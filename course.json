@@ -1,0 +1,182 @@
+{
+    "api_version": [
+        0,
+        3
+    ],
+    "course": {
+        "default_time": {
+            "end": "20:00",
+            "start": "18:00"
+        },
+        "description": "Úvod do získávání, manipulace a analýzy dat, základy strojového učení.",
+        "edit_info": {
+            "branch": "main",
+            "url": "https://github.com/PyDataCZ/pyladies-kurz"
+        },
+        "lessons": {
+            "pydata/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Lumír Balhar, 2019."
+                        ],
+                        "content": {
+                            "path": "install/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/install/index.md",
+                        "title": "Instalace knihoven a nástrojů",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/install/info.yml",
+                "static_files": {},
+                "title": "Instalace knihoven a nástrojů"
+            },
+            "pydata/notebook": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Lumír Balhar, 2019."
+                        ],
+                        "content": {
+                            "path": "notebook/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/notebook/index.md",
+                        "title": "Základy práce s Jupyter Notebookem",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/notebook/info.yml",
+                "static_files": {
+                    "first_command.png": {
+                        "path": "notebook/first_command.png"
+                    },
+                    "jupyter_notebook_home.png": {
+                        "path": "notebook/jupyter_notebook_home.png"
+                    },
+                    "jupyter_notebook_new.png": {
+                        "path": "notebook/jupyter_notebook_new.png"
+                    },
+                    "latex.png": {
+                        "path": "notebook/latex.png"
+                    },
+                    "latex_examples.png": {
+                        "path": "notebook/latex_examples.png"
+                    },
+                    "markdown.png": {
+                        "path": "notebook/markdown.png"
+                    },
+                    "markdown_source.png": {
+                        "path": "notebook/markdown_source.png"
+                    },
+                    "outputs.png": {
+                        "path": "notebook/outputs.png"
+                    },
+                    "python_example.png": {
+                        "path": "notebook/python_example.png"
+                    },
+                    "python_logo.png": {
+                        "path": "notebook/python_logo.png"
+                    },
+                    "wrong_order.png": {
+                        "path": "notebook/wrong_order.png"
+                    }
+                },
+                "title": "Základy práce s Jupyter Notebookem"
+            },
+            "pydata/pandas_core": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsali Jan Pipek &amp; Lumír Balhar, 2019."
+                        ],
+                        "content": {
+                            "path": "pandas_core/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/pandas_core/index.ipynb",
+                        "title": "Knihovna pandas a základní manipulace s tabulkovými daty",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/pandas_core/info.yml",
+                "static_files": {
+                    "df.svg": {
+                        "path": "pandas_core/df.svg"
+                    },
+                    "pokemon.csv": {
+                        "path": "pandas_core/pokemon.csv"
+                    },
+                    "series.svg": {
+                        "path": "pandas_core/series.svg"
+                    }
+                },
+                "title": "Knihovna pandas a základní manipulace s tabulkovými daty"
+            }
+        },
+        "long_description": "<p>Tady najdeš všechny materiály k pražské verzi datového kurzu\nPyLadies - budou přibývat postupně, jak budeme procházet kurzem.</p>",
+        "place": "FIT ČVUT",
+        "sessions": [
+            {
+                "date": "2022-09-12",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/install",
+                        "title": "Instalace knihoven a nástrojů",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/notebook",
+                        "title": "Základy práce s Jupyter Notebookem",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/pandas_core",
+                        "title": "Knihovna pandas a základní manipulace s tabulkovými daty",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "1",
+                "slug": "eda1",
+                "source_file": "course.yml",
+                "title": "Představení, Jupyter notebook, základy pandas"
+            },
+            {
+                "date": "2022-12-24",
+                "slug": "konec",
+                "source_file": "course.yml",
+                "title": "Svátky klidu a konce kurzu"
+            }
+        ],
+        "source_file": "course.yml",
+        "subtitle": "Praha - podzim 2022",
+        "time_description": "18:00–20:00",
+        "timezone": "Europe/Prague",
+        "title": "Datový kurz PyLadies",
+        "vars": {
+            "coach-present": true,
+            "pyladies": true,
+            "user-gender": "f"
+        }
+    }
+}
