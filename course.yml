@@ -1,0 +1,34 @@
+title: Datový kurz PyLadies
+subtitle: Praha - podzim 2022
+time: 18:00–20:00
+default_time:
+  start: '18:00'
+  end: '20:00'
+timezone: Europe/Prague
+place: FIT ČVUT
+description: Úvod do získávání, manipulace a analýzy dat, základy strojového učení.
+long_description: |
+    Tady najdeš všechny materiály k pražské verzi datového kurzu
+    PyLadies - budou přibývat postupně, jak budeme procházet kurzem.
+
+    [PyData]: http://pydata.cz/
+
+    [PyLadies]: http://pyladies.cz/
+vars:
+  user-gender: f
+  pyladies: true
+  coach-present: true
+
+plan:
+- title: "Představení, Jupyter notebook, základy pandas"
+  slug: eda1
+  date: 2022-09-12
+  materials:
+  - lesson: pydata/install
+  - lesson: pydata/notebook
+  - lesson: pydata/pandas_core
+
+- title: "Svátky klidu a konce kurzu"
+  slug: konec
+  serial: null
+  date: 2022-12-24
