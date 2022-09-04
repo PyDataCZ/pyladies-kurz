@@ -9,6 +9,7 @@ python = "^3.9"
 pygments-pytest = "^2.2.0"
 naucse = "^0.5.2"
 Jinja2 = "~3.0.0"
+ipython = "^8.4.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
