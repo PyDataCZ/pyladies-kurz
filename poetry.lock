@@ -909,7 +909,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "080ddb118b3f8f5e9eb467eccde2d31cbffbcf2f396267668aaa6a22b3c03d65"
+content-hash = "9008330e8523c6a4133507ba31413045fe38679957d0c2a13f500057ac9f9e37"
 
 [metadata.files]
 ansi2html = [
