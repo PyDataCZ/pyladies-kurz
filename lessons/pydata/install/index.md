@@ -6,7 +6,7 @@ přeci jen něco pokazí, popros na Slacku nebo někoho zkušenějšího o radu.
 Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.8, 3.9 nebo 3.10.
 Pokud ne, jedna z následujících tří alternativních cest by tě do takové situace měla snadno dovést:
 
-- Máš-li aktualizované Windows 10, úplně nejjednodušší je použít instalaci z [Microsoft Store](https://apps.microsoft.com/store/detail/python-310/9PJPW5LDXLZ5). Toto místo vám otevře i příkaz `python` v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš.
+- Máš-li aktualizované Windows 10, úplně nejjednodušší je použít instalaci z [Microsoft Store](https://apps.microsoft.com/store/detail/python-310/9PJPW5LDXLZ5). Toto místo ti otevře i příkaz `python` v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš.
 
 - Obecný, trochu starší návod na instalaci máme k dispozici [v začátečnickém kurzu](https://naucse.python.cz/course/pyladies/sessions/install/). Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.10.6), ideálně v 64bitové verzi.
 
