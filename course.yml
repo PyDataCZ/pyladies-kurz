@@ -28,6 +28,13 @@ plan:
   - lesson: pydata/notebook
   - lesson: pydata/pandas_core
 
+- title: "Datové typy a základy vizualizace v pandas"
+  slug: eda2
+  date: 2022-09-19
+  materials:
+  - lesson: pydata/pandas_types
+  - lesson: pydata/visualization_basics
+
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
