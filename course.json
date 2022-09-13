@@ -132,6 +132,56 @@
                     }
                 },
                 "title": "Knihovna pandas a základní manipulace s tabulkovými daty"
+            },
+            "pydata/pandas_types": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Jan Pipek, 2020."
+                        ],
+                        "content": {
+                            "path": "pandas_types/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/pandas_types/index.ipynb",
+                        "title": "Pandas - datové typy a základní operace",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/pandas_types/info.yml",
+                "static_files": {},
+                "title": "Pandas - datové typy a základní operace"
+            },
+            "pydata/visualization_basics": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Jan Pipek, 2020."
+                        ],
+                        "content": {
+                            "path": "visualization_basics/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/visualization_basics/index.ipynb",
+                        "title": "Základy vizualizace - v pandas a pro pandas",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/visualization_basics/info.yml",
+                "static_files": {},
+                "title": "Základy vizualizace - v pandas a pro pandas"
             }
         },
         "long_description": "<p>Tady najdeš všechny materiály k pražské verzi datového kurzu\nPyLadies - budou přibývat postupně, jak budeme procházet kurzem.</p>",
@@ -160,6 +210,25 @@
                 "slug": "eda1",
                 "source_file": "course.yml",
                 "title": "Představení, Jupyter notebook, základy pandas"
+            },
+            {
+                "date": "2022-09-19",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/pandas_types",
+                        "title": "Pandas - datové typy a základní operace",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/visualization_basics",
+                        "title": "Základy vizualizace - v pandas a pro pandas",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "2",
+                "slug": "eda2",
+                "source_file": "course.yml",
+                "title": "Datové typy a základy vizualizace v pandas"
             },
             {
                 "date": "2022-12-24",
