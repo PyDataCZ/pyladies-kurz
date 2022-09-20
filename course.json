@@ -14,6 +14,38 @@
             "url": "https://github.com/PyDataCZ/pyladies-kurz"
         },
         "lessons": {
+            "pydata/eda-univariate-timeseries": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Jakub Urban, 2019."
+                        ],
+                        "content": {
+                            "path": "eda-univariate-timeseries/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/eda-univariate-timeseries/index.ipynb",
+                        "title": "Analýza jedné proměnné a časových řad",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/eda-univariate-timeseries/info.yml",
+                "static_files": {
+                    "thumb_geografie.png": {
+                        "path": "eda-univariate-timeseries/thumb_geografie.png"
+                    },
+                    "thumb_teplota.png": {
+                        "path": "eda-univariate-timeseries/thumb_teplota.png"
+                    }
+                },
+                "title": "Analýza jedné proměnné a časových řad"
+            },
             "pydata/install": {
                 "pages": {
                     "index": {
@@ -229,6 +261,20 @@
                 "slug": "eda2",
                 "source_file": "course.yml",
                 "title": "Datové typy a základy vizualizace v pandas"
+            },
+            {
+                "date": "2022-09-26",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/eda-univariate-timeseries",
+                        "title": "Analýza jedné proměnné a časových řad",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "3",
+                "slug": "eda3",
+                "source_file": "course.yml",
+                "title": "Explorativní analýza a statistika jedné proměnné"
             },
             {
                 "date": "2022-12-24",
