@@ -165,6 +165,41 @@
                 },
                 "title": "Knihovna pandas a základní manipulace s tabulkovými daty"
             },
+            "pydata/pandas_correlations": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Jan Pipek, 2020."
+                        ],
+                        "content": {
+                            "path": "pandas_correlations/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/pandas_correlations/index.ipynb",
+                        "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/pandas_correlations/info.yml",
+                "static_files": {
+                    "joins.svg": {
+                        "path": "pandas_correlations/joins.svg"
+                    },
+                    "korelace.png": {
+                        "path": "pandas_correlations/korelace.png"
+                    },
+                    "plneni_2d_hist.png": {
+                        "path": "pandas_correlations/plneni_2d_hist.png"
+                    }
+                },
+                "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými"
+            },
             "pydata/pandas_types": {
                 "pages": {
                     "index": {
@@ -275,6 +310,20 @@
                 "slug": "eda3",
                 "source_file": "course.yml",
                 "title": "Explorativní analýza a statistika jedné proměnné"
+            },
+            {
+                "date": "2021-10-03",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/pandas_correlations",
+                        "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "4",
+                "slug": "eda4",
+                "source_file": "course.yml",
+                "title": "Explorativní datová analýza a více zdrojů / proměnných"
             },
             {
                 "date": "2022-12-24",
