@@ -200,6 +200,31 @@
                 },
                 "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými"
             },
+            "pydata/pandas_groupby": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsali Jakub Urban a Ondřej Kokeš, 2020."
+                        ],
+                        "content": {
+                            "path": "pandas_groupby/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/pandas_groupby/index.ipynb",
+                        "title": "Pandas - práce s indexy a analýza dat po skupinách",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/pandas_groupby/info.yml",
+                "static_files": {},
+                "title": "Pandas - práce s indexy a analýza dat po skupinách"
+            },
             "pydata/pandas_types": {
                 "pages": {
                     "index": {
@@ -324,6 +349,20 @@
                 "slug": "eda4",
                 "source_file": "course.yml",
                 "title": "Explorativní datová analýza a více zdrojů / proměnných"
+            },
+            {
+                "date": "2022-10-10",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/pandas_groupby",
+                        "title": "Pandas - práce s indexy a analýza dat po skupinách",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "5",
+                "slug": "eda5",
+                "source_file": "course.yml",
+                "title": "Explorativní datová analýza a pokročilejší manipulace"
             },
             {
                 "date": "2022-12-24",
