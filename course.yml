@@ -47,6 +47,12 @@ plan:
   materials:
   - lesson: pydata/pandas_correlations
 
+- title: "Explorativní datová analýza a pokročilejší manipulace"
+  slug: eda5
+  date: 2022-10-10
+  materials:
+  - lesson: pydata/pandas_groupby
+
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
