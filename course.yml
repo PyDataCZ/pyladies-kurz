@@ -53,6 +53,12 @@ plan:
   materials:
   - lesson: pydata/pandas_groupby
 
+- title: "Analýza hlavních komponent (PCA)"
+  slug: pca
+  date: 2022-10-24
+  materials:
+  - lesson: pydata/pca  
+
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
