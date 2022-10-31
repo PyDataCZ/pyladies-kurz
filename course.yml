@@ -59,7 +59,7 @@ plan:
   materials:
   - lesson: pydata/pca  
 
-- title: "Úvod do strojového učení, regresse"
+- title: "Úvod do strojového učení, regrese"
   slug: ml1
   date: 2022-10-31
   materials:
