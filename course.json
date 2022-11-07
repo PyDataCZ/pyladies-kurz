@@ -46,6 +46,31 @@
                 },
                 "title": "Analýza jedné proměnné a časových řad"
             },
+            "pydata/homework_revisited": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Petra Vidnerová, Roman Diba, 2020."
+                        ],
+                        "content": {
+                            "path": "homework_revisited/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/homework_revisited/index.ipynb",
+                        "title": "Implementace úlohy z domácího úkolu",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/homework_revisited/info.yml",
+                "static_files": {},
+                "title": "Implementace úlohy z domácího úkolu"
+            },
             "pydata/install": {
                 "pages": {
                     "index": {
@@ -442,6 +467,60 @@
                 "static_files": {},
                 "title": "Regrese - Co bych měla po této lekci znát .."
             },
+            "pydata/scikitlearn_api": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Petra Vidnerová, Roman Diba, 2020."
+                        ],
+                        "content": {
+                            "path": "scikitlearn_api/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/scikitlearn_api/index.ipynb",
+                        "title": "Knihovna Scikit-learn",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/scikitlearn_api/info.yml",
+                "static_files": {
+                    "salaries.csv": {
+                        "path": "scikitlearn_api/salaries.csv"
+                    }
+                },
+                "title": "Knihovna Scikit-learn"
+            },
+            "pydata/scikitlearn_resume": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsali Petra Vidnerová a Roman Diba, 2020."
+                        ],
+                        "content": {
+                            "path": "scikitlearn_resume/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/scikitlearn_resume/index.md",
+                        "title": "Scikitlearn - Co bych měla po této lekci znát ..",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/scikitlearn_resume/info.yml",
+                "static_files": {},
+                "title": "Scikitlearn - Co bych měla po této lekci znát .."
+            },
             "pydata/visualization_basics": {
                 "pages": {
                     "index": {
@@ -598,6 +677,30 @@
                 "slug": "ml1",
                 "source_file": "course.yml",
                 "title": "Úvod do strojového učení, regrese"
+            },
+            {
+                "date": "2022-11-07",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/scikitlearn_api",
+                        "title": "Knihovna Scikit-learn",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/homework_revisited",
+                        "title": "Implementace úlohy z domácího úkolu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/scikitlearn_resume",
+                        "title": "Scikitlearn - Co bych měla po této lekci znát ..",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "8",
+                "slug": "ml2",
+                "source_file": "course.yml",
+                "title": "Knihovna Scikit-learn, ML workflow"
             },
             {
                 "date": "2022-12-24",
