@@ -68,6 +68,14 @@ plan:
   - lesson: pydata/regression_exercises
   - lesson: pydata/regression_resume
 
+- title: "Knihovna Scikit-learn, ML workflow"
+  slug: ml2
+  date: 2022-11-07
+  materials:
+  - lesson: pydata/scikitlearn_api
+  - lesson: pydata/homework_revisited
+  - lesson: pydata/scikitlearn_resume
+
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
