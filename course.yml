@@ -76,7 +76,7 @@ plan:
   - lesson: pydata/homework_revisited
   - lesson: pydata/scikitlearn_resume
 
-- title: "Knihovna Scikit-learn, ML workflow"
+- title: "Strojové učení, klasifikace"
   slug: ml3
   date: 2022-11-14
   materials:
