@@ -57,13 +57,13 @@ plan:
   slug: pca
   date: 2022-10-24
   materials:
-  - lesson: pydata/pca  
+  - lesson: pydata/pca
 
 - title: "Úvod do strojového učení, regrese"
   slug: ml1
   date: 2022-10-31
   materials:
-  - lesson: pydata/intro_regression 
+  - lesson: pydata/intro_regression
   - lesson: pydata/regression_metrics
   - lesson: pydata/regression_exercises
   - lesson: pydata/regression_resume
@@ -83,6 +83,12 @@ plan:
   - lesson: pydata/intro_classification
   - lesson: pydata/classification_metrics
   - lesson: pydata/classification_resume
+
+- title: Interaktivní vizualizace a aplikace
+  slug: dashboards
+  date: 2022-11-21
+  materials:
+  - lesson: pydata/dashboards
 
 - title: "Svátky klidu a konce kurzu"
   slug: konec
