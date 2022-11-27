@@ -89,6 +89,12 @@ plan:
   date: 2022-11-21
   materials:
   - lesson: pydata/dashboards
+  
+- title: Databáze a SQL
+  slug: databases
+  date: 2022-11-28
+  materials:
+  - lesson: pydata/databases
 
 - title: "Svátky klidu a konce kurzu"
   slug: konec
