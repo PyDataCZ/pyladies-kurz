@@ -88,7 +88,7 @@ UPDATE directors SET birthdate = "1950-01-02" WHERE director_id = 3;</code></pre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># smažte # na následujícím řádku pro instalaci balíčku sqlalchemy</span>
@@ -109,7 +109,7 @@ UPDATE directors SET birthdate = "1950-01-02" WHERE director_id = 3;</code></pre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sqlalchemy</span>
@@ -129,7 +129,7 @@ UPDATE directors SET birthdate = "1950-01-02" WHERE director_id = 3;</code></pre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -151,7 +151,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># smažte # na následujícím řádku pro stažení dat</span>
@@ -174,7 +174,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">engine</span> <span class="o">=</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">'sqlite:///movies.sqlite'</span><span class="p">)</span>
@@ -195,13 +195,33 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span><span class="o">.</span><span class="n">get_table_names</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;actor&#39;, &#39;casting&#39;, &#39;movie&#39;]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -215,7 +235,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">prozkoumat</span><span class="p">(</span><span class="n">engine</span><span class="p">):</span>
@@ -237,13 +257,51 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prozkoumat</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Schema: main
+
+  Table: actor
+
+      Column: id           INTEGER
+      Column: name         VARCHAR(50)
+
+  Table: casting
+
+      Column: movieid      INTEGER
+      Column: actorid      INTEGER
+      Column: ord          INTEGER
+
+  Table: movie
+
+      Column: id           INTEGER
+      Column: title        VARCHAR(50)
+      Column: yr           INTEGER
+      Column: director     INTEGER
+      Column: budget       INTEGER
+      Column: gross        INTEGER
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -257,13 +315,111 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql_table</span><span class="p">(</span><span class="s1">'actor'</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>Richard Brooks</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>Warren Beatty</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>Goldie Hawn</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>Gert FrÃ¶be</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>48143</th>
+      <td>48162</td>
+      <td>David Kernan</td>
+    </tr>
+    <tr>
+      <th>48144</th>
+      <td>48163</td>
+      <td>Peter Gill</td>
+    </tr>
+    <tr>
+      <th>48145</th>
+      <td>48164</td>
+      <td>Dickie Owen</td>
+    </tr>
+    <tr>
+      <th>48146</th>
+      <td>48165</td>
+      <td>Dennis Folbigge</td>
+    </tr>
+    <tr>
+      <th>48147</th>
+      <td>48166</td>
+      <td>Douglas Hickox</td>
+    </tr>
+  </tbody>
+</table>
+<p>48148 rows × 2 columns</p>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -277,13 +433,64 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s1">'SELECT title, yr, budget, gross FROM movie WHERE title = "Chasing Amy"'</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>yr</th>
+      <th>budget</th>
+      <th>gross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Chasing Amy</td>
+      <td>1997</td>
+      <td>250000</td>
+      <td>12021272</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -301,7 +508,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ostraňte # na začátku následujících řádků pro stažení souboru world.sqlite</span>
@@ -315,7 +522,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">engine_world</span> <span class="o">=</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">'sqlite:///world.sqlite'</span><span class="p">)</span>
@@ -327,16 +534,126 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Schema: main
+
+  Table: world
+
+      Column: name         VARCHAR(50)
+      Column: continent    VARCHAR(60)
+      Column: area         DECIMAL(10, 0)
+      Column: population   DECIMAL(11, 0)
+      Column: gdp          DECIMAL(14, 0)
+      Column: capital      VARCHAR(60)
+      Column: tld          VARCHAR(5)
+      Column: flag         VARCHAR(255)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s1">'SELECT * FROM world LIMIT 3'</span><span class="p">,</span> <span class="n">engine_world</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>continent</th>
+      <th>area</th>
+      <th>population</th>
+      <th>gdp</th>
+      <th>capital</th>
+      <th>tld</th>
+      <th>flag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>652230</td>
+      <td>25500100</td>
+      <td>20364000000</td>
+      <td>Kabul</td>
+      <td>.af</td>
+      <td>//upload.wikimedia.org/wikipedia/commons/9/9a/...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>Europe</td>
+      <td>28748</td>
+      <td>2821977</td>
+      <td>12044000000</td>
+      <td>Tirana</td>
+      <td>.al</td>
+      <td>//upload.wikimedia.org/wikipedia/commons/3/36/...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>Africa</td>
+      <td>2381741</td>
+      <td>38700000</td>
+      <td>207021000000</td>
+      <td>Algiers</td>
+      <td>.dz</td>
+      <td>//upload.wikimedia.org/wikipedia/commons/7/77/...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -354,7 +671,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -369,6 +686,51 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>65906000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -380,7 +742,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -395,6 +757,68 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brazil</td>
+      <td>202794000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>China</td>
+      <td>1365370000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>India</td>
+      <td>1246160000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Russia</td>
+      <td>146000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -405,7 +829,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -420,6 +844,88 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Belarus</td>
+      <td>207600</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ghana</td>
+      <td>238533</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Guinea</td>
+      <td>245857</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Guyana</td>
+      <td>214969</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Laos</td>
+      <td>236800</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Romania</td>
+      <td>238391</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Uganda</td>
+      <td>241550</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>United Kingdom</td>
+      <td>242900</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -431,7 +937,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -443,6 +949,59 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Fiji</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Finland</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>France</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -456,7 +1015,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -468,6 +1027,59 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Fiji</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Finland</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>France</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -481,7 +1093,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -493,6 +1105,59 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Fiji</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Finland</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>France</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -507,7 +1172,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -522,6 +1187,79 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andorra</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Angola</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Antigua and Barbuda</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>India</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Indonesia</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>United Arab Emirates</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>United Kingdom</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>United States</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -532,7 +1270,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -547,6 +1285,47 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -557,7 +1336,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -571,21 +1350,131 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>capital</th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Kabul</td>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>Tirana</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>Algiers</td>
+      <td>Africa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andorra</td>
+      <td>Andorra la Vella</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>Africa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Venezuela</td>
+      <td>Caracas</td>
+      <td>South America</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>Vietnam</td>
+      <td>Hanoi</td>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Yemen</td>
+      <td>Sana‘a</td>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Zambia</td>
+      <td>Lusaka</td>
+      <td>Africa</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>Zimbabwe</td>
+      <td>Harare</td>
+      <td>Africa</td>
+    </tr>
+  </tbody>
+</table>
+<p>195 rows × 3 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="select_uvnitr_selectu_order">SELECT uvnitř SELECTu, ORDER
-<a href="#header-select_uvnitr_selectu_order" class="header-link">#</a>
+<h3 id="vnoreny_select_select_uvnitr_selectu">Vnořený SELECT (SELECT uvnitř SELECTu)
+<a href="#header-vnoreny_select_select_uvnitr_selectu" class="header-link">#</a>
 </h3>
-<p>Pro komplexní dotazy potřebujeme často porovnat hodnotu s hodnotou, na kterou samotnou musíme z databáze získat. K tomu slouží možnost vnořit jeden SELECT do druhého.</p>
+<p>Pro komplexní dotazy potřebujeme často porovnat hodnotu s hodnotou, kterou samotnou musíme z databáze získat. K tomu slouží možnost vnořit jeden SELECT do druhého.</p>
 <p><strong>Cvičení 0</strong>: Které státy mají více obyvatel než Rusko? To už umíme - na dva dotazy... (povšimněte si použití ORDER - seřadí výsledek podle jednoho či více sloupců)</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -600,10 +1489,57 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Russia</td>
+      <td>146000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -619,6 +1555,79 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bangladesh</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brazil</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>China</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>India</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Indonesia</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Nigeria</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Pakistan</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>United States</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -629,7 +1638,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -647,6 +1656,79 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bangladesh</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brazil</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>China</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>India</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Indonesia</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Nigeria</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Pakistan</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>United States</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -657,7 +1739,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -674,6 +1756,73 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gdp/population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bangladesh</td>
+      <td>812</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>China</td>
+      <td>6121</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>India</td>
+      <td>1504</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Indonesia</td>
+      <td>3482</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Pakistan</td>
+      <td>1144</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -684,7 +1833,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -700,6 +1849,53 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>China</td>
+      <td>1365370000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -710,7 +1906,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -727,6 +1923,58 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gdp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>China</td>
+      <td>8358400000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>United States</td>
+      <td>16244600000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -740,7 +1988,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -756,6 +2004,53 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>SUM(population)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Asia</td>
+      <td>4342955676</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -766,7 +2061,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -781,6 +2076,79 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Caribbean</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Eurasia</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>North America</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Oceania</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>South America</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -791,7 +2159,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -807,6 +2175,88 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>SUM(population)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+      <td>1016091005</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Asia</td>
+      <td>4342955676</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Caribbean</td>
+      <td>36149204</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Eurasia</td>
+      <td>149017400</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Europe</td>
+      <td>610261850</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>North America</td>
+      <td>518755156</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Oceania</td>
+      <td>37783477</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>South America</td>
+      <td>407618970</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -817,7 +2267,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -834,6 +2284,78 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>SUM(population)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+      <td>1016091005</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Asia</td>
+      <td>4342955676</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Eurasia</td>
+      <td>149017400</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Europe</td>
+      <td>610261850</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>North America</td>
+      <td>518755156</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>South America</td>
+      <td>407618970</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -844,7 +2366,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -861,17 +2383,99 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>COUNT(name)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Asia</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Caribbean</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Eurasia</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Europe</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>North America</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Oceania</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>South America</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Cvičení 2</strong>: Některé státy jsou velmi malé. Zkuste modifikovat kód na Cvičení 1 tak, aby počítal jen státy, které mají alespoň 10 milionů obyvatel. Použije je tu WHERE nebo HAVING, a proč? (řešení: např. pro Evropu 14)</p>
+<p><strong>Cvičení 2</strong>: Některé státy jsou velmi malé. Zkuste modifikovat kód na Cvičení 1 tak, aby počítal jen státy, které mají alespoň 10 milionů obyvatel. Použije se tu WHERE nebo HAVING, a proč? (řešení: např. pro Evropu 14)</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -884,6 +2488,88 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>SUM(population)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+      <td>1016091005</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Asia</td>
+      <td>4342955676</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Caribbean</td>
+      <td>36149204</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Eurasia</td>
+      <td>149017400</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Europe</td>
+      <td>610261850</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>North America</td>
+      <td>518755156</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Oceania</td>
+      <td>37783477</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>South America</td>
+      <td>407618970</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -902,7 +2588,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -917,6 +2603,75 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>John Hurt</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sigourney Weaver</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Yaphet Kotto</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Harry Dean Stanton</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ian Holm</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Tom Skerritt</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Veronica Cartwright</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -930,7 +2685,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -945,6 +2700,75 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>John Hurt</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sigourney Weaver</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Yaphet Kotto</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Harry Dean Stanton</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ian Holm</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Tom Skerritt</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Veronica Cartwright</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -958,7 +2782,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -973,6 +2797,75 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>John Hurt</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sigourney Weaver</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Yaphet Kotto</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Harry Dean Stanton</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ian Holm</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Tom Skerritt</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Veronica Cartwright</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
 </div>
 </div>
 
@@ -980,13 +2873,13 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Cvičení 3</strong>: Vypište všechny název filmů, které byly uvedeny do kin v roce 1962, společně s hlavní hvězdou (<code>ord</code> v castingu je rovno jedné). (řešení: je jich pět, hlavní roli v Jak zabít moudivláčka hrál Gregory Peck)</p>
+<p><strong>Cvičení 3</strong>: Vypište název filmů, které byly uvedeny do kin v roce 1962, společně s hlavní hvězdou (<code>ord</code> v castingu je rovno jedné). (řešení: je jich pět, hlavní roli v Jak zabít moudivláčka hrál Gregory Peck)</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -1004,6 +2897,88 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>John Hurt</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sigourney Weaver</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Yaphet Kotto</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Harry Dean Stanton</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ian Holm</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Tom Skerritt</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Veronica Cartwright</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="obtiznejsi_cviceni">Obtížnější cvičení:
+<a href="#header-obtiznejsi_cviceni" class="header-link">#</a>
+</h4>
+<p><strong>Cvičení 4:</strong> Vypište všechny filmy, v kterých hrála Julie Andrews, a ke každému z nich uveďte i herce v hlavní roli.</p>
+<p><strong>Cviření 5:</strong> Najděte všechny herce, kteří hráli alespoň patnáctkrát v hlavní roli.</p>
+<p><strong>Cvičení 6:</strong> Vybište všechny filmy z roku 1978 seřazené podle počtu herců, kteří v nich hráli. V případě rovnosti řaďte podle názvu filmu.</p>
+<p><strong>Cvičení 7:</strong> Nalezněte všechny herce, kteří hráli ve filmu, v kterém hrál též Art Garfunkel.</p>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1022,6 +2997,8 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </li>
 <li><p>Většina databázových serverů není z bezpečnostních důvodů veřejně dostupných a přistupujete k nim skrz nějakou API službu (o těch si budeme vykládat příště). Pokud byste si ale chtěli vyzkoušet, jaké to je připojit se ke vzdálenému serveru, jeden z mála dostupných je <a href="https://plants.ensembl.org/info/data/mysql.html">Ensembl</a> poskytující genomická data.</p>
 </li>
+<li><p>Možná vám přišlo, že dnešní SQL lekce byla velmi podobná prvním lekcím na Pandách. Jeden z významných rozdílů SQL tabulky je, že může obsahovat více indexů, zadímco pandas DataFrame má jen jeden. Dalším rozdílem je, že <code>NA</code> se v jazyce SQL nazývá <code>NULL</code> - testuje se na něj IS NULL, podobně jako v Pythonu.</p>
+</li>
 <li><p>Pokud vám SQL přijde intuitivní a chtěli byste takto pracovat i s Pandas tabulkami, je to možné pomocí knihovny <a href="https://github.com/yhat/pandasql/">pandasql</a>.</p>
 </li>
 <li><p>A naopak, ve všech příkladech zde jsme používali SQLAlchemy v kombinaci s pandas. To ale vůbec není nutné, můžeme použít <code>engine.execute(...)</code> a dostaneme iterátor reprezentující výsledek SQL dotazu. Například...</p>
@@ -1032,7 +3009,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'SELECT id, title, yr FROM movie LIMIT 5'</span><span class="p">)</span>
@@ -1041,6 +3018,28 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10001 $ 1971
+10002 &#34;Crocodile&#34; Dundee 1986
+10003 &#34;Crocodile&#34; Dundee II 1988
+10004 &#39;Til There Was You 1997
+10005 &#39;Til We Meet Again 1940
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
