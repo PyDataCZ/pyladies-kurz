@@ -120,6 +120,31 @@
                 "static_files": {},
                 "title": "Interaktivní vizualizace a aplikace I."
             },
+            "pydata/databases": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Petr Šimeček, 2022, původní verze Petr Messner, 2020."
+                        ],
+                        "content": {
+                            "path": "databases/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/databases/index.ipynb",
+                        "title": "Databáze a SQL",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/databases/info.yml",
+                "static_files": {},
+                "title": "Databáze a SQL"
+            },
             "pydata/eda-univariate-timeseries": {
                 "pages": {
                     "index": {
@@ -880,6 +905,20 @@
                 "slug": "dashboards",
                 "source_file": "course.yml",
                 "title": "Interaktivní vizualizace a aplikace"
+            },
+            {
+                "date": "2022-11-28",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/databases",
+                        "title": "Databáze a SQL",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "11",
+                "slug": "databases",
+                "source_file": "course.yml",
+                "title": "Databáze a SQL"
             },
             {
                 "date": "2022-12-24",
