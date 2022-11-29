@@ -154,8 +154,11 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># smažte # na následujícím řádku pro stažení dat</span>
-<span class="c1"># !wget https://github.com/PyDataCZ/pyladies-kurz/raw/main/lessons/pydata/databases/movies.sqlite</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># smažte # na následujících řádcích pro stažení dat movies.sqlite</span>
+<span class="c1">#from pathlib import Path</span>
+<span class="c1">#import requests</span>
+<span class="c1">#db_data = requests.get('https://github.com/PyDataCZ/pyladies-kurz/raw/main/lessons/pydata/databases/movies.sqlite').content</span>
+<span class="c1">#Path('movies.sqlite').write_bytes(db_data)</span>
 </pre></div>
 
     </div>
@@ -512,7 +515,8 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ostraňte # na začátku následujících řádků pro stažení souboru world.sqlite</span>
-<span class="c1"># !wget https://github.com/PyDataCZ/pyladies-kurz/raw/main/lessons/pydata/databases/world.sqlite</span>
+<span class="c1">#db_data = requests.get('https://github.com/PyDataCZ/pyladies-kurz/raw/main/lessons/pydata/databases/world.sqlite').content</span>
+<span class="c1">#Path('world.sqlite').write_bytes(db_data)</span>
 </pre></div>
 
     </div>
@@ -1900,7 +1904,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Cvičení 2</strong>: Nalezněte státy, které mají HDP vyšší než všechny státy v Evropě. (řešení: jsou tři)</p>
+<p><strong>Cvičení 2</strong>: Nalezněte státy, které mají HDP vyšší než libovolný evropský stát. (řešení: jsou tři)</p>
 </div>
 </div>
 </div>
@@ -2370,9 +2374,8 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">"""</span>
-<span class="s2">SELECT continent, COUNT(name)</span>
+<span class="s2">SELECT continent, SUM(population)</span>
 <span class="s2">  FROM world</span>
-<span class="s2">  WHERE population &gt; 10000000</span>
 <span class="s2">  GROUP BY continent</span>
 <span class="s2">"""</span>
 
@@ -2412,49 +2415,49 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
     <tr style="text-align: right;">
       <th></th>
       <th>continent</th>
-      <th>COUNT(name)</th>
+      <th>SUM(population)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>Africa</td>
-      <td>29</td>
+      <td>1016091005</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Asia</td>
-      <td>26</td>
+      <td>4342955676</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Caribbean</td>
-      <td>2</td>
+      <td>36149204</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Eurasia</td>
-      <td>1</td>
+      <td>149017400</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Europe</td>
-      <td>14</td>
+      <td>610261850</td>
     </tr>
     <tr>
       <th>5</th>
       <td>North America</td>
-      <td>4</td>
+      <td>518755156</td>
     </tr>
     <tr>
       <th>6</th>
       <td>Oceania</td>
-      <td>1</td>
+      <td>37783477</td>
     </tr>
     <tr>
       <th>7</th>
       <td>South America</td>
-      <td>8</td>
+      <td>407618970</td>
     </tr>
   </tbody>
 </table>
@@ -2469,7 +2472,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Cvičení 2</strong>: Některé státy jsou velmi malé. Zkuste modifikovat kód na Cvičení 1 tak, aby počítal jen státy, které mají alespoň 10 milionů obyvatel. Použije se tu WHERE nebo HAVING, a proč? (řešení: např. pro Evropu 14)</p>
+<p><strong>Cvičení 2</strong>: Některé státy jsou velmi malé. Zkuste modifikovat kód na Cvičení 1 tak, aby počítal jen státy, které mají alespoň 10 milionů obyvatel. A kdybychom filtrovali nikoli malé státy, ale malé kontinenty? Kdy se použije WHERE, kdy HAVING, a proč? (řešení: např. pro Evropu 14)</p>
 </div>
 </div>
 </div>
@@ -2873,7 +2876,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Cvičení 3</strong>: Vypište název filmů, které byly uvedeny do kin v roce 1962, společně s hlavní hvězdou (<code>ord</code> v castingu je rovno jedné). (řešení: je jich pět, hlavní roli v Jak zabít moudivláčka hrál Gregory Peck)</p>
+<p><strong>Cvičení 3</strong>: Vypište název filmů, které byly uvedeny do kin v roce 1903, společně s hlavní hvězdou (<code>ord</code> v castingu je rovno jedné). (řešení: je jich pět, hlavní roli v Alice in Wonderland hrála May Clark)</p>
 </div>
 </div>
 </div>
@@ -2975,7 +2978,7 @@ Databáze v podobě SQLite souboru má výhodu v tom, že když něco rozbijete,
 </h4>
 <p><strong>Cvičení 4:</strong> Vypište všechny filmy, v kterých hrála Julie Andrews, a ke každému z nich uveďte i herce v hlavní roli.</p>
 <p><strong>Cviření 5:</strong> Najděte všechny herce, kteří hráli alespoň patnáctkrát v hlavní roli.</p>
-<p><strong>Cvičení 6:</strong> Vybište všechny filmy z roku 1978 seřazené podle počtu herců, kteří v nich hráli. V případě rovnosti řaďte podle názvu filmu.</p>
+<p><strong>Cvičení 6:</strong> Vypište všechny filmy z roku 1978 seřazené podle počtu herců, kteří v nich hráli. V případě rovnosti řaďte podle názvu filmu.</p>
 <p><strong>Cvičení 7:</strong> Nalezněte všechny herce, kteří hráli ve filmu, v kterém hrál též Art Garfunkel.</p>
 </div>
 </div>
