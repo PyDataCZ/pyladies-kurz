@@ -14,6 +14,44 @@
             "url": "https://github.com/PyDataCZ/pyladies-kurz"
         },
         "lessons": {
+            "pydata/api": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Dan Cupak, 2020."
+                        ],
+                        "content": {
+                            "path": "api/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/api/index.ipynb",
+                        "title": "API",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/api/info.yml",
+                "static_files": {
+                    "curl-return.jpg": {
+                        "path": "api/curl-return.jpg"
+                    },
+                    "curl.jpg": {
+                        "path": "api/curl.jpg"
+                    },
+                    "giphy.gif": {
+                        "path": "api/giphy.gif"
+                    },
+                    "null.jpg": {
+                        "path": "api/null.jpg"
+                    }
+                },
+                "title": "API"
+            },
             "pydata/classification_metrics": {
                 "pages": {
                     "index": {
@@ -919,6 +957,20 @@
                 "slug": "databases",
                 "source_file": "course.yml",
                 "title": "Databáze a SQL"
+            },
+            {
+                "date": "2022-12-05",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/api",
+                        "title": "API",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "12",
+                "slug": "api",
+                "source_file": "course.yml",
+                "title": "API"
             },
             {
                 "date": "2022-12-24",
