@@ -96,6 +96,12 @@ plan:
   materials:
   - lesson: pydata/databases
 
+- title: API
+  slug: api
+  date: 2022-12-05
+  materials:
+  - lesson: pydata/api
+
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
