@@ -99,7 +99,7 @@ plan:
 - title: API
   slug: api
   date: 2022-12-05
-  materials"
+  materials:
   - lesson: pydata/api
 
 - title: "Svátky klidu a konce kurzu"
