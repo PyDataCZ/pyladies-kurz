@@ -3,7 +3,7 @@
 Instalace všeho potřebného není složitá a zabere jen chvíli. Pokud se během ní
 přeci jen něco pokazí, popros na Slacku nebo někoho zkušenějšího o radu.
 
-Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.8-3.11.
+Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.10-3.11.
 Pokud ne, jedna z následujících tří alternativních cest by tě do takové situace měla snadno dovést:
 
 - Obecný návod na instalaci máme k dispozici [v začátečnickém kurzu](https://naucse.python.cz/course/pyladies/sessions/install/). Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.11.5), ideálně v 64bitové verzi. Toto je náš preferovaný způsob.
