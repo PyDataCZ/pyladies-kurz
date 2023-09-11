@@ -25,7 +25,7 @@ mohli pracovat s knihovnami a nástroji v něm nainstalovanými.
 
 ## Instalace knihoven
 
-Do příkazové řádky s aktivním virtuálním prostředím zadej následující příkazy:
+Do příkazové řádky s aktivním virtuálním prostředím zadej následující příkaz:
 
 ```shell
 (venv)$ python -m pip install jupyter pandas matplotlib requests seaborn scipy scikit-learn sqlalchemy plotly xlrd openpyxl
