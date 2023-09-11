@@ -27,3 +27,7 @@ plan:
   - lesson: pydata/install
   - lesson: pydata/notebook
   - lesson: pydata/pandas_core
+- title: "Svátky klidu a konce kurzu"
+  slug: konec
+  serial: null
+  date: 2023-12-24
