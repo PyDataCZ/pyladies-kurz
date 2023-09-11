@@ -3,12 +3,12 @@
 </h1>
 <p>Instalace všeho potřebného není složitá a zabere jen chvíli. Pokud se během ní
 přeci jen něco pokazí, popros na Slacku nebo někoho zkušenějšího o radu.</p>
-<p>Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.8, 3.9 nebo 3.10.
+<p>Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.10-3.11.
 Pokud ne, jedna z následujících tří alternativních cest by tě do takové situace měla snadno dovést:</p>
 <ul>
-<li><p>Máš-li aktualizované Windows 10, úplně nejjednodušší je použít instalaci z <a href="https://apps.microsoft.com/store/detail/python-310/9PJPW5LDXLZ5">Microsoft Store</a>. Toto místo ti otevře i příkaz <code>python</code> v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš.</p>
+<li><p>Obecný návod na instalaci máme k dispozici <a href="https://naucse.python.cz/course/pyladies/sessions/install/">v začátečnickém kurzu</a>. Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.11.5), ideálně v 64bitové verzi. Toto je náš preferovaný způsob.</p>
 </li>
-<li><p>Obecný, trochu starší návod na instalaci máme k dispozici <a href="https://naucse.python.cz/course/pyladies/sessions/install/">v začátečnickém kurzu</a>. Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.10.6), ideálně v 64bitové verzi.</p>
+<li><p>Máš-li aktualizované Windows 10/11, úplně nejjednodušší je použít instalaci z <a href="https://apps.microsoft.com/store/detail/python-311/9NRWMJP3717K">Microsoft Store</a>. Toto místo ti otevře i příkaz <code>python</code> v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš. Nicméně můžeš čekat zádrhele, když začneš instalovat další nástroje Pythonu, které v kurzu nepoužíváme.</p>
 </li>
 <li><p>Můžeš použít distribuci <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>, s ní obvykle nebývají problémy. Lidé z oblasti data science (včetně některých autorů těchto materiálů) ji rádi používají - sice se tak připravují o práci s "čistým" Pythonem, ale zjednodušují si instalaci některých (zejména výpočetních) knihoven, které závisejí na externích binárních balíčcích. Na vytváření virtuálních prostředí a instalace pak slouží příkaz <code>conda</code>, viz <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/index.html">dokumentace</a>.</p>
 </li>
@@ -25,11 +25,9 @@ mohli pracovat s knihovnami a nástroji v něm nainstalovanými.</p>
 <h2 id="instalace_knihoven">Instalace knihoven
 <a href="#header-instalace_knihoven" class="header-link">#</a>
 </h2>
-<p>Do příkazové řádky s aktivním virtuálním prostředím zadej následující příkazy:</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span>$ python -m pip install <span class="s2">&quot;psutil==5.9.1&quot;</span>
-<span class="o">(</span>venv<span class="o">)</span>$ python -m pip install jupyter pandas matplotlib requests seaborn scipy scikit-learn sqlalchemy plotly xlrd openpyxl
-</pre></div><p><em>První příkaz je bohužel v době psaní tohoto návodu (4.9.2022) potřeba, ale pravděpodobně brzy nebude.</em></p>
-<p>Druhým příkazem se do virtuálního prostředí nainstalovaly následující knihovny (a některé další jejich závislosti):</p>
+<p>Do příkazové řádky s aktivním virtuálním prostředím zadej následující příkaz:</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span>$ python -m pip install jupyter pandas matplotlib requests seaborn scipy scikit-learn sqlalchemy plotly xlrd openpyxl
+</pre></div><p>Tímto příkazem se do virtuálního prostředí nainstalovaly následující knihovny (a některé další jejich závislosti):</p>
 <ul>
 <li>Jupyter - webové rozhraní pro interaktivní a reprodukovatelnou práci s Pythonem</li>
 <li>Matplotlib - jedna z nejznámějších knihoven pro tvorbu grafů</li>
