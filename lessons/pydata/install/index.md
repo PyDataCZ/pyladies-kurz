@@ -6,9 +6,9 @@ přeci jen něco pokazí, popros na Slacku nebo někoho zkušenějšího o radu.
 Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.8-3.11.
 Pokud ne, jedna z následujících tří alternativních cest by tě do takové situace měla snadno dovést:
 
-- Máš-li aktualizované Windows 10, úplně nejjednodušší je použít instalaci z [Microsoft Store](https://apps.microsoft.com/store/detail/python-311/9NRWMJP3717K). Toto místo ti otevře i příkaz `python` v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš.
+- Obecný návod na instalaci máme k dispozici [v začátečnickém kurzu](https://naucse.python.cz/course/pyladies/sessions/install/). Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.11.5), ideálně v 64bitové verzi. Toto je náš preferovaný způsob.
 
-- Obecný, trochu starší návod na instalaci máme k dispozici [v začátečnickém kurzu](https://naucse.python.cz/course/pyladies/sessions/install/). Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.11.5), ideálně v 64bitové verzi.
+- Máš-li aktualizované Windows 10/11, úplně nejjednodušší je použít instalaci z [Microsoft Store](https://apps.microsoft.com/store/detail/python-311/9NRWMJP3717K). Toto místo ti otevře i příkaz `python` v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš. Nicméně můžeš čekat zádrhele, když začneš instalovat další nástroje Pythonu, které v kurzu nepoužíváme.
 
 - Můžeš použít distribuci [miniconda](https://docs.conda.io/en/latest/miniconda.html), s ní obvykle nebývají problémy. Lidé z oblasti data science (včetně některých autorů těchto materiálů) ji rádi používají - sice se tak připravují o práci s "čistým" Pythonem, ale zjednodušují si instalaci některých (zejména výpočetních) knihoven, které závisejí na externích binárních balíčcích. Na vytváření virtuálních prostředí a instalace pak slouží příkaz `conda`, viz [dokumentace](https://docs.conda.io/projects/conda/en/latest/user-guide/index.html).
 
