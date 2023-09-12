@@ -10,7 +10,9 @@ Pokud ne, jedna z následujících tří alternativních cest by tě do takové 
 
 - Máš-li aktualizované Windows 10/11, úplně nejjednodušší je použít instalaci z [Microsoft Store](https://apps.microsoft.com/store/detail/python-311/9NRWMJP3717K). Toto místo ti otevře i příkaz `python` v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš. Nicméně můžeš čekat zádrhele, když začneš instalovat další nástroje Pythonu, které v kurzu nepoužíváme.
 
-- Můžeš použít distribuci [miniconda](https://docs.conda.io/en/latest/miniconda.html), s ní obvykle nebývají problémy. Lidé z oblasti data science (včetně některých autorů těchto materiálů) ji rádi používají - sice se tak připravují o práci s "čistým" Pythonem, ale zjednodušují si instalaci některých (zejména výpočetních) knihoven, které závisejí na externích binárních balíčcích. Na vytváření virtuálních prostředí a instalace pak slouží příkaz `conda`, viz [dokumentace](https://docs.conda.io/projects/conda/en/latest/user-guide/index.html).
+- Na MacOS, kromě Homebrew zmiňovaného v návodu začátečnickém kurzu výše, je také jednoduché použít oficiální instalátor z [python.org](https://www.python.org/downloads/macos/). V současnosti je poslední verze 3.11.5 ke stažení [zde](https://www.python.org/ftp/python/3.11.5/python-3.11.5-macos11.pkg).
+
+- Můžeš použít distribuci [Mamba](https://github.com/mamba-org/mamba), která řeší kromě Pythonu samotného i případné další (binární) závislosti a je tak v podstatě nejrobustnějším řešením napříč operačními systémy. Lidé z oblasti data science (včetně některých autorů těchto materiálů) ji rádi používají - sice se tak připravují o práci s "čistým" Pythonem, ale zjednodušují si instalaci některých (zejména výpočetních) knihoven, které závisejí na externích binárních balíčcích. Instalace je jednoduchá, viz [dockumentace](https://mamba.readthedocs.io/en/latest/mamba-installation.html). Na vytváření virtuálních prostředí a instalace balíčků pak slouží příkaz `mamba`, viz [dokumentace](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html).
 
 ## Adresář, vytvoření a aktivace virtuálního prostředí
 
