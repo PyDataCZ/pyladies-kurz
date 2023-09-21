@@ -10,7 +10,7 @@ from nbconvert.preprocessors import ClearOutputPreprocessor
 
 
 def get_materials() -> dict:
-    with open("course.yml", "r") as f:
+    with open("course.yml", "r", encoding="utf8") as f:
         course = yaml.safe_load(f)
         materials = {
             lesson["slug"]: lesson.get("materials", []) for lesson in course["plan"]
