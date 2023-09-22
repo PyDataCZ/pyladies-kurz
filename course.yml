@@ -30,7 +30,7 @@ plan:
 
 - title: "Datové typy a základy vizualizace v pandas"
   slug: eda2
-  date: 2022-09-25
+  date: 2023-09-25
   materials:
   - lesson: pydata/pandas_types
   - lesson: pydata/visualization_basics
