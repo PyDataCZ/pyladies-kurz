@@ -41,6 +41,13 @@ plan:
   materials:
   - lesson: pydata/eda-univariate-timeseries
 
+- title: "Explorativní datová analýza a více zdrojů / proměnných"
+  slug: eda4
+  date: 2023-10-09
+  materials:
+  - lesson: pydata/pandas_joins
+  - lesson: pydata/pandas_correlations
+
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
