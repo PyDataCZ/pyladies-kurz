@@ -178,7 +178,7 @@
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/pydata/pandas_correlations/index.ipynb",
-                        "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými",
+                        "title": "Pandas - vztahy mezi více proměnnými",
                         "vars": {
                             "coach-present": true,
                             "pyladies": true,
@@ -195,7 +195,7 @@
                         "path": "pandas_correlations/plneni_2d_hist.png"
                     }
                 },
-                "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými"
+                "title": "Pandas - vztahy mezi více proměnnými"
             },
             "pydata/pandas_joins": {
                 "pages": {
@@ -210,7 +210,7 @@
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/pydata/pandas_joins/index.ipynb",
-                        "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými",
+                        "title": "Pandas - spojování tabulek",
                         "vars": {
                             "coach-present": true,
                             "pyladies": true,
@@ -224,7 +224,7 @@
                         "path": "pandas_joins/joins.svg"
                     }
                 },
-                "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými"
+                "title": "Pandas - spojování tabulek"
             },
             "pydata/pandas_types": {
                 "pages": {
@@ -342,12 +342,12 @@
                 "materials": [
                     {
                         "lesson_slug": "pydata/pandas_joins",
-                        "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými",
+                        "title": "Pandas - spojování tabulek",
                         "type": "lesson"
                     },
                     {
                         "lesson_slug": "pydata/pandas_correlations",
-                        "title": "Pandas - spojování tabulek a vztahy mezi více proměnnými",
+                        "title": "Pandas - vztahy mezi více proměnnými",
                         "type": "lesson"
                     }
                 ],
