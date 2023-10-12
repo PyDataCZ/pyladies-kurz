@@ -48,6 +48,12 @@ plan:
   - lesson: pydata/pandas_joins
   - lesson: pydata/pandas_correlations
 
+- title: "Explorativní datová analýza - agregace a transformace"
+  slug: eda5
+  date: 2023-10-16
+  materials:
+  - lesson: pydata/pandas_groupby
+
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
