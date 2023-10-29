@@ -71,6 +71,53 @@
                 "static_files": {},
                 "title": "Instalace knihoven a nástrojů"
             },
+            "pydata/intro_regression": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsali Petra Vidnerová a  Roman Diba, ilustrovaly Klára a Kateřina Vidnerovy, 2020."
+                        ],
+                        "content": {
+                            "path": "intro_regression/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/intro_regression/index.ipynb",
+                        "title": "Ilustrační příklad (regrese)",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/intro_regression/info.yml",
+                "static_files": {
+                    "blackbox.jpeg": {
+                        "path": "intro_regression/blackbox.jpeg"
+                    },
+                    "blackbox.png": {
+                        "path": "intro_regression/blackbox.png"
+                    },
+                    "krajina.pdf": {
+                        "path": "intro_regression/krajina.pdf"
+                    },
+                    "krajina_public.pdf": {
+                        "path": "intro_regression/krajina_public.pdf"
+                    },
+                    "ml_alternative_small.jpg": {
+                        "path": "intro_regression/ml_alternative_small.jpg"
+                    },
+                    "ml_small.jpg": {
+                        "path": "intro_regression/ml_small.jpg"
+                    },
+                    "overfit.png": {
+                        "path": "intro_regression/overfit.png"
+                    }
+                },
+                "title": "Ilustrační příklad (regrese)"
+            },
             "pydata/notebook": {
                 "pages": {
                     "index": {
@@ -276,6 +323,119 @@
                 "static_files": {},
                 "title": "Pandas - datové typy a základní operace"
             },
+            "pydata/regression_exercises": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Petra Vidnerová, Roman Diba, 2020."
+                        ],
+                        "content": {
+                            "path": "regression_exercises/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/regression_exercises/index.ipynb",
+                        "title": "Úkoly (regrese)",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/regression_exercises/info.yml",
+                "static_files": {
+                    "data_ruzyne.png": {
+                        "path": "regression_exercises/data_ruzyne.png"
+                    },
+                    "diabetes.png": {
+                        "path": "regression_exercises/diabetes.png"
+                    },
+                    "excercise.ipynb": {
+                        "path": "regression_exercises/excercise.ipynb"
+                    },
+                    "population.csv": {
+                        "path": "regression_exercises/population.csv"
+                    },
+                    "salaries.png": {
+                        "path": "regression_exercises/salaries.png"
+                    }
+                },
+                "title": "Úkoly (regrese)"
+            },
+            "pydata/regression_metrics": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Petra Vidnerová, Roman Diba, 2020."
+                        ],
+                        "content": {
+                            "path": "regression_metrics/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/regression_metrics/index.ipynb",
+                        "title": "Regrese - základní metriky",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/regression_metrics/info.yml",
+                "static_files": {
+                    "mae_large.png": {
+                        "path": "regression_metrics/mae_large.png"
+                    },
+                    "mse_large.png": {
+                        "path": "regression_metrics/mse_large.png"
+                    },
+                    "r2.png": {
+                        "path": "regression_metrics/r2.png"
+                    },
+                    "r2_large.png": {
+                        "path": "regression_metrics/r2_large.png"
+                    },
+                    "y_hat_list_inline.png": {
+                        "path": "regression_metrics/y_hat_list_inline.png"
+                    },
+                    "y_list_inline.png": {
+                        "path": "regression_metrics/y_list_inline.png"
+                    },
+                    "y_y_hat.png": {
+                        "path": "regression_metrics/y_y_hat.png"
+                    }
+                },
+                "title": "Regrese - základní metriky"
+            },
+            "pydata/regression_resume": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Petra Vidnerová, Roman Diba, 2020."
+                        ],
+                        "content": {
+                            "path": "regression_resume/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/regression_resume/index.ipynb",
+                        "title": "Regrese - Co bych měla po této lekci znát ..",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/regression_resume/info.yml",
+                "static_files": {},
+                "title": "Regrese - Co bych měla po této lekci znát .."
+            },
             "pydata/visualization_basics": {
                 "pages": {
                     "index": {
@@ -394,6 +554,35 @@
                 "slug": "eda5",
                 "source_file": "course.yml",
                 "title": "Explorativní datová analýza - agregace a transformace"
+            },
+            {
+                "date": "2023-10-30",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/intro_regression",
+                        "title": "Ilustrační příklad (regrese)",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/regression_metrics",
+                        "title": "Regrese - základní metriky",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/regression_exercises",
+                        "title": "Úkoly (regrese)",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/regression_resume",
+                        "title": "Regrese - Co bych měla po této lekci znát ..",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "6",
+                "slug": "ml1",
+                "source_file": "course.yml",
+                "title": "Strojové učení - úvod, regrese"
             },
             {
                 "date": "2023-12-24",
