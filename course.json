@@ -14,6 +14,87 @@
             "url": "https://github.com/PyDataCZ/pyladies-kurz"
         },
         "lessons": {
+            "pydata/classification_metrics": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsali Petra Vidnerová a Roman Diba, ilustrovala Klára Vidnerová, 2020."
+                        ],
+                        "content": {
+                            "path": "classification_metrics/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/classification_metrics/index.ipynb",
+                        "title": "Klasifikační metriky",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/classification_metrics/info.yml",
+                "static_files": {
+                    "f1.png": {
+                        "path": "classification_metrics/f1.png"
+                    },
+                    "iris_data.png": {
+                        "path": "classification_metrics/iris_data.png"
+                    },
+                    "iris_pairplot.jpg": {
+                        "path": "classification_metrics/iris_pairplot.jpg"
+                    },
+                    "iris_pairplot.png": {
+                        "path": "classification_metrics/iris_pairplot.png"
+                    },
+                    "np.jpg": {
+                        "path": "classification_metrics/np.jpg"
+                    },
+                    "np.png": {
+                        "path": "classification_metrics/np.png"
+                    },
+                    "np_small.png": {
+                        "path": "classification_metrics/np_small.png"
+                    },
+                    "precision.png": {
+                        "path": "classification_metrics/precision.png"
+                    },
+                    "recall.png": {
+                        "path": "classification_metrics/recall.png"
+                    },
+                    "roc.png": {
+                        "path": "classification_metrics/roc.png"
+                    }
+                },
+                "title": "Klasifikační metriky"
+            },
+            "pydata/classification_resume": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsali Petra Vidnerová a Roman Diba, 2020."
+                        ],
+                        "content": {
+                            "path": "classification_resume/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/classification_resume/index.md",
+                        "title": "Klasifikace - Co bych měla po této lekci znát ..",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/classification_resume/info.yml",
+                "static_files": {},
+                "title": "Klasifikace - Co bych měla po této lekci znát .."
+            },
             "pydata/eda-univariate-timeseries": {
                 "pages": {
                     "index": {
@@ -95,6 +176,41 @@
                 "source_file": "lessons/pydata/install/info.yml",
                 "static_files": {},
                 "title": "Instalace knihoven a nástrojů"
+            },
+            "pydata/intro_classification": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Petra Vidnerová, Roman Diba, 2020."
+                        ],
+                        "content": {
+                            "path": "intro_classification/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/intro_classification/index.ipynb",
+                        "title": "Úvod klasifikace",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/intro_classification/info.yml",
+                "static_files": {
+                    "fish_data.csv": {
+                        "path": "intro_classification/fish_data.csv"
+                    },
+                    "fish_data_test.csv": {
+                        "path": "intro_classification/fish_data_test.csv"
+                    },
+                    "ryby.png": {
+                        "path": "intro_classification/ryby.png"
+                    }
+                },
+                "title": "Úvod klasifikace"
             },
             "pydata/intro_regression": {
                 "pages": {
@@ -686,6 +802,30 @@
                 "slug": "ml2",
                 "source_file": "course.yml",
                 "title": "Knihovna Scikit-learn, ML workflow"
+            },
+            {
+                "date": "2023-11-13",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/intro_classification",
+                        "title": "Úvod klasifikace",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/classification_metrics",
+                        "title": "Klasifikační metriky",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "pydata/classification_resume",
+                        "title": "Klasifikace - Co bych měla po této lekci znát ..",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "8",
+                "slug": "ml3",
+                "source_file": "course.yml",
+                "title": "Strojové učení, klasifikace"
             },
             {
                 "date": "2023-12-24",
