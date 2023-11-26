@@ -85,6 +85,12 @@ plan:
   materials:
   - lesson: pydata/pca
 
+- title: "Interaktivní vizualizace a aplikace"
+  slug: dashboards
+  date: 2023-11-27
+  materials:
+  - lesson: pydata/dashboards
+
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
