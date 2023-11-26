@@ -464,6 +464,38 @@
                 "static_files": {},
                 "title": "Pandas - datové typy a základní operace"
             },
+            "pydata/pca": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Petr Šimeček, 2021."
+                        ],
+                        "content": {
+                            "path": "pca/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/pca/index.ipynb",
+                        "title": "Analýza hlavních komponent (PCA)",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/pca/info.yml",
+                "static_files": {
+                    "ML_small.csv": {
+                        "path": "pca/ML_small.csv"
+                    },
+                    "protein_expr.zip": {
+                        "path": "pca/protein_expr.zip"
+                    }
+                },
+                "title": "Analýza hlavních komponent (PCA)"
+            },
             "pydata/regression_exercises": {
                 "pages": {
                     "index": {
@@ -826,6 +858,20 @@
                 "slug": "ml3",
                 "source_file": "course.yml",
                 "title": "Strojové učení, klasifikace"
+            },
+            {
+                "date": "2023-11-20",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/pca",
+                        "title": "Analýza hlavních komponent (PCA)",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "9",
+                "slug": "pca",
+                "source_file": "course.yml",
+                "title": "Analýza hlavních komponent (PCA)"
             },
             {
                 "date": "2023-12-24",
