@@ -95,6 +95,31 @@
                 "static_files": {},
                 "title": "Klasifikace - Co bych měla po této lekci znát .."
             },
+            "pydata/dashboards": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsal Jakub Urban, 2020."
+                        ],
+                        "content": {
+                            "path": "dashboards/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/dashboards/index.ipynb",
+                        "title": "Interaktivní vizualizace a aplikace I.",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/dashboards/info.yml",
+                "static_files": {},
+                "title": "Interaktivní vizualizace a aplikace I."
+            },
             "pydata/eda-univariate-timeseries": {
                 "pages": {
                     "index": {
@@ -872,6 +897,20 @@
                 "slug": "pca",
                 "source_file": "course.yml",
                 "title": "Analýza hlavních komponent (PCA)"
+            },
+            {
+                "date": "2023-11-27",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/dashboards",
+                        "title": "Interaktivní vizualizace a aplikace I.",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "10",
+                "slug": "dashboards",
+                "source_file": "course.yml",
+                "title": "Interaktivní vizualizace a aplikace"
             },
             {
                 "date": "2023-12-24",
