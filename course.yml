@@ -1,5 +1,5 @@
 title: Datový kurz PyLadies
-subtitle: Praha - podzim 2023
+subtitle: Praha - podzim 2024
 time: 18:00–20:00
 default_time:
   start: '18:00'
@@ -22,76 +22,13 @@ vars:
 plan:
 - title: "Představení, Jupyter notebook, základy pandas"
   slug: eda1
-  date: 2023-09-18
+  date: 2024-09-16
   materials:
   - lesson: pydata/install
   - lesson: pydata/notebook
   - lesson: pydata/pandas_core
 
-- title: "Datové typy a základy vizualizace v pandas"
-  slug: eda2
-  date: 2023-09-25
-  materials:
-  - lesson: pydata/pandas_types
-  - lesson: pydata/visualization_basics
-
-- title: "Explorativní analýza a statistika jedné proměnné"
-  slug: eda3
-  date: 2023-10-02
-  materials:
-  - lesson: pydata/eda-univariate-timeseries
-
-- title: "Explorativní datová analýza a více zdrojů / proměnných"
-  slug: eda4
-  date: 2023-10-09
-  materials:
-  - lesson: pydata/pandas_joins
-  - lesson: pydata/pandas_correlations
-
-- title: "Explorativní datová analýza - agregace a transformace"
-  slug: eda5
-  date: 2023-10-16
-  materials:
-  - lesson: pydata/pandas_groupby
-
-- title: "Strojové učení - úvod, regrese"
-  slug: ml1
-  date: 2023-10-30
-  materials:
-  - lesson: pydata/intro_regression
-  - lesson: pydata/regression_metrics
-  - lesson: pydata/regression_exercises
-  - lesson: pydata/regression_resume
-
-- title: "Knihovna Scikit-learn, ML workflow"
-  slug: ml2
-  date: 2023-11-06
-  materials:
-  - lesson: pydata/scikitlearn_api
-  - lesson: pydata/homework_revisited
-  - lesson: pydata/scikitlearn_resume
-
-- title: "Strojové učení, klasifikace"
-  slug: ml3
-  date: 2023-11-13
-  materials:
-  - lesson: pydata/intro_classification
-  - lesson: pydata/classification_metrics
-  - lesson: pydata/classification_resume
-
-- title: "Analýza hlavních komponent (PCA)"
-  slug: pca
-  date: 2023-11-20
-  materials:
-  - lesson: pydata/pca
-
-- title: "Interaktivní vizualizace a aplikace"
-  slug: dashboards
-  date: 2023-11-27
-  materials:
-  - lesson: pydata/dashboards
-
 - title: "Svátky klidu a konce kurzu"
   slug: konec
   serial: null
-  date: 2023-12-24
+  date: 2024-12-24
