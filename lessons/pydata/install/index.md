@@ -3,12 +3,12 @@
 Instalace všeho potřebného není složitá a zabere jen chvíli. Pokud se během ní
 přeci jen něco pokazí, popros na Slacku nebo někoho zkušenějšího o radu.
 
-Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.10-3.11.
+Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.10-3.12.
 Pokud ne, jedna z následujících tří alternativních cest by tě do takové situace měla snadno dovést:
 
-- Obecný návod na instalaci máme k dispozici [v začátečnickém kurzu](https://naucse.python.cz/course/pyladies/sessions/install/). Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.11.5), ideálně v 64bitové verzi. Toto je náš preferovaný způsob.
+- Obecný návod na instalaci máme k dispozici [v začátečnickém kurzu](https://naucse.python.cz/course/pyladies/sessions/install/). Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.12.6), ideálně v 64bitové verzi. Toto je náš preferovaný způsob.
 
-- Máš-li aktualizované Windows 10/11, úplně nejjednodušší je použít instalaci z [Microsoft Store](https://apps.microsoft.com/store/detail/python-311/9NRWMJP3717K). Toto místo ti otevře i příkaz `python` v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš. Nicméně můžeš čekat zádrhele, když začneš instalovat další nástroje Pythonu, které v kurzu nepoužíváme.
+- Máš-li aktualizované Windows 10/11, úplně nejjednodušší je použít instalaci z [Microsoft Store](https://apps.microsoft.com/detail/9ncvdn91xzqp). Toto místo ti otevře i příkaz `python` v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš. Nicméně můžeš čekat zádrhele, když začneš instalovat další nástroje Pythonu, které v kurzu nepoužíváme.
 
 - Na MacOS, kromě Homebrew zmiňovaného v návodu začátečnickém kurzu výše, je také jednoduché použít oficiální instalátor z [python.org](https://www.python.org/downloads/macos/). V současnosti je poslední verze 3.11.5 ke stažení [zde](https://www.python.org/ftp/python/3.11.5/python-3.11.5-macos11.pkg).
 
