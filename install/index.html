@@ -1,0 +1,47 @@
+<h1 id="instalace">Instalace
+<a href="#header-instalace" class="header-link">#</a>
+</h1>
+<p>Instalace všeho potřebného není složitá a zabere jen chvíli. Pokud se během ní
+přeci jen něco pokazí, popros na Slacku nebo někoho zkušenějšího o radu.</p>
+<p>Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.10-3.11.
+Pokud ne, jedna z následujících tří alternativních cest by tě do takové situace měla snadno dovést:</p>
+<ul>
+<li><p>Obecný návod na instalaci máme k dispozici <a href="https://naucse.python.cz/course/pyladies/sessions/install/">v začátečnickém kurzu</a>. Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.11.5), ideálně v 64bitové verzi. Toto je náš preferovaný způsob.</p>
+</li>
+<li><p>Máš-li aktualizované Windows 10/11, úplně nejjednodušší je použít instalaci z <a href="https://apps.microsoft.com/store/detail/python-311/9NRWMJP3717K">Microsoft Store</a>. Toto místo ti otevře i příkaz <code>python</code> v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš. Nicméně můžeš čekat zádrhele, když začneš instalovat další nástroje Pythonu, které v kurzu nepoužíváme.</p>
+</li>
+<li><p>Na MacOS, kromě Homebrew zmiňovaného v návodu začátečnickém kurzu výše, je také jednoduché použít oficiální instalátor z <a href="https://www.python.org/downloads/macos/">python.org</a>. V současnosti je poslední verze 3.11.5 ke stažení <a href="https://www.python.org/ftp/python/3.11.5/python-3.11.5-macos11.pkg">zde</a>.</p>
+</li>
+<li><p>Můžeš použít distribuci <a href="https://github.com/mamba-org/mamba">Mamba</a>, která řeší kromě Pythonu samotného i případné další (binární) závislosti a je tak v podstatě nejrobustnějším řešením napříč operačními systémy. Lidé z oblasti data science (včetně některých autorů těchto materiálů) ji rádi používají - sice se tak připravují o práci s "čistým" Pythonem, ale zjednodušují si instalaci některých (zejména výpočetních) knihoven, které závisejí na externích binárních balíčcích. Instalace je jednoduchá, viz <a href="https://mamba.readthedocs.io/en/latest/mamba-installation.html">dockumentace</a>. Na vytváření virtuálních prostředí a instalace balíčků pak slouží příkaz <code>mamba</code>, viz <a href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">dokumentace</a>.</p>
+</li>
+</ul>
+<h2 id="adresar_vytvoreni_a_aktivace_virtualniho_prostredi">Adresář, vytvoření a aktivace virtuálního prostředí
+<a href="#header-adresar_vytvoreni_a_aktivace_virtualniho_prostredi" class="header-link">#</a>
+</h2>
+<p>Nejprve si připrav adresář pro ukládání souborů (třeba <code>pydata</code>) a v něm si vytvoř
+virtuální prostředí.</p>
+<p>Pokud nevíš jak na to, kompletní návod je stejně jako pro instalaci Pythonu k dispozici
+v <a href="https://naucse.python.cz/2019/pyladies-ostrava-podzim/beginners/venv-setup/">materiálech pro začátečnický kurz</a>.</p>
+<p>Po každém spuštění příkazové řádky bude potřeba aktivovat virtuální prostředí, abychom
+mohli pracovat s knihovnami a nástroji v něm nainstalovanými.</p>
+<h2 id="instalace_knihoven">Instalace knihoven
+<a href="#header-instalace_knihoven" class="header-link">#</a>
+</h2>
+<p>Do příkazové řádky s aktivním virtuálním prostředím zadej následující příkaz:</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span>$ python -m pip install jupyter pandas matplotlib requests seaborn scipy scikit-learn sqlalchemy plotly xlrd openpyxl
+</pre></div><p>Tímto příkazem se do virtuálního prostředí nainstalovaly následující knihovny (a některé další jejich závislosti):</p>
+<ul>
+<li>Jupyter - webové rozhraní pro interaktivní a reprodukovatelnou práci s Pythonem</li>
+<li>Matplotlib - jedna z nejznámějších knihoven pro tvorbu grafů</li>
+<li>Openpyxl - knihovna pro načítání a zápis souborů .xlsx</li>
+<li>Pandas - pro práci s tabulkovými daty</li>
+<li>Plotly - knihovna pro vytváření interaktivních grafů</li>
+<li>Requests - knihovna pro práci s HTTP (webovými a API) požadavky</li>
+<li>Scikit-learn - sbírka nejznámějších algoritmů pro strojové učení</li>
+<li>SciPy - švýcarský nůž pro vědecké výpočty a pokročilou matematiku</li>
+<li>Seaborn - rozšíření pro Matplotlib, které umí vytvořit pokročilejší grafy</li>
+<li>Sqlalchemy - knihovna pro sjednocený, vysokoúrovňový přístup k databázím</li>
+<li>Xlrd - knihovna pro načítání souborů .xls/.xlsx</li>
+</ul>
+<p>Pokud kterýkoliv z kroků selže, nebo si jen nebudeš vědět rady, zeptej se na Slacku v kanále <code>#poradna</code>, ideálně ještě před zahájením kurzu.</p>
+<p>V následující kapitole se podíváme na to, jak Jupyter spustit a jak s ním pracovat.</p>
