@@ -1,6 +1,7 @@
 # Materiály pro Datový kurz PyLadies
 
-TODO: Link na aktuální kurz
+Tento repozitář slouží jako zdroj pro materiály datového kurzu, který najdeš
+(ve vydání roku 2024) na adrese https://naucse.python.cz/2024/pydata-praha-podzim/.
 
 ## Instalace a spuštění
 
@@ -38,8 +39,13 @@ $ poetry run python -m naucse serve
 
 ## Publikování
 
+Aby se vůbec něco nahrálo na web, kurz musí být definován v repozitáři
+https://github.com/pyvec/naucse.python.cz, konkrétně v souboru `courses.yaml`
+
+...
+
 TODO: 🤯
 
-## Větve 
+## Větve
 
 TODO: Popiš!
