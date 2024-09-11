@@ -39,13 +39,10 @@ $ poetry run python -m naucse serve
 
 ## Publikování
 
-Aby se vůbec něco nahrálo na web, kurz musí být definován v repozitáři
+1. Aby se vůbec něco nahrálo na web, kurz musí být definován v repozitáři
 https://github.com/pyvec/naucse.python.cz, konkrétně v souboru `courses.yaml`
 
-...
+2. Soubor `.github/workflows/main.yml` v tomto repozitáři musí definovat odpovídající
+jméno větve, do které se mají materiály kompilovat.
 
-TODO: 🤯
-
-## Větve
-
-TODO: Popiš!
+3. Potom by mělo stačit mergovat cokoliv do větve `main`, aby se vše automaticky propsalo na web.
