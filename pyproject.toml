@@ -1,17 +1,16 @@
-[tool.poetry]
-name = "naucse.python.cz"
-version = "0"
-description = "Website with learning materials / Stránka s učebními materiály"
-authors = ["Petr Viktorin <encukou@gmail.com>", "Naucse contributors"]
-
-[tool.poetry.dependencies]
-python = "^3.9"
-pygments-pytest = "^2.2.0"
-naucse = "^0.5.2"
-Jinja2 = "~3.0.0"
-ipython = "^8.4.0"
-ghp-import = "^2.1.0"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[project]
+name = "pyladies-kurz"
+version = "2024.9.1"
+description = "Kurz pro PyLadies"
+authors = [
+    {name = "Jan Pipek", email = "jan.pipek@gmail.com"},
+    {name = "Jakub Urban", email = "coobas@gmail.com"}
+]
+requires-python = ">=3.9"
+dependencies = [
+    "naucse>=0.5.2",
+    "Jinja2>=3.0.0",
+    "ipython>=8.4.0",
+    "ghp-import~=2.1.0",
+    "pygit2==1.13.3"  # V novějších verzích AttributeError
+]
