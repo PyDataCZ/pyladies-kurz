@@ -17,21 +17,31 @@ Nemáš-li `uv`, nainstaluj si jej. Na to je několik způsobů:
 
 Přepni se do adresáře s projektem a spusť:
 
-```console
-$ uv sync
+```shell
+uv sync
 ```
 
 ### Lokální server
 
 Chceš-li si kurz prohlédnout, přepni se do adresáře s projektem a spusť:
 
-```console
-$ uv run python -m naucse serve
+```shell
+uv run python -m naucse serve
 ```
 
 * Program vypíše adresu (např. `http://0.0.0.0:8003/`).
   * Buď adresu navštiv v prohlížeči a doklikej se na kurz, nebo
   * na konec adresy přidej `/course/local/` a navštiv kurz přímo.
+
+Poznámka: ve windows mi to nefunguje :-(
+
+## Publikování jedné hodiny
+
+Balíček ZIP se všemi materiály lze vytvořit použitím skriptu:
+
+```shell
+uv run cli.py export <id-hodiny>
+```
 
 ## Publikování
 
