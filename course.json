@@ -1,7 +1,7 @@
 {
     "api_version": [
         0,
-        3
+        4
     ],
     "course": {
         "default_time": {
@@ -23,7 +23,25 @@
                         "content": {
                             "path": "install/index.html"
                         },
+                        "ids": [
+                            "adresar_vytvoreni_a_aktivace_virtualniho_prostredi",
+                            "instalace",
+                            "instalace_knihoven"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#adresar_vytvoreni_a_aktivace_virtualniho_prostredi",
+                            "#instalace",
+                            "#instalace_knihoven",
+                            "https://apps.microsoft.com/detail/9ncvdn91xzqp",
+                            "https://github.com/mamba-org/mamba",
+                            "https://mamba.readthedocs.io/en/latest/mamba-installation.html",
+                            "https://mamba.readthedocs.io/en/latest/user_guide/mamba.html",
+                            "https://naucse.python.cz/2019/pyladies-ostrava-podzim/beginners/venv-setup/",
+                            "https://naucse.python.cz/course/pyladies/sessions/install/",
+                            "https://www.python.org/downloads/macos/",
+                            "https://www.python.org/ftp/python/3.12.6/python-3.12.6-macos11.pkg"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/pydata/install/index.md",
@@ -48,7 +66,50 @@
                         "content": {
                             "path": "notebook/index.html"
                         },
+                        "ids": [
+                            "dalsi_uzitecne_funkce",
+                            "jupyter_notebook_intro",
+                            "markdown",
+                            "matematicke_vzorce",
+                            "napoveda",
+                            "pokracovani",
+                            "prikazy_z_prikazove_radky",
+                            "specialni_prikazy",
+                            "spusteni",
+                            "text",
+                            "typy_obsahu",
+                            "uzivatelske_rozhrani",
+                            "zakladni_pouziti"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#dalsi_uzitecne_funkce",
+                            "#jupyter_notebook_intro",
+                            "#markdown",
+                            "#matematicke_vzorce",
+                            "#napoveda",
+                            "#pokracovani",
+                            "#prikazy_z_prikazove_radky",
+                            "#specialni_prikazy",
+                            "#spusteni",
+                            "#text",
+                            "#typy_obsahu",
+                            "#uzivatelske_rozhrani",
+                            "#zakladni_pouziti",
+                            "https://cs.wikipedia.org/wiki/Markdown",
+                            "https://cs.wikipedia.org/wiki/N%C3%A1pov%C4%9Bda:Matematick%C3%A9_vzorce",
+                            "https://github.com/PyDataCZ/naucse.python.cz/tree/master/lessons/pydata",
+                            "https://github.com/jupyter/jupyter/wiki/Jupyter-kernels",
+                            "naucse:static?filename=first_command.png",
+                            "naucse:static?filename=jupyter_notebook_home.png",
+                            "naucse:static?filename=jupyter_notebook_new.png",
+                            "naucse:static?filename=latex_examples.png",
+                            "naucse:static?filename=markdown.png",
+                            "naucse:static?filename=markdown_source.png",
+                            "naucse:static?filename=outputs.png",
+                            "naucse:static?filename=python_example.png",
+                            "naucse:static?filename=wrong_order.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/pydata/notebook/index.md",
@@ -107,7 +168,55 @@
                         "content": {
                             "path": "pandas_core/index.html"
                         },
+                        "ids": [
+                            "1_hodnoty",
+                            "2_typ_hodnot",
+                            "3_index",
+                            "4_jmeno",
+                            "5_velikost",
+                            "codecode",
+                            "codeiloccode",
+                            "codeloccode",
+                            "cviceni",
+                            "dataframe",
+                            "import_knihovny_codepandascode",
+                            "index",
+                            "indexovani",
+                            "knihovna_pandas_a_zakladni_manipulace_s_tabulkovymi_daty",
+                            "nacteni_tabulky_s_daty",
+                            "series",
+                            "shrnuti",
+                            "zakladni_tridy_v_codepandascode_-_dataframe_series_index"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#1_hodnoty",
+                            "#2_typ_hodnot",
+                            "#3_index",
+                            "#4_jmeno",
+                            "#5_velikost",
+                            "#codecode",
+                            "#codeiloccode",
+                            "#codeloccode",
+                            "#cviceni",
+                            "#dataframe",
+                            "#import_knihovny_codepandascode",
+                            "#index",
+                            "#indexovani",
+                            "#knihovna_pandas_a_zakladni_manipulace_s_tabulkovymi_daty",
+                            "#nacteni_tabulky_s_daty",
+                            "#series",
+                            "#shrnuti",
+                            "#zakladni_tridy_v_codepandascode_-_dataframe_series_index",
+                            "https://cs.wikipedia.org/wiki/CSV",
+                            "https://github.com/janpipek/eda-polars-way",
+                            "https://github.com/veekun/pokedex",
+                            "https://pola.rs",
+                            "https://www.r-project.org/",
+                            "naucse:static?filename=pokemon.csv",
+                            "static/df.svg",
+                            "static/series.svg"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/pydata/pandas_core/index.ipynb",

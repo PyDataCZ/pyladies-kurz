@@ -2,7 +2,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="knihovna_pandas_a_zakladni_manipulace_s_tabulkovymi_daty">Knihovna pandas a základní manipulace s tabulkovými daty
-<a href="#header-knihovna_pandas_a_zakladni_manipulace_s_tabulkovymi_daty" class="header-link">#</a>
+<a class="header-link" href="#knihovna_pandas_a_zakladni_manipulace_s_tabulkovymi_daty">#</a>
 </h1>
 </div>
 </div>
@@ -12,9 +12,10 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Před jakoukoli složitější analýzou je třeba naučit se základy práce se zpracovávanými daty. Data můžou být různého charakteru - jednorozměrná, dvourozměrná, strukturovaná, nestrukturovaná, obrazová, zvuková... V lekcích explorativní datové analýzy budeme pracovat s daty převážně <strong>tabulkovými</strong> - tedy takovými, které jistě znáš ze svého oblíbeného (nebo neoblíbeného) tabulkového procesoru ("spreadsheetu"). Obvykle každý <strong>řádek</strong> takové tabulky odpovídá nějaké věci, exempláři čehosi, případně nějakému pozorování. V jednotlivých <strong>sloupcích</strong> se pak nacházejí jednotlivé vlastnosti či měřené veličiny pro tyto věci charakteristické.</p>
 <p>Ve světě Pythonu se pro zpracování tabulkových dat nejčastěji používá knihovna <strong>pandas</strong>. Ta umožňuje načítat data z mnohých formátů (včetně sešitů XLS(x)), různě je upravovat, velice efektivně počítat se sloupci, přímo zkoumat některé statistické ukazatele a v neposlední řadě výsledky pěkně vizualizovat. Tato lekce tě seznámí se základními používanými koncepty a naučí tě přistupovat k jednotlivým sloupcům, řádkům a buňkám.</p>
-<blockquote><p>Poznámka: Aktuálně (2024) získává na popularitě knihovna <a href="https://pola.rs"><strong>polars</strong></a>. V tomto kurzu se jí nebudeme věnovat, ale nebojte se v kuloárech zeptat nebo se podívat na anglickojazyčné materiály k workshopu <a href="https://github.com/janpipek/eda-polars-way">E.D.A., the Polars Way</a>.</p>
+<blockquote>
+<p>Poznámka: Aktuálně (2024) získává na popularitě knihovna <a href="https://pola.rs"><strong>polars</strong></a>. V tomto kurzu se jí nebudeme věnovat, ale nebojte se v kuloárech zeptat nebo se podívat na anglickojazyčné materiály k workshopu <a href="https://github.com/janpipek/eda-polars-way">E.D.A., the Polars Way</a>.</p>
 </blockquote>
-<p>Více o knihovně pandas najdeš na jejích domovských stránkách: <a href="https://pandas.pydata.org/">https://pandas.pydata.org/</a></p>
+<p>Více o knihovně pandas najdeš na jejích domovských stránkách: https://pandas.pydata.org/</p>
 </div>
 </div>
 </div>
@@ -22,23 +23,21 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="import_knihovny_codepandascode">Import knihovny <code>pandas</code>
-<a href="#header-import_knihovny_codepandascode" class="header-link">#</a>
+<a class="header-link" href="#import_knihovny_codepandascode">#</a>
 </h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>     <span class="c1"># K pandas budeme přistupovat pomocí aliasu pd</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>     <span class="c1"># K pandas budeme přistupovat pomocí aliasu pd</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -49,22 +48,20 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pandas   -&gt; Vyvolalo by NameError</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># pandas   -&gt; Vyvolalo by NameError</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="nacteni_tabulky_s_daty">Načtení tabulky s daty
-<a href="#header-nacteni_tabulky_s_daty" class="header-link">#</a>
+<a class="header-link" href="#nacteni_tabulky_s_daty">#</a>
 </h2>
 </div>
 </div>
@@ -80,16 +77,14 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"static/pokemon.csv"</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"static/pokemon.csv"</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -100,28 +95,20 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
+<div class="prompt output_prompt">Out[4]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -135,211 +122,208 @@
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>name</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>bulbasaur</td>
-      <td>0.7</td>
-      <td>6.9</td>
-      <td>green</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>45</td>
-      <td>49</td>
-      <td>49</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>ivysaur</td>
-      <td>1.0</td>
-      <td>13.0</td>
-      <td>green</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>60</td>
-      <td>62</td>
-      <td>63</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>venusaur</td>
-      <td>2.0</td>
-      <td>100.0</td>
-      <td>green</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>80</td>
-      <td>82</td>
-      <td>83</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>charmander</td>
-      <td>0.6</td>
-      <td>8.5</td>
-      <td>red</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Fire</td>
-      <td>NaN</td>
-      <td>39</td>
-      <td>52</td>
-      <td>43</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>charmeleon</td>
-      <td>1.1</td>
-      <td>19.0</td>
-      <td>red</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Fire</td>
-      <td>NaN</td>
-      <td>58</td>
-      <td>64</td>
-      <td>58</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>802</th>
-      <td>803</td>
-      <td>poipole</td>
-      <td>0.6</td>
-      <td>1.8</td>
-      <td>purple</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Poison</td>
-      <td>NaN</td>
-      <td>67</td>
-      <td>73</td>
-      <td>67</td>
-      <td>73</td>
-    </tr>
-    <tr>
-      <th>803</th>
-      <td>804</td>
-      <td>naganadel</td>
-      <td>3.6</td>
-      <td>150.0</td>
-      <td>purple</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Poison</td>
-      <td>Dragon</td>
-      <td>73</td>
-      <td>73</td>
-      <td>73</td>
-      <td>121</td>
-    </tr>
-    <tr>
-      <th>804</th>
-      <td>805</td>
-      <td>stakataka</td>
-      <td>5.5</td>
-      <td>820.0</td>
-      <td>gray</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Rock</td>
-      <td>Steel</td>
-      <td>61</td>
-      <td>131</td>
-      <td>211</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>805</th>
-      <td>806</td>
-      <td>blacephalon</td>
-      <td>1.8</td>
-      <td>13.0</td>
-      <td>white</td>
-      <td>humanoid</td>
-      <td>False</td>
-      <td>Fire</td>
-      <td>Ghost</td>
-      <td>53</td>
-      <td>127</td>
-      <td>53</td>
-      <td>107</td>
-    </tr>
-    <tr>
-      <th>806</th>
-      <td>807</td>
-      <td>zeraora</td>
-      <td>1.5</td>
-      <td>44.5</td>
-      <td>yellow</td>
-      <td>humanoid</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>NaN</td>
-      <td>88</td>
-      <td>112</td>
-      <td>75</td>
-      <td>143</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>name</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>bulbasaur</td>
+<td>0.7</td>
+<td>6.9</td>
+<td>green</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Grass</td>
+<td>Poison</td>
+<td>45</td>
+<td>49</td>
+<td>49</td>
+<td>45</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2</td>
+<td>ivysaur</td>
+<td>1.0</td>
+<td>13.0</td>
+<td>green</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Grass</td>
+<td>Poison</td>
+<td>60</td>
+<td>62</td>
+<td>63</td>
+<td>60</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3</td>
+<td>venusaur</td>
+<td>2.0</td>
+<td>100.0</td>
+<td>green</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Grass</td>
+<td>Poison</td>
+<td>80</td>
+<td>82</td>
+<td>83</td>
+<td>80</td>
+</tr>
+<tr>
+<th>3</th>
+<td>4</td>
+<td>charmander</td>
+<td>0.6</td>
+<td>8.5</td>
+<td>red</td>
+<td>upright</td>
+<td>False</td>
+<td>Fire</td>
+<td>NaN</td>
+<td>39</td>
+<td>52</td>
+<td>43</td>
+<td>65</td>
+</tr>
+<tr>
+<th>4</th>
+<td>5</td>
+<td>charmeleon</td>
+<td>1.1</td>
+<td>19.0</td>
+<td>red</td>
+<td>upright</td>
+<td>False</td>
+<td>Fire</td>
+<td>NaN</td>
+<td>58</td>
+<td>64</td>
+<td>58</td>
+<td>80</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>802</th>
+<td>803</td>
+<td>poipole</td>
+<td>0.6</td>
+<td>1.8</td>
+<td>purple</td>
+<td>upright</td>
+<td>False</td>
+<td>Poison</td>
+<td>NaN</td>
+<td>67</td>
+<td>73</td>
+<td>67</td>
+<td>73</td>
+</tr>
+<tr>
+<th>803</th>
+<td>804</td>
+<td>naganadel</td>
+<td>3.6</td>
+<td>150.0</td>
+<td>purple</td>
+<td>wings</td>
+<td>False</td>
+<td>Poison</td>
+<td>Dragon</td>
+<td>73</td>
+<td>73</td>
+<td>73</td>
+<td>121</td>
+</tr>
+<tr>
+<th>804</th>
+<td>805</td>
+<td>stakataka</td>
+<td>5.5</td>
+<td>820.0</td>
+<td>gray</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Rock</td>
+<td>Steel</td>
+<td>61</td>
+<td>131</td>
+<td>211</td>
+<td>13</td>
+</tr>
+<tr>
+<th>805</th>
+<td>806</td>
+<td>blacephalon</td>
+<td>1.8</td>
+<td>13.0</td>
+<td>white</td>
+<td>humanoid</td>
+<td>False</td>
+<td>Fire</td>
+<td>Ghost</td>
+<td>53</td>
+<td>127</td>
+<td>53</td>
+<td>107</td>
+</tr>
+<tr>
+<th>806</th>
+<td>807</td>
+<td>zeraora</td>
+<td>1.5</td>
+<td>44.5</td>
+<td>yellow</td>
+<td>humanoid</td>
+<td>False</td>
+<td>Electric</td>
+<td>NaN</td>
+<td>88</td>
+<td>112</td>
+<td>75</td>
+<td>143</td>
+</tr>
+</tbody>
 </table>
 <p>807 rows × 13 columns</p>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -354,43 +338,31 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="zakladni_tridy_v_codepandascode_-_dataframe_series_index">Základní třídy v <code>pandas</code> - DataFrame, Series, Index
-<a href="#header-zakladni_tridy_v_codepandascode_-_dataframe_series_index" class="header-link">#</a>
+<a class="header-link" href="#zakladni_tridy_v_codepandascode_-_dataframe_series_index">#</a>
 </h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">tabulka_pokemonu</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">tabulka_pokemonu</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[5]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>pandas.core.frame.DataFrame</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -402,28 +374,19 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span> <span class="o">=</span> <span class="n">tabulka_pokemonu</span><span class="p">[</span><span class="s2">"height"</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span> <span class="o">=</span> <span class="n">tabulka_pokemonu</span><span class="p">[</span><span class="s2">"height"</span><span class="p">]</span>
 <span class="n">vysky</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[6]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0      0.7
 1      1.0
@@ -438,12 +401,9 @@
 806    1.5
 Name: height, Length: 807, dtype: float64</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -455,42 +415,30 @@ Name: height, Length: 807, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">vysky</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">vysky</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[7]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>pandas.core.series.Series</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="series">Series
-<a href="#header-series" class="header-link">#</a>
+<a class="header-link" href="#series">#</a>
 </h3>
 </div>
 </div>
@@ -504,60 +452,39 @@ Name: height, Length: 807, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     <span class="c1"># První výška? ✓</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     <span class="c1"># První výška? ✓</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[8]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>np.float64(0.7)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>   <span class="c1"># Posledních pět výšek? ✓</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>   <span class="c1"># Posledních pět výšek? ✓</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[9]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>802    0.6
 803    3.6
@@ -566,12 +493,9 @@ Name: height, Length: 807, dtype: float64</pre>
 806    1.5
 Name: height, dtype: float64</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -589,40 +513,28 @@ Name: height, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cisla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cisla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">cisla</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[10]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0    1
 1    2
 2    3
 dtype: int64</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -633,37 +545,25 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cisla</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>     <span class="c1"># Varianta 1 (preferovaná, rychlejší)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cisla</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>     <span class="c1"># Varianta 1 (preferovaná, rychlejší)</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>        <span class="c1"># Varianta 2</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[11]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>[1, 2, 3]</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -676,7 +576,7 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="static/series.svg" style="max-height: 20em;"></p>
+<img alt="No description has been provided for this image" src="static/series.svg" style="max-height: 20em;"/>
 </div>
 </div>
 </div>
@@ -684,79 +584,55 @@ dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="1_hodnoty">1) hodnoty
-<a href="#header-1_hodnoty" class="header-link">#</a>
+<a class="header-link" href="#1_hodnoty">#</a>
 </h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>    <span class="c1"># Z estetických důvodů si sloupec trochu zkrátíme</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>    <span class="c1"># Z estetických důvodů si sloupec trochu zkrátíme</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[12]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>array([0.7, 1. , 2. , 0.6, 1.1, 1.7, 0.5, 1. , 1.6, 0.3, 0.7, 1.1, 0.3,
        0.6, 1. , 0.3, 1.1, 1.5, 0.3, 0.7, 0.3, 1.2, 2. , 3.5, 0.4, 0.8,
        0.6, 1. , 0.4, 0.8, 1.3, 0.5, 0.9, 1.4, 0.6, 1.3, 0.6, 1.1, 0.5,
        1. , 0.8, 1.6, 0.5, 0.8, 1.2, 0.3, 1. , 1. , 1.5, 0.2])</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">vysky</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">vysky</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[13]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>numpy.ndarray</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -769,43 +645,31 @@ dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="2_typ_hodnot">2) typ hodnot
-<a href="#header-2_typ_hodnot" class="header-link">#</a>
+<a class="header-link" href="#2_typ_hodnot">#</a>
 </h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">dtype</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">dtype</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[14]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>dtype(&#39;float64&#39;)</pre>
-</div>
-
-</div>
-
+<pre>dtype('float64')</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -818,43 +682,31 @@ dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="3_index">3) index
-<a href="#header-3_index" class="header-link">#</a>
+<a class="header-link" href="#3_index">#</a>
 </h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">index</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[15]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>RangeIndex(start=0, stop=807, step=1)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -867,43 +719,31 @@ dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="4_jmeno">4) jméno
-<a href="#header-4_jmeno" class="header-link">#</a>
+<a class="header-link" href="#4_jmeno">#</a>
 </h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">name</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[16]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;height&#39;</pre>
-</div>
-
-</div>
-
+<pre>'height'</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -916,43 +756,31 @@ dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="5_velikost">5) velikost
-<a href="#header-5_velikost" class="header-link">#</a>
+<a class="header-link" href="#5_velikost">#</a>
 </h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">size</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">size</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[17]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>807</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -977,10 +805,10 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vek</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vek</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
     <span class="p">[</span><span class="mi">27</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">"Věk"</span><span class="p">,</span>
     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"Karla"</span><span class="p">,</span> <span class="s2">"Martina"</span><span class="p">,</span> <span class="s2">"Žofie"</span><span class="p">],</span>
@@ -988,34 +816,22 @@ dtype: int64</pre>
 <span class="p">)</span>
 <span class="n">vek</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[18]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>Karla      27.0
 Martina    65.0
 Žofie      14.0
 Name: Věk, dtype: float64</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1028,7 +844,7 @@ Name: Věk, dtype: float64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="index">Index
-<a href="#header-index" class="header-link">#</a>
+<a class="header-link" href="#index">#</a>
 </h2>
 </div>
 </div>
@@ -1042,36 +858,24 @@ Name: Věk, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">index</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vysky</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[19]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[19]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>RangeIndex(start=0, stop=807, step=1)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1082,64 +886,43 @@ Name: Věk, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vek</span><span class="o">.</span><span class="n">index</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vek</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[20]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>Index([&#39;Karla&#39;, &#39;Martina&#39;, &#39;Žofie&#39;], dtype=&#39;object&#39;)</pre>
-</div>
-
-</div>
-
+<pre>Index(['Karla', 'Martina', 'Žofie'], dtype='object')</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">udalosti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">udalosti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
     <span class="p">[</span><span class="s2">"Nezávislost Československa"</span><span class="p">,</span> <span class="s2">"Konec druhé světové války"</span><span class="p">,</span> <span class="s2">"Sametová revoluce"</span><span class="p">],</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="mi">1918</span><span class="p">,</span> <span class="mi">1945</span><span class="p">,</span> <span class="mi">1989</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"rok"</span><span class="p">)</span>   <span class="c1"># Index může mít i jméno</span>
 <span class="p">)</span>
 <span class="n">udalosti</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[21]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>rok
 1918    Nezávislost Československa
@@ -1147,45 +930,30 @@ Name: Věk, dtype: float64</pre>
 1989             Sametová revoluce
 dtype: object</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">udalosti</span><span class="o">.</span><span class="n">index</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">udalosti</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[22]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[22]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>Index([1918, 1945, 1989], dtype=&#39;int64&#39;, name=&#39;rok&#39;)</pre>
-</div>
-
-</div>
-
+<pre>Index([1918, 1945, 1989], dtype='int64', name='rok')</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1196,40 +964,28 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">udalosti_presne</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">udalosti_presne</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
     <span class="p">[</span><span class="s2">"Nezávislost Československa"</span><span class="p">,</span> <span class="s2">"Konec druhé světové války"</span><span class="p">,</span> <span class="s2">"Sametová revoluce"</span><span class="p">],</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">([</span><span class="s1">'1918-10-28'</span><span class="p">,</span> <span class="s1">'1945-05-08'</span><span class="p">,</span> <span class="s1">'1989-11-17'</span><span class="p">])</span>
 <span class="p">)</span>
 <span class="n">udalosti_presne</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[23]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>DatetimeIndex([&#39;1918-10-28&#39;, &#39;1945-05-08&#39;, &#39;1989-11-17&#39;], dtype=&#39;datetime64[ns]&#39;, freq=None)</pre>
-</div>
-
-</div>
-
+<pre>DatetimeIndex(['1918-10-28', '1945-05-08', '1989-11-17'], dtype='datetime64[ns]', freq=None)</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1240,36 +996,24 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vek</span><span class="p">[</span><span class="s2">"Martina"</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vek</span><span class="p">[</span><span class="s2">"Martina"</span><span class="p">]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[24]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>np.float64(65.0)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1282,7 +1026,7 @@ dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="dataframe">DataFrame
-<a href="#header-dataframe" class="header-link">#</a>
+<a class="header-link" href="#dataframe">#</a>
 </h2>
 </div>
 </div>
@@ -1290,7 +1034,7 @@ dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="static/df.svg" style="max-height: 25em;"/></p>
+<p><img alt="No description has been provided for this image" src="static/df.svg" style="max-height: 25em;"/></p>
 </div>
 </div>
 </div>
@@ -1304,143 +1048,95 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">columns</span>    <span class="c1"># Seznam sloupců</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">columns</span>    <span class="c1"># Seznam sloupců</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[25]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[25]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>Index([&#39;id&#39;, &#39;name&#39;, &#39;height&#39;, &#39;weight&#39;, &#39;color&#39;, &#39;shape&#39;, &#39;is baby&#39;, &#39;type 1&#39;,
-       &#39;type 2&#39;, &#39;hp&#39;, &#39;attack&#39;, &#39;defense&#39;, &#39;speed&#39;],
-      dtype=&#39;object&#39;)</pre>
-</div>
-
-</div>
-
+<pre>Index(['id', 'name', 'height', 'weight', 'color', 'shape', 'is baby', 'type 1',
+       'type 2', 'hp', 'attack', 'defense', 'speed'],
+      dtype='object')</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">index</span>      <span class="c1"># Index (seznam řádků)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">index</span>      <span class="c1"># Index (seznam řádků)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[26]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>RangeIndex(start=0, stop=807, step=1)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">values</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[27]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[1, &#39;bulbasaur&#39;, 0.7, ..., 49, 49, 45],
-       [2, &#39;ivysaur&#39;, 1.0, ..., 62, 63, 60],
-       [3, &#39;venusaur&#39;, 2.0, ..., 82, 83, 80],
+<pre>array([[1, 'bulbasaur', 0.7, ..., 49, 49, 45],
+       [2, 'ivysaur', 1.0, ..., 62, 63, 60],
+       [3, 'venusaur', 2.0, ..., 82, 83, 80],
        ...,
-       [805, &#39;stakataka&#39;, 5.5, ..., 131, 211, 13],
-       [806, &#39;blacephalon&#39;, 1.8, ..., 127, 53, 107],
-       [807, &#39;zeraora&#39;, 1.5, ..., 112, 75, 143]], dtype=object)</pre>
-</div>
-
-</div>
-
+       [805, 'stakataka', 5.5, ..., 131, 211, 13],
+       [806, 'blacephalon', 1.8, ..., 127, 53, 107],
+       [807, 'zeraora', 1.5, ..., 112, 75, 143]], dtype=object)</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">shape</span>       <span class="c1"># Velikost (počet řádků x počet sloupců)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">shape</span>       <span class="c1"># Velikost (počet řádků x počet sloupců)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[28]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[28]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>(807, 13)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1451,31 +1147,23 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">"cislo"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
     <span class="s2">"pismeno"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">]</span>
 <span class="p">})</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[29]:</div>
-
-
-
+<div class="prompt output_prompt">Out[29]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -1489,45 +1177,42 @@ dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>cislo</th>
-      <th>pismeno</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>b</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>c</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>cislo</th>
+<th>pismeno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3</td>
+<td>c</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
         <span class="p">{</span><span class="s2">"jmeno"</span><span class="p">:</span> <span class="s2">"máslo"</span><span class="p">,</span> <span class="s2">"cena"</span><span class="p">:</span> <span class="mf">42.90</span><span class="p">},</span>
         <span class="p">{</span><span class="s2">"jmeno"</span><span class="p">:</span> <span class="s2">"sýr"</span><span class="p">,</span> <span class="s2">"cena"</span><span class="p">:</span> <span class="mf">31.90</span><span class="p">},</span>
         <span class="p">{</span><span class="s2">"jmeno"</span><span class="p">:</span> <span class="s2">"kečup"</span><span class="p">,</span> <span class="s2">"cena"</span><span class="p">:</span> <span class="mf">49.90</span> <span class="p">},</span>   
@@ -1535,23 +1220,15 @@ dtype: object</pre>
     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"artikl1"</span><span class="p">,</span> <span class="s2">"artikl2"</span><span class="p">,</span> <span class="s2">"artikl3"</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[30]:</div>
-
-
-
+<div class="prompt output_prompt">Out[30]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -1565,38 +1242,35 @@ dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>jmeno</th>
-      <th>cena</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>artikl1</th>
-      <td>máslo</td>
-      <td>42.9</td>
-    </tr>
-    <tr>
-      <th>artikl2</th>
-      <td>sýr</td>
-      <td>31.9</td>
-    </tr>
-    <tr>
-      <th>artikl3</th>
-      <td>kečup</td>
-      <td>49.9</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>jmeno</th>
+<th>cena</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>artikl1</th>
+<td>máslo</td>
+<td>42.9</td>
+</tr>
+<tr>
+<th>artikl2</th>
+<td>sýr</td>
+<td>31.9</td>
+</tr>
+<tr>
+<th>artikl3</th>
+<td>kečup</td>
+<td>49.9</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1609,7 +1283,7 @@ dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="indexovani">Indexování
-<a href="#header-indexovani" class="header-link">#</a>
+<a class="header-link" href="#indexovani">#</a>
 </h2>
 <p>Řádky, sloupce, číselné pořadí, klíče, rozsahy... Objekty pandas se někdy chovají jako seznamy, někdy jako slovníky. Jak z nich tedy dostat hodnoty? Je toho hodně, a proto přistupování k částem tabulky nevystačíme s prostými hranatými závorkami <code>[]</code>.</p>
 <p>Pro začátek si upravíme naši tabulku s pokémony tak, aby měla zajímavý a snadno uchopitelný index. Použijeme k tomu dvě metody třídy <code>DataFrame</code> (obě vrací novou instanci <code>DataFrame</code>, odvozenou od instance, na které je voláme):</p>
@@ -1624,29 +1298,21 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span> <span class="o">=</span> <span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span> <span class="o">=</span> <span class="n">tabulka_pokemonu</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 <span class="n">pokemoni</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[31]:</div>
-
-
-
+<div class="prompt output_prompt">Out[31]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -1660,258 +1326,243 @@ dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>abomasnow</th>
-      <td>460</td>
-      <td>2.2</td>
-      <td>135.5</td>
-      <td>white</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Grass</td>
-      <td>Ice</td>
-      <td>90</td>
-      <td>92</td>
-      <td>75</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>abra</th>
-      <td>63</td>
-      <td>0.9</td>
-      <td>19.5</td>
-      <td>brown</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Psychic</td>
-      <td>NaN</td>
-      <td>25</td>
-      <td>20</td>
-      <td>15</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>absol</th>
-      <td>359</td>
-      <td>1.2</td>
-      <td>47.0</td>
-      <td>white</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>65</td>
-      <td>130</td>
-      <td>60</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>accelgor</th>
-      <td>617</td>
-      <td>0.8</td>
-      <td>25.3</td>
-      <td>red</td>
-      <td>arms</td>
-      <td>False</td>
-      <td>Bug</td>
-      <td>NaN</td>
-      <td>80</td>
-      <td>70</td>
-      <td>40</td>
-      <td>145</td>
-    </tr>
-    <tr>
-      <th>aegislash</th>
-      <td>681</td>
-      <td>1.7</td>
-      <td>53.0</td>
-      <td>brown</td>
-      <td>blob</td>
-      <td>False</td>
-      <td>Steel</td>
-      <td>Ghost</td>
-      <td>60</td>
-      <td>50</td>
-      <td>150</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>zoroark</th>
-      <td>571</td>
-      <td>1.6</td>
-      <td>81.1</td>
-      <td>gray</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>60</td>
-      <td>105</td>
-      <td>60</td>
-      <td>105</td>
-    </tr>
-    <tr>
-      <th>zorua</th>
-      <td>570</td>
-      <td>0.7</td>
-      <td>12.5</td>
-      <td>gray</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>40</td>
-      <td>65</td>
-      <td>40</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>zubat</th>
-      <td>41</td>
-      <td>0.8</td>
-      <td>7.5</td>
-      <td>purple</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Poison</td>
-      <td>Flying</td>
-      <td>40</td>
-      <td>45</td>
-      <td>35</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <th>zweilous</th>
-      <td>634</td>
-      <td>1.4</td>
-      <td>50.0</td>
-      <td>blue</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>Dragon</td>
-      <td>72</td>
-      <td>85</td>
-      <td>70</td>
-      <td>58</td>
-    </tr>
-    <tr>
-      <th>zygarde</th>
-      <td>718</td>
-      <td>5.0</td>
-      <td>305.0</td>
-      <td>green</td>
-      <td>squiggle</td>
-      <td>False</td>
-      <td>Dragon</td>
-      <td>Ground</td>
-      <td>108</td>
-      <td>100</td>
-      <td>121</td>
-      <td>95</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>abomasnow</th>
+<td>460</td>
+<td>2.2</td>
+<td>135.5</td>
+<td>white</td>
+<td>upright</td>
+<td>False</td>
+<td>Grass</td>
+<td>Ice</td>
+<td>90</td>
+<td>92</td>
+<td>75</td>
+<td>60</td>
+</tr>
+<tr>
+<th>abra</th>
+<td>63</td>
+<td>0.9</td>
+<td>19.5</td>
+<td>brown</td>
+<td>upright</td>
+<td>False</td>
+<td>Psychic</td>
+<td>NaN</td>
+<td>25</td>
+<td>20</td>
+<td>15</td>
+<td>90</td>
+</tr>
+<tr>
+<th>absol</th>
+<td>359</td>
+<td>1.2</td>
+<td>47.0</td>
+<td>white</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>65</td>
+<td>130</td>
+<td>60</td>
+<td>75</td>
+</tr>
+<tr>
+<th>accelgor</th>
+<td>617</td>
+<td>0.8</td>
+<td>25.3</td>
+<td>red</td>
+<td>arms</td>
+<td>False</td>
+<td>Bug</td>
+<td>NaN</td>
+<td>80</td>
+<td>70</td>
+<td>40</td>
+<td>145</td>
+</tr>
+<tr>
+<th>aegislash</th>
+<td>681</td>
+<td>1.7</td>
+<td>53.0</td>
+<td>brown</td>
+<td>blob</td>
+<td>False</td>
+<td>Steel</td>
+<td>Ghost</td>
+<td>60</td>
+<td>50</td>
+<td>150</td>
+<td>60</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>zoroark</th>
+<td>571</td>
+<td>1.6</td>
+<td>81.1</td>
+<td>gray</td>
+<td>upright</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>60</td>
+<td>105</td>
+<td>60</td>
+<td>105</td>
+</tr>
+<tr>
+<th>zorua</th>
+<td>570</td>
+<td>0.7</td>
+<td>12.5</td>
+<td>gray</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>40</td>
+<td>65</td>
+<td>40</td>
+<td>65</td>
+</tr>
+<tr>
+<th>zubat</th>
+<td>41</td>
+<td>0.8</td>
+<td>7.5</td>
+<td>purple</td>
+<td>wings</td>
+<td>False</td>
+<td>Poison</td>
+<td>Flying</td>
+<td>40</td>
+<td>45</td>
+<td>35</td>
+<td>55</td>
+</tr>
+<tr>
+<th>zweilous</th>
+<td>634</td>
+<td>1.4</td>
+<td>50.0</td>
+<td>blue</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>Dragon</td>
+<td>72</td>
+<td>85</td>
+<td>70</td>
+<td>58</td>
+</tr>
+<tr>
+<th>zygarde</th>
+<td>718</td>
+<td>5.0</td>
+<td>305.0</td>
+<td>green</td>
+<td>squiggle</td>
+<td>False</td>
+<td>Dragon</td>
+<td>Ground</td>
+<td>108</td>
+<td>100</td>
+<td>121</td>
+<td>95</td>
+</tr>
+</tbody>
 </table>
 <p>807 rows × 12 columns</p>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">index</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[32]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[32]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>Index([&#39;abomasnow&#39;, &#39;abra&#39;, &#39;absol&#39;, &#39;accelgor&#39;, &#39;aegislash&#39;, &#39;aerodactyl&#39;,
-       &#39;aggron&#39;, &#39;aipom&#39;, &#39;alakazam&#39;, &#39;alomomola&#39;,
+<pre>Index(['abomasnow', 'abra', 'absol', 'accelgor', 'aegislash', 'aerodactyl',
+       'aggron', 'aipom', 'alakazam', 'alomomola',
        ...
-       &#39;zapdos&#39;, &#39;zebstrika&#39;, &#39;zekrom&#39;, &#39;zeraora&#39;, &#39;zigzagoon&#39;, &#39;zoroark&#39;,
-       &#39;zorua&#39;, &#39;zubat&#39;, &#39;zweilous&#39;, &#39;zygarde&#39;],
-      dtype=&#39;object&#39;, name=&#39;name&#39;, length=807)</pre>
-</div>
-
-</div>
-
+       'zapdos', 'zebstrika', 'zekrom', 'zeraora', 'zigzagoon', 'zoroark',
+       'zorua', 'zubat', 'zweilous', 'zygarde'],
+      dtype='object', name='name', length=807)</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="codecode"><code>[]</code>
-<a href="#header-codecode" class="header-link">#</a>
+<a class="header-link" href="#codecode">#</a>
 </h3>
 <p>Začneme s hranatými závorkami:</p>
 <ul>
@@ -1923,27 +1574,18 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="p">[</span><span class="s2">"height"</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="p">[</span><span class="s2">"height"</span><span class="p">]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[33]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[33]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 abomasnow    2.2
@@ -1959,12 +1601,9 @@ zweilous     1.4
 zygarde      5.0
 Name: height, Length: 807, dtype: float64</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -1975,28 +1614,20 @@ Name: height, Length: 807, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="p">[[</span><span class="s2">"height"</span><span class="p">,</span> <span class="s2">"weight"</span><span class="p">]]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="p">[[</span><span class="s2">"height"</span><span class="p">,</span> <span class="s2">"weight"</span><span class="p">]]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[34]:</div>
-
-
-
+<div class="prompt output_prompt">Out[34]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2010,84 +1641,81 @@ Name: height, Length: 807, dtype: float64</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>height</th>
-      <th>weight</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>abomasnow</th>
-      <td>2.2</td>
-      <td>135.5</td>
-    </tr>
-    <tr>
-      <th>abra</th>
-      <td>0.9</td>
-      <td>19.5</td>
-    </tr>
-    <tr>
-      <th>absol</th>
-      <td>1.2</td>
-      <td>47.0</td>
-    </tr>
-    <tr>
-      <th>accelgor</th>
-      <td>0.8</td>
-      <td>25.3</td>
-    </tr>
-    <tr>
-      <th>aegislash</th>
-      <td>1.7</td>
-      <td>53.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>zoroark</th>
-      <td>1.6</td>
-      <td>81.1</td>
-    </tr>
-    <tr>
-      <th>zorua</th>
-      <td>0.7</td>
-      <td>12.5</td>
-    </tr>
-    <tr>
-      <th>zubat</th>
-      <td>0.8</td>
-      <td>7.5</td>
-    </tr>
-    <tr>
-      <th>zweilous</th>
-      <td>1.4</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>zygarde</th>
-      <td>5.0</td>
-      <td>305.0</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>height</th>
+<th>weight</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>abomasnow</th>
+<td>2.2</td>
+<td>135.5</td>
+</tr>
+<tr>
+<th>abra</th>
+<td>0.9</td>
+<td>19.5</td>
+</tr>
+<tr>
+<th>absol</th>
+<td>1.2</td>
+<td>47.0</td>
+</tr>
+<tr>
+<th>accelgor</th>
+<td>0.8</td>
+<td>25.3</td>
+</tr>
+<tr>
+<th>aegislash</th>
+<td>1.7</td>
+<td>53.0</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>zoroark</th>
+<td>1.6</td>
+<td>81.1</td>
+</tr>
+<tr>
+<th>zorua</th>
+<td>0.7</td>
+<td>12.5</td>
+</tr>
+<tr>
+<th>zubat</th>
+<td>0.8</td>
+<td>7.5</td>
+</tr>
+<tr>
+<th>zweilous</th>
+<td>1.4</td>
+<td>50.0</td>
+</tr>
+<tr>
+<th>zygarde</th>
+<td>5.0</td>
+<td>305.0</td>
+</tr>
+</tbody>
 </table>
 <p>807 rows × 2 columns</p>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -2107,7 +1735,7 @@ Name: height, Length: 807, dtype: float64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="codeloccode"><code>.loc[]</code>
-<a href="#header-codeloccode" class="header-link">#</a>
+<a class="header-link" href="#codeloccode">#</a>
 </h3>
 <p>Když chceme získat nějaký řádek, použijeme atribut <code>loc</code>, takzvaný indexer. Pozor, není to metoda a nepoužívají se závorky kulaté, nýbrž hranaté. (Má to své důvody - jedině tak můžeme elegantně používat zkrácený dvojtečkový zápis pro rozsahy).</p>
 </div>
@@ -2115,27 +1743,18 @@ Name: height, Length: 807, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"abra"</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"abra"</span><span class="p">]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[35]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[35]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>id              63
 height         0.9
@@ -2151,12 +1770,9 @@ defense         15
 speed           90
 Name: abra, dtype: object</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -2168,28 +1784,20 @@ Name: abra, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"z"</span><span class="p">:]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"z"</span><span class="p">:]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[36]:</div>
-
-
-
+<div class="prompt output_prompt">Out[36]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2203,213 +1811,210 @@ Name: abra, dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>zangoose</th>
-      <td>335</td>
-      <td>1.3</td>
-      <td>40.3</td>
-      <td>white</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Normal</td>
-      <td>NaN</td>
-      <td>73</td>
-      <td>115</td>
-      <td>60</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>zapdos</th>
-      <td>145</td>
-      <td>1.6</td>
-      <td>52.6</td>
-      <td>yellow</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>Flying</td>
-      <td>90</td>
-      <td>90</td>
-      <td>85</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th>zebstrika</th>
-      <td>523</td>
-      <td>1.6</td>
-      <td>79.5</td>
-      <td>black</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>NaN</td>
-      <td>75</td>
-      <td>100</td>
-      <td>63</td>
-      <td>116</td>
-    </tr>
-    <tr>
-      <th>zekrom</th>
-      <td>644</td>
-      <td>2.9</td>
-      <td>345.0</td>
-      <td>black</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Dragon</td>
-      <td>Electric</td>
-      <td>100</td>
-      <td>150</td>
-      <td>120</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>zeraora</th>
-      <td>807</td>
-      <td>1.5</td>
-      <td>44.5</td>
-      <td>yellow</td>
-      <td>humanoid</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>NaN</td>
-      <td>88</td>
-      <td>112</td>
-      <td>75</td>
-      <td>143</td>
-    </tr>
-    <tr>
-      <th>zigzagoon</th>
-      <td>263</td>
-      <td>0.4</td>
-      <td>17.5</td>
-      <td>brown</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Normal</td>
-      <td>NaN</td>
-      <td>38</td>
-      <td>30</td>
-      <td>41</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>zoroark</th>
-      <td>571</td>
-      <td>1.6</td>
-      <td>81.1</td>
-      <td>gray</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>60</td>
-      <td>105</td>
-      <td>60</td>
-      <td>105</td>
-    </tr>
-    <tr>
-      <th>zorua</th>
-      <td>570</td>
-      <td>0.7</td>
-      <td>12.5</td>
-      <td>gray</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>40</td>
-      <td>65</td>
-      <td>40</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>zubat</th>
-      <td>41</td>
-      <td>0.8</td>
-      <td>7.5</td>
-      <td>purple</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Poison</td>
-      <td>Flying</td>
-      <td>40</td>
-      <td>45</td>
-      <td>35</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <th>zweilous</th>
-      <td>634</td>
-      <td>1.4</td>
-      <td>50.0</td>
-      <td>blue</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>Dragon</td>
-      <td>72</td>
-      <td>85</td>
-      <td>70</td>
-      <td>58</td>
-    </tr>
-    <tr>
-      <th>zygarde</th>
-      <td>718</td>
-      <td>5.0</td>
-      <td>305.0</td>
-      <td>green</td>
-      <td>squiggle</td>
-      <td>False</td>
-      <td>Dragon</td>
-      <td>Ground</td>
-      <td>108</td>
-      <td>100</td>
-      <td>121</td>
-      <td>95</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>zangoose</th>
+<td>335</td>
+<td>1.3</td>
+<td>40.3</td>
+<td>white</td>
+<td>upright</td>
+<td>False</td>
+<td>Normal</td>
+<td>NaN</td>
+<td>73</td>
+<td>115</td>
+<td>60</td>
+<td>90</td>
+</tr>
+<tr>
+<th>zapdos</th>
+<td>145</td>
+<td>1.6</td>
+<td>52.6</td>
+<td>yellow</td>
+<td>wings</td>
+<td>False</td>
+<td>Electric</td>
+<td>Flying</td>
+<td>90</td>
+<td>90</td>
+<td>85</td>
+<td>100</td>
+</tr>
+<tr>
+<th>zebstrika</th>
+<td>523</td>
+<td>1.6</td>
+<td>79.5</td>
+<td>black</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Electric</td>
+<td>NaN</td>
+<td>75</td>
+<td>100</td>
+<td>63</td>
+<td>116</td>
+</tr>
+<tr>
+<th>zekrom</th>
+<td>644</td>
+<td>2.9</td>
+<td>345.0</td>
+<td>black</td>
+<td>upright</td>
+<td>False</td>
+<td>Dragon</td>
+<td>Electric</td>
+<td>100</td>
+<td>150</td>
+<td>120</td>
+<td>90</td>
+</tr>
+<tr>
+<th>zeraora</th>
+<td>807</td>
+<td>1.5</td>
+<td>44.5</td>
+<td>yellow</td>
+<td>humanoid</td>
+<td>False</td>
+<td>Electric</td>
+<td>NaN</td>
+<td>88</td>
+<td>112</td>
+<td>75</td>
+<td>143</td>
+</tr>
+<tr>
+<th>zigzagoon</th>
+<td>263</td>
+<td>0.4</td>
+<td>17.5</td>
+<td>brown</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Normal</td>
+<td>NaN</td>
+<td>38</td>
+<td>30</td>
+<td>41</td>
+<td>60</td>
+</tr>
+<tr>
+<th>zoroark</th>
+<td>571</td>
+<td>1.6</td>
+<td>81.1</td>
+<td>gray</td>
+<td>upright</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>60</td>
+<td>105</td>
+<td>60</td>
+<td>105</td>
+</tr>
+<tr>
+<th>zorua</th>
+<td>570</td>
+<td>0.7</td>
+<td>12.5</td>
+<td>gray</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>40</td>
+<td>65</td>
+<td>40</td>
+<td>65</td>
+</tr>
+<tr>
+<th>zubat</th>
+<td>41</td>
+<td>0.8</td>
+<td>7.5</td>
+<td>purple</td>
+<td>wings</td>
+<td>False</td>
+<td>Poison</td>
+<td>Flying</td>
+<td>40</td>
+<td>45</td>
+<td>35</td>
+<td>55</td>
+</tr>
+<tr>
+<th>zweilous</th>
+<td>634</td>
+<td>1.4</td>
+<td>50.0</td>
+<td>blue</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>Dragon</td>
+<td>72</td>
+<td>85</td>
+<td>70</td>
+<td>58</td>
+</tr>
+<tr>
+<th>zygarde</th>
+<td>718</td>
+<td>5.0</td>
+<td>305.0</td>
+<td>green</td>
+<td>squiggle</td>
+<td>False</td>
+<td>Dragon</td>
+<td>Ground</td>
+<td>108</td>
+<td>100</td>
+<td>121</td>
+<td>95</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -2421,28 +2026,20 @@ Name: abra, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"zangoose"</span><span class="p">:</span><span class="s2">"zygarde"</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"zangoose"</span><span class="p">:</span><span class="s2">"zygarde"</span><span class="p">]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[37]:</div>
-
-
-
+<div class="prompt output_prompt">Out[37]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2456,213 +2053,210 @@ Name: abra, dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>zangoose</th>
-      <td>335</td>
-      <td>1.3</td>
-      <td>40.3</td>
-      <td>white</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Normal</td>
-      <td>NaN</td>
-      <td>73</td>
-      <td>115</td>
-      <td>60</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>zapdos</th>
-      <td>145</td>
-      <td>1.6</td>
-      <td>52.6</td>
-      <td>yellow</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>Flying</td>
-      <td>90</td>
-      <td>90</td>
-      <td>85</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th>zebstrika</th>
-      <td>523</td>
-      <td>1.6</td>
-      <td>79.5</td>
-      <td>black</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>NaN</td>
-      <td>75</td>
-      <td>100</td>
-      <td>63</td>
-      <td>116</td>
-    </tr>
-    <tr>
-      <th>zekrom</th>
-      <td>644</td>
-      <td>2.9</td>
-      <td>345.0</td>
-      <td>black</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Dragon</td>
-      <td>Electric</td>
-      <td>100</td>
-      <td>150</td>
-      <td>120</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>zeraora</th>
-      <td>807</td>
-      <td>1.5</td>
-      <td>44.5</td>
-      <td>yellow</td>
-      <td>humanoid</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>NaN</td>
-      <td>88</td>
-      <td>112</td>
-      <td>75</td>
-      <td>143</td>
-    </tr>
-    <tr>
-      <th>zigzagoon</th>
-      <td>263</td>
-      <td>0.4</td>
-      <td>17.5</td>
-      <td>brown</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Normal</td>
-      <td>NaN</td>
-      <td>38</td>
-      <td>30</td>
-      <td>41</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>zoroark</th>
-      <td>571</td>
-      <td>1.6</td>
-      <td>81.1</td>
-      <td>gray</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>60</td>
-      <td>105</td>
-      <td>60</td>
-      <td>105</td>
-    </tr>
-    <tr>
-      <th>zorua</th>
-      <td>570</td>
-      <td>0.7</td>
-      <td>12.5</td>
-      <td>gray</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>40</td>
-      <td>65</td>
-      <td>40</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>zubat</th>
-      <td>41</td>
-      <td>0.8</td>
-      <td>7.5</td>
-      <td>purple</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Poison</td>
-      <td>Flying</td>
-      <td>40</td>
-      <td>45</td>
-      <td>35</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <th>zweilous</th>
-      <td>634</td>
-      <td>1.4</td>
-      <td>50.0</td>
-      <td>blue</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>Dragon</td>
-      <td>72</td>
-      <td>85</td>
-      <td>70</td>
-      <td>58</td>
-    </tr>
-    <tr>
-      <th>zygarde</th>
-      <td>718</td>
-      <td>5.0</td>
-      <td>305.0</td>
-      <td>green</td>
-      <td>squiggle</td>
-      <td>False</td>
-      <td>Dragon</td>
-      <td>Ground</td>
-      <td>108</td>
-      <td>100</td>
-      <td>121</td>
-      <td>95</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>zangoose</th>
+<td>335</td>
+<td>1.3</td>
+<td>40.3</td>
+<td>white</td>
+<td>upright</td>
+<td>False</td>
+<td>Normal</td>
+<td>NaN</td>
+<td>73</td>
+<td>115</td>
+<td>60</td>
+<td>90</td>
+</tr>
+<tr>
+<th>zapdos</th>
+<td>145</td>
+<td>1.6</td>
+<td>52.6</td>
+<td>yellow</td>
+<td>wings</td>
+<td>False</td>
+<td>Electric</td>
+<td>Flying</td>
+<td>90</td>
+<td>90</td>
+<td>85</td>
+<td>100</td>
+</tr>
+<tr>
+<th>zebstrika</th>
+<td>523</td>
+<td>1.6</td>
+<td>79.5</td>
+<td>black</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Electric</td>
+<td>NaN</td>
+<td>75</td>
+<td>100</td>
+<td>63</td>
+<td>116</td>
+</tr>
+<tr>
+<th>zekrom</th>
+<td>644</td>
+<td>2.9</td>
+<td>345.0</td>
+<td>black</td>
+<td>upright</td>
+<td>False</td>
+<td>Dragon</td>
+<td>Electric</td>
+<td>100</td>
+<td>150</td>
+<td>120</td>
+<td>90</td>
+</tr>
+<tr>
+<th>zeraora</th>
+<td>807</td>
+<td>1.5</td>
+<td>44.5</td>
+<td>yellow</td>
+<td>humanoid</td>
+<td>False</td>
+<td>Electric</td>
+<td>NaN</td>
+<td>88</td>
+<td>112</td>
+<td>75</td>
+<td>143</td>
+</tr>
+<tr>
+<th>zigzagoon</th>
+<td>263</td>
+<td>0.4</td>
+<td>17.5</td>
+<td>brown</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Normal</td>
+<td>NaN</td>
+<td>38</td>
+<td>30</td>
+<td>41</td>
+<td>60</td>
+</tr>
+<tr>
+<th>zoroark</th>
+<td>571</td>
+<td>1.6</td>
+<td>81.1</td>
+<td>gray</td>
+<td>upright</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>60</td>
+<td>105</td>
+<td>60</td>
+<td>105</td>
+</tr>
+<tr>
+<th>zorua</th>
+<td>570</td>
+<td>0.7</td>
+<td>12.5</td>
+<td>gray</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>40</td>
+<td>65</td>
+<td>40</td>
+<td>65</td>
+</tr>
+<tr>
+<th>zubat</th>
+<td>41</td>
+<td>0.8</td>
+<td>7.5</td>
+<td>purple</td>
+<td>wings</td>
+<td>False</td>
+<td>Poison</td>
+<td>Flying</td>
+<td>40</td>
+<td>45</td>
+<td>35</td>
+<td>55</td>
+</tr>
+<tr>
+<th>zweilous</th>
+<td>634</td>
+<td>1.4</td>
+<td>50.0</td>
+<td>blue</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>Dragon</td>
+<td>72</td>
+<td>85</td>
+<td>70</td>
+<td>58</td>
+</tr>
+<tr>
+<th>zygarde</th>
+<td>718</td>
+<td>5.0</td>
+<td>305.0</td>
+<td>green</td>
+<td>squiggle</td>
+<td>False</td>
+<td>Dragon</td>
+<td>Ground</td>
+<td>108</td>
+<td>100</td>
+<td>121</td>
+<td>95</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -2673,36 +2267,24 @@ Name: abra, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"zorua"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"zorua"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[38]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[38]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;gray&#39;</pre>
-</div>
-
-</div>
-
+<pre>'gray'</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -2713,28 +2295,20 @@ Name: abra, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">"zorua"</span><span class="p">,</span> <span class="s2">"zubat"</span><span class="p">]]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">"zorua"</span><span class="p">,</span> <span class="s2">"zubat"</span><span class="p">]]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[39]:</div>
-
-
-
+<div class="prompt output_prompt">Out[39]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2748,78 +2322,75 @@ Name: abra, dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>zorua</th>
-      <td>570</td>
-      <td>0.7</td>
-      <td>12.5</td>
-      <td>gray</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>40</td>
-      <td>65</td>
-      <td>40</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>zubat</th>
-      <td>41</td>
-      <td>0.8</td>
-      <td>7.5</td>
-      <td>purple</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Poison</td>
-      <td>Flying</td>
-      <td>40</td>
-      <td>45</td>
-      <td>35</td>
-      <td>55</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>zorua</th>
+<td>570</td>
+<td>0.7</td>
+<td>12.5</td>
+<td>gray</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>40</td>
+<td>65</td>
+<td>40</td>
+<td>65</td>
+</tr>
+<tr>
+<th>zubat</th>
+<td>41</td>
+<td>0.8</td>
+<td>7.5</td>
+<td>purple</td>
+<td>wings</td>
+<td>False</td>
+<td>Poison</td>
+<td>Flying</td>
+<td>40</td>
+<td>45</td>
+<td>35</td>
+<td>55</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -2830,28 +2401,20 @@ Name: abra, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"j"</span><span class="p">:</span><span class="s2">"k"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"color"</span><span class="p">,</span> <span class="s2">"attack"</span><span class="p">]]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"j"</span><span class="p">:</span><span class="s2">"k"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"color"</span><span class="p">,</span> <span class="s2">"attack"</span><span class="p">]]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[40]:</div>
-
-
-
+<div class="prompt output_prompt">Out[40]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -2865,68 +2428,65 @@ Name: abra, dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>color</th>
-      <th>attack</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>jangmo-o</th>
-      <td>gray</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <th>jellicent</th>
-      <td>white</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>jigglypuff</th>
-      <td>pink</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>jirachi</th>
-      <td>yellow</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th>jolteon</th>
-      <td>yellow</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>joltik</th>
-      <td>yellow</td>
-      <td>47</td>
-    </tr>
-    <tr>
-      <th>jumpluff</th>
-      <td>blue</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <th>jynx</th>
-      <td>red</td>
-      <td>50</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>color</th>
+<th>attack</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>jangmo-o</th>
+<td>gray</td>
+<td>55</td>
+</tr>
+<tr>
+<th>jellicent</th>
+<td>white</td>
+<td>60</td>
+</tr>
+<tr>
+<th>jigglypuff</th>
+<td>pink</td>
+<td>45</td>
+</tr>
+<tr>
+<th>jirachi</th>
+<td>yellow</td>
+<td>100</td>
+</tr>
+<tr>
+<th>jolteon</th>
+<td>yellow</td>
+<td>65</td>
+</tr>
+<tr>
+<th>joltik</th>
+<td>yellow</td>
+<td>47</td>
+</tr>
+<tr>
+<th>jumpluff</th>
+<td>blue</td>
+<td>55</td>
+</tr>
+<tr>
+<th>jynx</th>
+<td>red</td>
+<td>50</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -2953,7 +2513,7 @@ Name: abra, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="codeiloccode"><code>.iloc[]</code>
-<a href="#header-codeiloccode" class="header-link">#</a>
+<a class="header-link" href="#codeiloccode">#</a>
 </h3>
 <p>Když chceme na chvíli zapomenout na to, jaký index je u tabulky nebo sloupce použit, můžeme k prvkům přistupovat přímo přes jejich pořadí (čísla řádku nebo sloupce). Toto je v zásadě intuitivní a odpovídá indexování, na které jsi zvyklá/ý z práce se seznamy.</p>
 </div>
@@ -2961,27 +2521,18 @@ Name: abra, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In [41]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">44</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">44</span><span class="p">]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[41]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[41]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>id                15
 height           1.0
@@ -2997,37 +2548,26 @@ defense           40
 speed             75
 Name: beedrill, dtype: object</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[42]:</div>
-
-
-
+<div class="prompt output_prompt">Out[42]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -3041,198 +2581,195 @@ Name: beedrill, dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>zapdos</th>
-      <td>145</td>
-      <td>1.6</td>
-      <td>52.6</td>
-      <td>yellow</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>Flying</td>
-      <td>90</td>
-      <td>90</td>
-      <td>85</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th>zebstrika</th>
-      <td>523</td>
-      <td>1.6</td>
-      <td>79.5</td>
-      <td>black</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>NaN</td>
-      <td>75</td>
-      <td>100</td>
-      <td>63</td>
-      <td>116</td>
-    </tr>
-    <tr>
-      <th>zekrom</th>
-      <td>644</td>
-      <td>2.9</td>
-      <td>345.0</td>
-      <td>black</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Dragon</td>
-      <td>Electric</td>
-      <td>100</td>
-      <td>150</td>
-      <td>120</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>zeraora</th>
-      <td>807</td>
-      <td>1.5</td>
-      <td>44.5</td>
-      <td>yellow</td>
-      <td>humanoid</td>
-      <td>False</td>
-      <td>Electric</td>
-      <td>NaN</td>
-      <td>88</td>
-      <td>112</td>
-      <td>75</td>
-      <td>143</td>
-    </tr>
-    <tr>
-      <th>zigzagoon</th>
-      <td>263</td>
-      <td>0.4</td>
-      <td>17.5</td>
-      <td>brown</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Normal</td>
-      <td>NaN</td>
-      <td>38</td>
-      <td>30</td>
-      <td>41</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>zoroark</th>
-      <td>571</td>
-      <td>1.6</td>
-      <td>81.1</td>
-      <td>gray</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>60</td>
-      <td>105</td>
-      <td>60</td>
-      <td>105</td>
-    </tr>
-    <tr>
-      <th>zorua</th>
-      <td>570</td>
-      <td>0.7</td>
-      <td>12.5</td>
-      <td>gray</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>40</td>
-      <td>65</td>
-      <td>40</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>zubat</th>
-      <td>41</td>
-      <td>0.8</td>
-      <td>7.5</td>
-      <td>purple</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Poison</td>
-      <td>Flying</td>
-      <td>40</td>
-      <td>45</td>
-      <td>35</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <th>zweilous</th>
-      <td>634</td>
-      <td>1.4</td>
-      <td>50.0</td>
-      <td>blue</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>Dragon</td>
-      <td>72</td>
-      <td>85</td>
-      <td>70</td>
-      <td>58</td>
-    </tr>
-    <tr>
-      <th>zygarde</th>
-      <td>718</td>
-      <td>5.0</td>
-      <td>305.0</td>
-      <td>green</td>
-      <td>squiggle</td>
-      <td>False</td>
-      <td>Dragon</td>
-      <td>Ground</td>
-      <td>108</td>
-      <td>100</td>
-      <td>121</td>
-      <td>95</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>zapdos</th>
+<td>145</td>
+<td>1.6</td>
+<td>52.6</td>
+<td>yellow</td>
+<td>wings</td>
+<td>False</td>
+<td>Electric</td>
+<td>Flying</td>
+<td>90</td>
+<td>90</td>
+<td>85</td>
+<td>100</td>
+</tr>
+<tr>
+<th>zebstrika</th>
+<td>523</td>
+<td>1.6</td>
+<td>79.5</td>
+<td>black</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Electric</td>
+<td>NaN</td>
+<td>75</td>
+<td>100</td>
+<td>63</td>
+<td>116</td>
+</tr>
+<tr>
+<th>zekrom</th>
+<td>644</td>
+<td>2.9</td>
+<td>345.0</td>
+<td>black</td>
+<td>upright</td>
+<td>False</td>
+<td>Dragon</td>
+<td>Electric</td>
+<td>100</td>
+<td>150</td>
+<td>120</td>
+<td>90</td>
+</tr>
+<tr>
+<th>zeraora</th>
+<td>807</td>
+<td>1.5</td>
+<td>44.5</td>
+<td>yellow</td>
+<td>humanoid</td>
+<td>False</td>
+<td>Electric</td>
+<td>NaN</td>
+<td>88</td>
+<td>112</td>
+<td>75</td>
+<td>143</td>
+</tr>
+<tr>
+<th>zigzagoon</th>
+<td>263</td>
+<td>0.4</td>
+<td>17.5</td>
+<td>brown</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Normal</td>
+<td>NaN</td>
+<td>38</td>
+<td>30</td>
+<td>41</td>
+<td>60</td>
+</tr>
+<tr>
+<th>zoroark</th>
+<td>571</td>
+<td>1.6</td>
+<td>81.1</td>
+<td>gray</td>
+<td>upright</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>60</td>
+<td>105</td>
+<td>60</td>
+<td>105</td>
+</tr>
+<tr>
+<th>zorua</th>
+<td>570</td>
+<td>0.7</td>
+<td>12.5</td>
+<td>gray</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>40</td>
+<td>65</td>
+<td>40</td>
+<td>65</td>
+</tr>
+<tr>
+<th>zubat</th>
+<td>41</td>
+<td>0.8</td>
+<td>7.5</td>
+<td>purple</td>
+<td>wings</td>
+<td>False</td>
+<td>Poison</td>
+<td>Flying</td>
+<td>40</td>
+<td>45</td>
+<td>35</td>
+<td>55</td>
+</tr>
+<tr>
+<th>zweilous</th>
+<td>634</td>
+<td>1.4</td>
+<td>50.0</td>
+<td>blue</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>Dragon</td>
+<td>72</td>
+<td>85</td>
+<td>70</td>
+<td>58</td>
+</tr>
+<tr>
+<th>zygarde</th>
+<td>718</td>
+<td>5.0</td>
+<td>305.0</td>
+<td>green</td>
+<td>squiggle</td>
+<td>False</td>
+<td>Dragon</td>
+<td>Ground</td>
+<td>108</td>
+<td>100</td>
+<td>121</td>
+<td>95</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -3243,36 +2780,24 @@ Name: beedrill, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[43]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[43]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>np.int64(718)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -3283,28 +2808,20 @@ Name: beedrill, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>    <span class="c1"># Prvních několik řádků</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>    <span class="c1"># Prvních několik řádků</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[44]:</div>
-
-
-
+<div class="prompt output_prompt">Out[44]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -3318,148 +2835,137 @@ Name: beedrill, dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>abomasnow</th>
-      <td>460</td>
-      <td>2.2</td>
-      <td>135.5</td>
-      <td>white</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Grass</td>
-      <td>Ice</td>
-      <td>90</td>
-      <td>92</td>
-      <td>75</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>abra</th>
-      <td>63</td>
-      <td>0.9</td>
-      <td>19.5</td>
-      <td>brown</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Psychic</td>
-      <td>NaN</td>
-      <td>25</td>
-      <td>20</td>
-      <td>15</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>absol</th>
-      <td>359</td>
-      <td>1.2</td>
-      <td>47.0</td>
-      <td>white</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>65</td>
-      <td>130</td>
-      <td>60</td>
-      <td>75</td>
-    </tr>
-    <tr>
-      <th>accelgor</th>
-      <td>617</td>
-      <td>0.8</td>
-      <td>25.3</td>
-      <td>red</td>
-      <td>arms</td>
-      <td>False</td>
-      <td>Bug</td>
-      <td>NaN</td>
-      <td>80</td>
-      <td>70</td>
-      <td>40</td>
-      <td>145</td>
-    </tr>
-    <tr>
-      <th>aegislash</th>
-      <td>681</td>
-      <td>1.7</td>
-      <td>53.0</td>
-      <td>brown</td>
-      <td>blob</td>
-      <td>False</td>
-      <td>Steel</td>
-      <td>Ghost</td>
-      <td>60</td>
-      <td>50</td>
-      <td>150</td>
-      <td>60</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>abomasnow</th>
+<td>460</td>
+<td>2.2</td>
+<td>135.5</td>
+<td>white</td>
+<td>upright</td>
+<td>False</td>
+<td>Grass</td>
+<td>Ice</td>
+<td>90</td>
+<td>92</td>
+<td>75</td>
+<td>60</td>
+</tr>
+<tr>
+<th>abra</th>
+<td>63</td>
+<td>0.9</td>
+<td>19.5</td>
+<td>brown</td>
+<td>upright</td>
+<td>False</td>
+<td>Psychic</td>
+<td>NaN</td>
+<td>25</td>
+<td>20</td>
+<td>15</td>
+<td>90</td>
+</tr>
+<tr>
+<th>absol</th>
+<td>359</td>
+<td>1.2</td>
+<td>47.0</td>
+<td>white</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>65</td>
+<td>130</td>
+<td>60</td>
+<td>75</td>
+</tr>
+<tr>
+<th>accelgor</th>
+<td>617</td>
+<td>0.8</td>
+<td>25.3</td>
+<td>red</td>
+<td>arms</td>
+<td>False</td>
+<td>Bug</td>
+<td>NaN</td>
+<td>80</td>
+<td>70</td>
+<td>40</td>
+<td>145</td>
+</tr>
+<tr>
+<th>aegislash</th>
+<td>681</td>
+<td>1.7</td>
+<td>53.0</td>
+<td>brown</td>
+<td>blob</td>
+<td>False</td>
+<td>Steel</td>
+<td>Ghost</td>
+<td>60</td>
+<td>50</td>
+<td>150</td>
+<td>60</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In [45]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>     <span class="c1"># Posledních několik řádků</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>     <span class="c1"># Posledních několik řádků</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[45]:</div>
-
-
-
+<div class="prompt output_prompt">Out[45]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -3473,123 +2979,120 @@ Name: beedrill, dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>zoroark</th>
-      <td>571</td>
-      <td>1.6</td>
-      <td>81.1</td>
-      <td>gray</td>
-      <td>upright</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>60</td>
-      <td>105</td>
-      <td>60</td>
-      <td>105</td>
-    </tr>
-    <tr>
-      <th>zorua</th>
-      <td>570</td>
-      <td>0.7</td>
-      <td>12.5</td>
-      <td>gray</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>NaN</td>
-      <td>40</td>
-      <td>65</td>
-      <td>40</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>zubat</th>
-      <td>41</td>
-      <td>0.8</td>
-      <td>7.5</td>
-      <td>purple</td>
-      <td>wings</td>
-      <td>False</td>
-      <td>Poison</td>
-      <td>Flying</td>
-      <td>40</td>
-      <td>45</td>
-      <td>35</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <th>zweilous</th>
-      <td>634</td>
-      <td>1.4</td>
-      <td>50.0</td>
-      <td>blue</td>
-      <td>quadruped</td>
-      <td>False</td>
-      <td>Dark</td>
-      <td>Dragon</td>
-      <td>72</td>
-      <td>85</td>
-      <td>70</td>
-      <td>58</td>
-    </tr>
-    <tr>
-      <th>zygarde</th>
-      <td>718</td>
-      <td>5.0</td>
-      <td>305.0</td>
-      <td>green</td>
-      <td>squiggle</td>
-      <td>False</td>
-      <td>Dragon</td>
-      <td>Ground</td>
-      <td>108</td>
-      <td>100</td>
-      <td>121</td>
-      <td>95</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>zoroark</th>
+<td>571</td>
+<td>1.6</td>
+<td>81.1</td>
+<td>gray</td>
+<td>upright</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>60</td>
+<td>105</td>
+<td>60</td>
+<td>105</td>
+</tr>
+<tr>
+<th>zorua</th>
+<td>570</td>
+<td>0.7</td>
+<td>12.5</td>
+<td>gray</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>NaN</td>
+<td>40</td>
+<td>65</td>
+<td>40</td>
+<td>65</td>
+</tr>
+<tr>
+<th>zubat</th>
+<td>41</td>
+<td>0.8</td>
+<td>7.5</td>
+<td>purple</td>
+<td>wings</td>
+<td>False</td>
+<td>Poison</td>
+<td>Flying</td>
+<td>40</td>
+<td>45</td>
+<td>35</td>
+<td>55</td>
+</tr>
+<tr>
+<th>zweilous</th>
+<td>634</td>
+<td>1.4</td>
+<td>50.0</td>
+<td>blue</td>
+<td>quadruped</td>
+<td>False</td>
+<td>Dark</td>
+<td>Dragon</td>
+<td>72</td>
+<td>85</td>
+<td>70</td>
+<td>58</td>
+</tr>
+<tr>
+<th>zygarde</th>
+<td>718</td>
+<td>5.0</td>
+<td>305.0</td>
+<td>green</td>
+<td>squiggle</td>
+<td>False</td>
+<td>Dragon</td>
+<td>Ground</td>
+<td>108</td>
+<td>100</td>
+<td>121</td>
+<td>95</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -3600,28 +3103,20 @@ Name: beedrill, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>    <span class="c1"># Náhodný řádek</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pokemoni</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>    <span class="c1"># Náhodný řádek</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[46]:</div>
-
-
-
+<div class="prompt output_prompt">Out[46]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -3635,63 +3130,60 @@ Name: beedrill, dtype: object</pre>
     }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>color</th>
-      <th>shape</th>
-      <th>is baby</th>
-      <th>type 1</th>
-      <th>type 2</th>
-      <th>hp</th>
-      <th>attack</th>
-      <th>defense</th>
-      <th>speed</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>boldore</th>
-      <td>525</td>
-      <td>0.9</td>
-      <td>102.0</td>
-      <td>blue</td>
-      <td>tentacles</td>
-      <td>False</td>
-      <td>Rock</td>
-      <td>NaN</td>
-      <td>70</td>
-      <td>105</td>
-      <td>105</td>
-      <td>20</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>height</th>
+<th>weight</th>
+<th>color</th>
+<th>shape</th>
+<th>is baby</th>
+<th>type 1</th>
+<th>type 2</th>
+<th>hp</th>
+<th>attack</th>
+<th>defense</th>
+<th>speed</th>
+</tr>
+<tr>
+<th>name</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>boldore</th>
+<td>525</td>
+<td>0.9</td>
+<td>102.0</td>
+<td>blue</td>
+<td>tentacles</td>
+<td>False</td>
+<td>Rock</td>
+<td>NaN</td>
+<td>70</td>
+<td>105</td>
+<td>105</td>
+<td>20</td>
+</tr>
+</tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -3704,7 +3196,7 @@ Name: beedrill, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="shrnuti">Shrnutí
-<a href="#header-shrnuti" class="header-link">#</a>
+<a class="header-link" href="#shrnuti">#</a>
 </h2>
 <p>V této lekci jsme si ukázali tři základní typy knihovny <code>pandas</code>:</p>
 <ul>
@@ -3721,11 +3213,11 @@ Name: beedrill, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="cviceni">Cvičení
-<a href="#header-cviceni" class="header-link">#</a>
+<a class="header-link" href="#cviceni">#</a>
 </h2>
-<p>Místní zoo zvažuje investici do nového pavilonu vyhrazeného pro Pokemony. Ředitel zoo, pan Felix, si ale není jist, jestli by se tato investice vyplatila a co všechno by to pro zoo znamenalo. Někdo mu doporučil, aby si na pomoc pozval tebe (my za to nemůžeme, přísaháme - pozn. autoři kurzu). Pan ředitel sepsal seznam otázek, na které by chtěl znát odpověd.</p>
+<p>Místní zoo zvažuje investici do nového pavilonu vyhrazeného pro Pokemony. Ředitel zoo, pan Felix, si ale není jist, jestli by se tato investice vyplatila a co všechno by to pro zoo znamenalo. Někdo mu doporučil, aby si na pomoc pozval tebe (my za to nemůžeme, přísaháme - pozn. autoři kurzu). Pan ředitel sepsal seznam otázek, na které by chtěl znát odpověd.
+0. (pro opakování opět načti data ze souboru <code>pokemon.csv</code>)</p>
 <ol>
-<li>(pro opakování opět načti data ze souboru <code>pokemon.csv</code>)</li>
 <li>Pro kolik nových zvířátek by zoo potřebovala potravu? Pan ředitel by chtěl jednoho samce a jednu samičku od každého druhu (jména).</li>
 <li>Marketingové oddělení se chystá vytvořiť nové letáčky o Pokemonech pro návštěvníky zoo. Pro všechny Pokemony by potřebovali informace o jejich výšce, váze, délce, barvě a typu. Jsou všechny informace k dispozici?</li>
 <li>Provoz zoo považuje za ideální, kdyby Pokemony přivážely postupně, ve skupinách po osmi tak, jak jsou uvedeni v tabulce <code>pokemon.csv</code>. Kteří Pokemoni by byli v první, v druhé a v poslední skupině?</li>
@@ -3736,5 +3228,3 @@ Name: beedrill, dtype: object</pre>
 </div>
 </div>
 </div>
-
-
