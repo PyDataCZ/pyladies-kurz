@@ -182,7 +182,7 @@ Tuvalu,TUV,east_asia_pacific,asia,upper_middle_income,False,False,,2017,30.0,988
 Uganda,UGA,sub_saharan_africa,africa,low_income,False,False,,2018,241550.0,36760000.0,16.4,22.36,22.48,13.69,2130.0,37.7,62.86,62.667,58.251999999999995,1962-10-25
 Ukraine,UKR,europe_central_asia,europe,lower_middle_income,False,False,,2018,603550.0,44700000.0,17.47,25.42,26.23,8.771,3138.0,7.7,72.29,77.067,67.24600000000001,1945-10-24
 United Arab Emirates,ARE,middle_east_north_africa,asia,high_income,False,False,,2018,83600.0,8208000.0,0.52,28.05,29.61,31.85,3280.0,5.9,76.89,79.081,76.87,1971-12-09
-United Kingdom,GBR,europe_central_asia,europe,high_income,True,True,1973-01-01,2018,243610.0,63180000.0,13.24,27.39,26.94,3.377,3424.0,3.5,81.19,83.55799999999999,80.127,1945-10-24
+United Kingdom,GBR,europe_central_asia,europe,high_income,False,True,1973-01-01,2018,243610.0,63180000.0,13.24,27.39,26.94,3.377,3424.0,3.5,81.19,83.55799999999999,80.127,1945-10-24
 United States,USA,america,americas,high_income,False,True,,2018,9831510.0,318500000.0,9.7,28.46,28.34,9.523,3682.0,5.6,79.14,81.94200000000001,77.429,1945-10-24
 Uruguay,URY,america,americas,high_income,False,False,,2018,176220.0,3403000.0,8.99,26.39,26.59,2.5660000000000003,3050.0,8.7,77.57,81.126,74.217,1945-12-18
 Uzbekistan,UZB,europe_central_asia,asia,lower_middle_income,False,False,,2018,447400.0,28400000.0,3.61,25.32,25.43,6.417999999999999,2760.0,33.9,70.5,74.362,68.721,1992-03-02
