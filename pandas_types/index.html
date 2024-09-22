@@ -669,9 +669,10 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="pridani_noveho_radku">Přidání nového řádku
-<a class="header-link" href="#pridani_noveho_radku">#</a>
+<h3 id="pridani_noveho_radku_volitelne">Přidání nového řádku (volitelné)
+<a class="header-link" href="#pridani_noveho_radku_volitelne">#</a>
 </h3>
+<p>🤔 Tohle je něco, co se dělá vlastně dost málo. Obvykle pracujeme na celých sloupcích (nebo slučujeme několik tabulek dohromady), a k přidání nového řádku dojde spíš omylem. Ale pro úplnost uvádíme.</p>
 <p>Když se strojem času vrátíme do dětství (nebo rané dospělosti) autorů těchto materiálů, tedy před rok 2006, kdy se v Praze konal astronomický kongres, který definoval pojem "planeta" (ale ne před rok 1930!), přibude nám nová planeta: Pluto.</p>
 <p>Do naší tabulky ho coby nový řádek vložíme pomocí indexeru <code>loc</code>, který jsme již dříve používali pro "koukání" do tabulky:</p>
 </div>
@@ -818,6 +819,7 @@
 <h3 id="zmena_hodnoty_bunky">Změna hodnoty buňky
 <a class="header-link" href="#zmena_hodnoty_bunky">#</a>
 </h3>
+<p>🤔 I toto se nedělá příliš často...</p>
 <p>"Indexery" <code>.loc</code> a <code>.iloc</code> se dvěma argumenty v hranatých závorkách odkazují přímo na konkrétní buňku, a přiřazením do nich (opět, podobně jako ve slovníku) se hodnota na příslušné místo zapíše. Jen je třeba zachovat pořadí (řádek, sloupec).</p>
 <p>Vrátíme se opět do současnosti a Pluto zbavíme jeho statutu:</p>
 </div>
@@ -973,14 +975,6 @@
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\janpi\AppData\Local\Temp\ipykernel_3960\3691059803.py:3: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value 'True' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
-  planety_bad.loc["Zeme", "planeta"] = True
-</pre>
-</div>
-</div>
 <div class="output_area">
 <div class="prompt output_prompt">Out[9]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
@@ -1145,14 +1139,6 @@
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\janpi\AppData\Local\Temp\ipykernel_3960\3322184877.py:1: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value 'False' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
-  planety.loc["Merkur":"Mars", "je_obr"] = False
-</pre>
-</div>
-</div>
-<div class="output_area">
 <div class="prompt output_prompt">Out[10]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
@@ -1288,17 +1274,12 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="odstraneni_radku">Odstranění řádku
-<a class="header-link" href="#odstraneni_radku">#</a>
+<h3 id="odstraneni_radku_volitelne">Odstranění řádku (volitelné)
+<a class="header-link" href="#odstraneni_radku_volitelne">#</a>
 </h3>
-<p>Pro odebrání sloupce či řádku z DataFrame slouží metoda <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html"><code>drop</code></a>. Její první argument očekává označení (index) jednoho nebo více řádků či sloupců, které chceš odebrat. Argument <code>axis</code> označuje, ve které dimenzi se operace má aplikovat. Můžeš použít buď číslo 0 či 1 (odpovídá pořadí od nuly, ve kterém se uvádějí klíče při odkazování na buňky), anebo pojmenování dané dimenze:</p>
-<p>Osa (axis):</p>
-<ul>
-<li>0 nebo "index" → řádky</li>
-<li>1 nebo "columns" → sloupce</li>
-</ul>
-<p><em>Tento argument používají i četné další metody a funkce, proto se ujisti, že mu rozumíš</em></p>
-<p>Když už jsme se vrátili do budoucnosti (resp. současnosti), vypořádejme se nemilosrdně s Plutem (pro metodu <code>drop</code> je výchozí hodnotou argumentu <code>axis</code> 0, nemusíme ho tedy psát):</p>
+<p>🤔 Obvykle neodstraňujeme řádky podle indexu, ale spíš hromadně na základě nějaké podmínky (viz <a href="#filtrovani">Filtrování</a>), nicméně do základní sady manipulačních nástrojů to patří.</p>
+<p>Pro odebrání sloupce či řádku z DataFrame slouží metoda <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html"><code>drop</code></a>. Ta umí odstraňovat řádky i sloupce, proto bychom jí explicitně měli říct, ve které ose budeme mazat. Jde to buď pomocí argumentu <code>axis</code> (na výběr je 0 či "index", 1 či "columns"), nebo o něco čitelněji pomocí pojmenovaného argumentu <code>index</code>, který rovnou specifikuje, že se chceme zbavit řádků:</p>
+<p>Když už jsme se vrátili do budoucnosti (resp. současnosti), vypořádejme se nemilosrdně s Plutem:</p>
 </div>
 </div>
 </div>
@@ -1307,7 +1288,7 @@
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">planety</span> <span class="o">=</span> <span class="n">planety</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"Pluto"</span><span class="p">)</span>   <span class="c1"># Přidej axis="rows", chceš-li být explicitní</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">planety</span> <span class="o">=</span> <span class="n">planety</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">"Pluto"</span><span class="p">)</span>
 <span class="n">planety</span>
 </pre></div>
 </div>
@@ -1445,7 +1426,7 @@
 <h3 id="odstraneni_sloupce">Odstranění sloupce
 <a class="header-link" href="#odstraneni_sloupce">#</a>
 </h3>
-<p>U sloupce funguje metoda <code>drop</code> velmi podobně, jen tentokrát argument <code>axis</code> uvést musíme.</p>
+<p>U sloupce funguje metoda <code>drop</code> velmi podobně, jen argument se teď jmenuje <code>columns</code>.</p>
 <p>Odstraňme zbytečný sloupec s informační hodnotou na úrovni "stěrače stírají, klakson troubí"...</p>
 </div>
 </div>
@@ -1455,7 +1436,7 @@
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">planety</span> <span class="o">=</span> <span class="n">planety</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"je_planeta"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">"columns"</span><span class="p">)</span>   
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">planety</span> <span class="o">=</span> <span class="n">planety</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">"je_planeta"</span><span class="p">)</span>   
 <span class="n">planety</span>
 </pre></div>
 </div>
@@ -1573,30 +1554,6 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Metoda <code>drop</code>, v souladu s výše zmíněnou konvencí, vrací nový <code>DataFrame</code> (a proto výsledek operace musíme přiřadit do <code>planety</code>). Pokud chceš operovat rovnou na tabulce, můžeš použít příkaz <code>del</code> (funguje stejně jako u slovníku) nebo poprosit pandí bohy (a autory těchto materiálů) o odpuštění a přidat argument <code>inplace=True</code> (tento argument lze, bohužel, použít i u mnoha dalších operací):</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [13]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Jen na vlastní nebezpečí</span>
-
-<span class="c1"># Alternativa 1)</span>
-<span class="c1"># del planety["je_planeta"]</span>
-
-<span class="c1"># Alternativa 2)</span>
-<span class="c1"># planety.drop("je_planeta", axis=1, inplace=True)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="datove_typy">Datové typy
 <a class="header-link" href="#datove_typy">#</a>
 </h2>
@@ -1622,7 +1579,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Místo `set_index` vybereme index rovnou při načítání</span>
@@ -1637,7 +1594,7 @@
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[13]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1972,7 +1929,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">countries</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"Czechia"</span><span class="p">]</span>
@@ -1983,7 +1940,7 @@
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>iso                                             CZE
 world_6region                   europe_central_asia
@@ -2020,7 +1977,7 @@ Name: Czechia, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">countries</span><span class="o">.</span><span class="n">dtypes</span>
@@ -2031,7 +1988,7 @@ Name: Czechia, dtype: object</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>iso                              object
 world_6region                    object
@@ -2070,7 +2027,7 @@ dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>💡 Novější verze <code>pandas</code> umožňují používat pro data tzv. "arrow" backend, který zrychluje a zefektivňuje některé operace. Nicméně je třeba jej explicitně vyžádat a kromě "pouhé" efektivity nepřináší mnoho výhod.</p>
+<p>💡 Novější verze <code>pandas</code> umožňují používat pro data tzv. "arrow" backend, který zrychluje a zefektivňuje některé operace. Nicméně je třeba jej explicitně vyžádat a kromě "pouhé" efektivity nepřináší mnoho výhod. My se tím nebudeme zabývat, ale můžete se podívat na příslušnou část <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/pyarrow.html">dokumentace</a>.</p>
 </div>
 </div>
 </div>
@@ -2106,7 +2063,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [17]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span>
@@ -2117,7 +2074,7 @@ dtype: object</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan    2018
@@ -2139,7 +2096,7 @@ Name: year, Length: 193, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [18]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">12345</span><span class="p">])</span>
@@ -2152,7 +2109,7 @@ Name: year, Length: 193, dtype: int64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0        0
 1      123
@@ -2172,7 +2129,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [19]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">12345</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"int16"</span><span class="p">)</span>
@@ -2183,7 +2140,7 @@ dtype: int64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0        0
 1      123
@@ -2203,7 +2160,7 @@ dtype: int16</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [20]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Toto vyhodí výjimku:</span>
@@ -2218,7 +2175,7 @@ dtype: int16</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[20]:</div>
+<div class="prompt output_prompt">Out[19]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0                                 0
 1                               123
@@ -2260,7 +2217,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [21]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="s2">"bmi_men"</span><span class="p">]</span>
@@ -2271,7 +2228,7 @@ dtype: object</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[20]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan    20.62
@@ -2293,7 +2250,7 @@ Name: bmi_men, Length: 193, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [22]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Docela přesné pí</span>
@@ -2305,7 +2262,7 @@ Name: bmi_men, Length: 193, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[22]:</div>
+<div class="prompt output_prompt">Out[21]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0    3.141593
 dtype: float64</pre>
@@ -2316,7 +2273,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [23]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ne už tak přesné pí</span>
@@ -2328,7 +2285,15 @@ dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\janpi\Documents\code\collaboration\pyladies-kurz\.venv\Lib\site-packages\pandas\io\formats\format.py:1458: RuntimeWarning: overflow encountered in cast
+  has_large_values = (abs_vals &gt; 1e6).any()
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0    3.140625
 dtype: float16</pre>
@@ -2356,7 +2321,7 @@ dtype: float16</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [24]:</div>
+<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="s2">"is_oecd"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
@@ -2367,7 +2332,7 @@ dtype: float16</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[24]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan            False
@@ -2398,7 +2363,7 @@ Name: is_oecd, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [25]:</div>
+<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Vytvoření nového sloupce</span>
@@ -2410,7 +2375,7 @@ Name: is_oecd, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[25]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0     True
 1    False
@@ -2430,7 +2395,7 @@ dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [26]:</div>
+<div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"bool"</span><span class="p">)</span>
@@ -2441,7 +2406,7 @@ dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[26]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0     True
 1    False
@@ -2465,13 +2430,13 @@ dtype: bool</pre>
 <h3 id="retezce_a_obecne_objekty_strings_objects">Řetězce a obecné objekty (strings, objects)
 <a class="header-link" href="#retezce_a_obecne_objekty_strings_objects">#</a>
 </h3>
-<p><em>Aktuální verze knihovny <code>pandas</code> (2.1) má k řetězcům poněkud schizofrenní postoj, respektive je v procesu přechodu od ne úplně šťastného přístupu (obecný datový typ <code>object</code>) k o něco lepšímu (speciální typ <code>string</code>) a ještě lepšímu (typ <code>string[pyarrow]</code>) - v dokumentaci se doporučuje používat přístup druhý, přestože to je zároveň označeno za experimentální. Rozdíl je v současnosti víceméně estetický (a my z pohodlnosti obvykle nebudeme sloupce na <code>string</code> převádět).</em></p>
+<p><em>Aktuální verze knihovny <code>pandas</code> (2.2) má k řetězcům poněkud schizofrenní postoj, respektive je v procesu přechodu od ne úplně šťastného přístupu (obecný datový typ <code>object</code>) k o něco lepšímu (speciální typ <code>string</code>) a ještě lepšímu (typ <code>string[pyarrow]</code>) - v dokumentaci se doporučuje používat přístup druhý, přestože to je zároveň označeno za experimentální. Rozdíl je v současnosti víceméně estetický (a my z pohodlnosti obvykle nebudeme sloupce na <code>string</code> převádět).</em></p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [27]:</div>
+<div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="s2">"iso"</span><span class="p">]</span>
@@ -2482,7 +2447,7 @@ dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[27]:</div>
+<div class="prompt output_prompt">Out[26]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan    AFG
@@ -2518,7 +2483,7 @@ Name: iso, Length: 193, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [28]:</div>
+<div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># countries["iso"].astype("string")</span>
@@ -2536,7 +2501,7 @@ Name: iso, Length: 193, dtype: object</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[28]:</div>
+<div class="prompt output_prompt">Out[27]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0          pes
 1        kočka
@@ -2551,7 +2516,7 @@ dtype: string</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [29]:</div>
+<div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># mazlicci[0] = 42  # Chyba</span>
@@ -2569,7 +2534,7 @@ dtype: string</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [30]:</div>
+<div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"dvě"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>   <span class="c1"># Řetězec a další "smetí"</span>
@@ -2580,7 +2545,7 @@ dtype: string</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[30]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0      1
 1    dvě
@@ -2600,7 +2565,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [31]:</div>
+<div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Objednávky</span>
@@ -2614,7 +2579,7 @@ dtype: object</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[30]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>Eva        [řízek, brambory, cola]
 Evelína         [smažák, hranolky]
@@ -2662,7 +2627,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [32]:</div>
+<div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s2">"un_accession"</span><span class="p">])</span>
@@ -2673,7 +2638,7 @@ dtype: object</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[32]:</div>
+<div class="prompt output_prompt">Out[31]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan   1946-11-19
@@ -2712,7 +2677,7 @@ Name: un_accession, Length: 193, dtype: datetime64[ns]</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [33]:</div>
+<div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="s2">"income_groups"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span>
@@ -2723,7 +2688,7 @@ Name: un_accession, Length: 193, dtype: datetime64[ns]</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[33]:</div>
+<div class="prompt output_prompt">Out[32]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan             low_income
@@ -2763,7 +2728,7 @@ Categories (4, object): ['high_income', 'low_income', 'lower_middle_income', 'up
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [34]:</div>
+<div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Očekávaná doba života ve dnech</span>
@@ -2775,7 +2740,7 @@ Categories (4, object): ['high_income', 'low_income', 'lower_middle_income', 'up
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[34]:</div>
+<div class="prompt output_prompt">Out[33]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan    21421.85
@@ -2797,7 +2762,7 @@ Name: life_expectancy, Length: 193, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [35]:</div>
+<div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Hustota obyvatelstva</span>
@@ -2809,7 +2774,7 @@ Name: life_expectancy, Length: 193, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[35]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan     52.844408
@@ -2831,7 +2796,7 @@ Length: 193, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [36]:</div>
+<div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Jak nám podražily obědy</span>
@@ -2843,7 +2808,7 @@ Length: 193, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[36]:</div>
+<div class="prompt output_prompt">Out[35]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>řízek     129.9
 smažák    109.9
@@ -2862,7 +2827,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [37]:</div>
+<div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Jak dlouho jsou v OSN?</span>
@@ -2875,20 +2840,20 @@ dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[37]:</div>
+<div class="prompt output_prompt">Out[36]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
-Afghanistan   28065 days 23:09:00.968517
-Albania       24753 days 23:09:00.968517
-Algeria       22263 days 23:09:00.968517
-Andorra       11012 days 23:09:00.968517
-Angola        17095 days 23:09:00.968517
+Afghanistan   28431 days 21:11:03.493724
+Albania       25119 days 21:11:03.493724
+Algeria       22629 days 21:11:03.493724
+Andorra       11378 days 21:11:03.493724
+Angola        17461 days 21:11:03.493724
                          ...            
-Venezuela     28434 days 23:09:00.968517
-Vietnam       16802 days 23:09:00.968517
-Yemen         27750 days 23:09:00.968517
-Zambia        21478 days 23:09:00.968517
-Zimbabwe      15732 days 23:09:00.968517
+Venezuela     28800 days 21:11:03.493724
+Vietnam       17168 days 21:11:03.493724
+Yemen         28116 days 21:11:03.493724
+Zambia        21844 days 21:11:03.493724
+Zimbabwe      16098 days 21:11:03.493724
 Name: un_accession, Length: 193, dtype: timedelta64[ns]</pre>
 </div>
 </div>
@@ -2904,7 +2869,7 @@ Name: un_accession, Length: 193, dtype: timedelta64[ns]</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [38]:</div>
+<div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -2915,7 +2880,7 @@ Name: un_accession, Length: 193, dtype: timedelta64[ns]</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[38]:</div>
+<div class="prompt output_prompt">Out[37]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0    NaN
 1   -inf
@@ -2935,7 +2900,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [39]:</div>
+<div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># pd.Series([7, 14, 149], dtype="int8") * 2</span>
@@ -2962,7 +2927,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [40]:</div>
+<div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 15 litrů čistého alkoholu na osobu na rok budeme považovat za hranici nadměrného pití</span>
@@ -2977,7 +2942,7 @@ dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[40]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan    False
@@ -2999,7 +2964,7 @@ Name: alcohol_adults, Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [41]:</div>
+<div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Skoro nikde. A jak jsme na tom u nás?</span>
@@ -3011,9 +2976,9 @@ Name: alcohol_adults, Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[41]:</div>
+<div class="prompt output_prompt">Out[40]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
+<pre>np.True_</pre>
 </div>
 </div>
 </div>
@@ -3021,7 +2986,7 @@ Name: alcohol_adults, Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [42]:</div>
+<div class="prompt input_prompt">In [41]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Jsou muži v jednotlivých zemích tlustší než ženy?</span>
@@ -3033,7 +2998,7 @@ Name: alcohol_adults, Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[42]:</div>
+<div class="prompt output_prompt">Out[41]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan    False
@@ -3062,7 +3027,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [43]:</div>
+<div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Leží země v Africe?</span>
@@ -3074,7 +3039,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[43]:</div>
+<div class="prompt output_prompt">Out[42]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan    False
@@ -3103,7 +3068,7 @@ Name: world_4region, Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [44]:</div>
+<div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Kde se ženy i muži dožívají přes 75 let?</span>
@@ -3115,7 +3080,7 @@ Name: world_4region, Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[44]:</div>
+<div class="prompt output_prompt">Out[43]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Afghanistan    False
@@ -3148,7 +3113,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [45]:</div>
+<div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[</span><span class="s2">"is_eu"</span><span class="p">]]</span>
@@ -3159,7 +3124,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[45]:</div>
+<div class="prompt output_prompt">Out[44]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -3845,29 +3810,6 @@ Length: 193, dtype: bool</pre>
 <td>81.126</td>
 <td>1946-11-19</td>
 </tr>
-<tr>
-<th>United Kingdom</th>
-<td>GBR</td>
-<td>europe_central_asia</td>
-<td>europe</td>
-<td>high_income</td>
-<td>True</td>
-<td>True</td>
-<td>1973-01-01</td>
-<td>2018</td>
-<td>243610.0</td>
-<td>63180000.0</td>
-<td>13.24</td>
-<td>27.39</td>
-<td>26.94</td>
-<td>3.377</td>
-<td>3424.0</td>
-<td>3.5</td>
-<td>81.19</td>
-<td>83.558</td>
-<td>80.127</td>
-<td>1945-10-24</td>
-</tr>
 </tbody>
 </table>
 </div></div>
@@ -3884,7 +3826,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [46]:</div>
+<div class="prompt input_prompt">In [45]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Prťavé země</span>
@@ -3896,7 +3838,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[46]:</div>
+<div class="prompt output_prompt">Out[45]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -4253,7 +4195,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [47]:</div>
+<div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Chudší země EU</span>
@@ -4265,7 +4207,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[47]:</div>
+<div class="prompt output_prompt">Out[46]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -4408,7 +4350,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [48]:</div>
+<div class="prompt input_prompt">In [47]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Které země OECD mají očekávanou dobu dožití méně 78 let?</span>
@@ -4420,7 +4362,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[48]:</div>
+<div class="prompt output_prompt">Out[47]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -4639,7 +4581,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [49]:</div>
+<div class="prompt input_prompt">In [48]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Opravdu veliké země (počet obyvatel nad 100 milionů)</span>
@@ -4651,7 +4593,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[49]:</div>
+<div class="prompt output_prompt">Out[48]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -4978,7 +4920,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [50]:</div>
+<div class="prompt input_prompt">In [49]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># V kterých zemích EU se hodně jí?</span>
@@ -4990,7 +4932,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[50]:</div>
+<div class="prompt output_prompt">Out[49]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -5209,7 +5151,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [51]:</div>
+<div class="prompt input_prompt">In [50]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">planety</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
@@ -5220,7 +5162,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[51]:</div>
+<div class="prompt output_prompt">Out[50]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -5335,7 +5277,7 @@ Length: 193, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [52]:</div>
+<div class="prompt input_prompt">In [51]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 10 zemí s nejmenším počtem obyvatel</span>
@@ -5347,7 +5289,7 @@ Length: 193, dtype: bool</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[52]:</div>
+<div class="prompt output_prompt">Out[51]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Tuvalu                    9888.0
@@ -5375,7 +5317,7 @@ Name: population, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [53]:</div>
+<div class="prompt input_prompt">In [52]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Největších 10 zemí podle rozlohy</span>
@@ -5387,7 +5329,7 @@ Name: population, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[53]:</div>
+<div class="prompt output_prompt">Out[52]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>name
 Russia           17098250.0
@@ -5415,7 +5357,7 @@ Name: area, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [54]:</div>
+<div class="prompt input_prompt">In [53]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 10 zemí s největší spotřebou alkoholu na jednoho obyvatele</span>
@@ -5427,7 +5369,7 @@ Name: area, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[54]:</div>
+<div class="prompt output_prompt">Out[53]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -5738,7 +5680,7 @@ Name: area, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [55]:</div>
+<div class="prompt input_prompt">In [54]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="p">(</span>
@@ -5758,7 +5700,7 @@ Name: area, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[55]:</div>
+<div class="prompt output_prompt">Out[54]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -5819,11 +5761,6 @@ Name: area, dtype: float64</pre>
 </tr>
 <tr>
 <th>Denmark</th>
-<td>1973-01-01</td>
-<td>1945-10-24</td>
-</tr>
-<tr>
-<th>United Kingdom</th>
 <td>1973-01-01</td>
 <td>1945-10-24</td>
 </tr>
@@ -5967,7 +5904,7 @@ Name: area, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [56]:</div>
+<div class="prompt input_prompt">In [55]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">planety</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"planety.csv"</span><span class="p">)</span>
@@ -5978,7 +5915,7 @@ Name: area, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [57]:</div>
+<div class="prompt input_prompt">In [56]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">planety</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">"planety.xlsx"</span><span class="p">)</span>
@@ -5990,7 +5927,7 @@ Name: area, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Excel ani CSV nejsou formáty pro ukládání velikých dat zcela vhodné (jako alternativy se nabízí třeba <a href="https://github.com/wesm/feather">feather</a> nebo <a href="https://en.wikipedia.org/wiki/Apache_Parquet">parquet</a>), pro naše účely (malé soubory, čitelný textový formát) ale budou CSV postačovat.</p>
+<p>Excel ani CSV nejsou formáty pro ukládání velikých dat zcela vhodné (jako alternativy se nabízí třeba <a href="https://en.wikipedia.org/wiki/Apache_Parquet">parquet</a>), pro naše účely (malé soubory, čitelný textový formát) ale budou CSV postačovat.</p>
 </div>
 </div>
 </div>
@@ -6003,7 +5940,7 @@ Name: area, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [58]:</div>
+<div class="prompt input_prompt">In [57]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">planety</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">"planety.html"</span><span class="p">)</span>
@@ -6030,12 +5967,6 @@ Name: area, dtype: float64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A to už je opravdu všechno. 👋</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 </div>
 </div>
 </div>
