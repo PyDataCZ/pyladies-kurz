@@ -35,11 +35,11 @@ plan:
       - lesson: pydata/pandas_types
       - lesson: pydata/visualization_basics
 
-  - title: "Sstatistika jedné proměnné a časové řady"
+  - title: "Statistika jedné proměnné a časové řady"
     slug: eda3
     date: 2024-09-30
     materials:
-    - lesson: pydata/eda-univariate-timeseries
+      - lesson: pydata/eda-univariate-timeseries
 
   - title: "Svátky klidu a konce kurzu"
     slug: konec
