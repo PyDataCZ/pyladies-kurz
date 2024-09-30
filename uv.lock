@@ -2302,7 +2302,7 @@ requires-dist = [
     { name = "ghp-import", specifier = "~=2.1.0" },
     { name = "ipython", specifier = ">=8.4.0" },
     { name = "jinja2", specifier = ">=3.0.0" },
-    { name = "jupyter-book", specifier = ">=1.0.2" },
+    { name = "jupyter-book", extras = ["binder"], specifier = ">=1.0.2" },
     { name = "naucse", specifier = ">=0.5.2" },
     { name = "pygit2", specifier = "==1.13.3" },
 ]

@@ -3,3 +3,11 @@ author: PyLadies a PyData Prague
 # logo: logo.png
 execute:
   execute_notebooks: 'off'
+repository:
+  url: "https://github.com/PyDataCZ/pyladies-kurz"
+  path_to_book: "book"
+  branch: "jupyter-book"
+launch_buttons:
+  notebook_interface: "jupyterlab"  # or "classic"
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
