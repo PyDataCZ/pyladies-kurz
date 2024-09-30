@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 _compiled/
+
+book/_build/

@@ -1,0 +1,5 @@
+title: Datavý kurz PyLadies
+author: PyLadies a PyData Prague
+# logo: logo.png
+execute:
+  execute_notebooks: 'off'
