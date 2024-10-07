@@ -44,7 +44,7 @@ Balíček ZIP se všemi materiály lze vytvořit použitím skriptu:
 uv run cli.py export <id-hodiny>
 ```
 
-## Publikování
+## Publikování na web
 
 1. Aby se vůbec něco nahrálo na web, kurz musí být definován v repozitáři
 https://github.com/pyvec/naucse.python.cz, konkrétně v souboru `courses.yaml`
@@ -53,3 +53,8 @@ https://github.com/pyvec/naucse.python.cz, konkrétně v souboru `courses.yaml`
 jméno větve, do které se mají materiály kompilovat.
 
 3. Potom by mělo stačit mergovat cokoliv do větve `main`, aby se vše automaticky propsalo na web.
+
+4. ⚠️ Nicméně ono se sice vyplodí, co se vyplodit má, ale na web nenahraje. Je potřeba to 
+prošťouchnout pomocí akce v hlavním repozitáři: https://github.com/pyvec/naucse.python.cz/actions/workflows/main.yml . 
+Ta se spustí tlačítkem "Run workflow" vpravo nahoře. Pokud by chyběla práva, @janpipek či @coobas by právo
+mít měli.
