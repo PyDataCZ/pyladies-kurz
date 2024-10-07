@@ -50,7 +50,7 @@ uv run cli.py export <id-hodiny>
 https://github.com/pyvec/naucse.python.cz, konkrétně v souboru `courses.yaml`
 
 2. Soubor `.github/workflows/main.yml` v tomto repozitáři musí definovat odpovídající
-jméno větve, do které se mají materiály kompilovat.
+jméno větve, do které se mají materiály kompilovat (aktuálně tedy `compiled2024`)
 
 3. Potom by mělo stačit mergovat cokoliv do větve `main`, aby se vše automaticky propsalo na web.
 
