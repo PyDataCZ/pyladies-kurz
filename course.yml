@@ -2,33 +2,53 @@ title: Datový kurz PyLadies
 subtitle: Praha - podzim 2024
 time: 18:00–20:00
 default_time:
-  start: '18:00'
-  end: '20:00'
+  start: "18:00"
+  end: "20:00"
 timezone: Europe/Prague
 place: FIT ČVUT
 description: Úvod do získávání, manipulace a analýzy dat, základy strojového učení.
 long_description: |
-    Tady najdeš všechny materiály k pražské verzi datového kurzu
-    PyLadies - budou přibývat postupně, jak budeme procházet kurzem.
+  Tady najdeš všechny materiály k pražské verzi datového kurzu
+  PyLadies - budou přibývat postupně, jak budeme procházet kurzem.
 
-    [PyData]: http://pydata.cz/
+  [PyData]: http://pydata.cz/
 
-    [PyLadies]: http://pyladies.cz/
+  [PyLadies]: http://pyladies.cz/
 vars:
   user-gender: f
   pyladies: true
   coach-present: true
 
 plan:
-- title: "Představení, Jupyter notebook, základy pandas"
-  slug: eda1
-  date: 2024-09-16
-  materials:
-  - lesson: pydata/install
-  - lesson: pydata/notebook
-  - lesson: pydata/pandas_core
+  - title: "Představení, Jupyter notebook, základy pandas"
+    slug: eda1
+    date: 2024-09-16
+    materials:
+      - lesson: pydata/install
+      - lesson: pydata/notebook
+      - lesson: pydata/pandas_core
 
-- title: "Svátky klidu a konce kurzu"
-  slug: konec
-  serial: null
-  date: 2024-12-24
+  - title: "Datové typy a základy vizualizace v pandas"
+    slug: eda2
+    date: 2024-09-23
+    materials:
+      - lesson: pydata/pandas_types
+      - lesson: pydata/visualization_basics
+
+  - title: "Statistika jedné proměnné a časové řady"
+    slug: eda3
+    date: 2024-09-30
+    materials:
+      - lesson: pydata/eda-univariate-timeseries
+
+  - title: "Explorativní datová analýza a více zdrojů / proměnných"
+    slug: eda4
+    date: 2024-10-07
+    materials:
+    - lesson: pydata/pandas_joins
+    - lesson: pydata/pandas_correlations
+
+  - title: "Svátky klidu a konce kurzu"
+    slug: konec
+    serial: null
+    date: 2024-12-24
