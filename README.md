@@ -34,7 +34,8 @@ uv run python -m naucse serve
   * Buď adresu navštiv v prohlížeči a doklikej se na kurz, nebo
   * na konec adresy přidej `/course/local/` a navštiv kurz přímo.
 
-Poznámka: ve windows mi to nefunguje :-(
+Poznámka @janpipek: ve windows ani linuxu mi to nefunguje :-( Ale tím asi netřeba se 
+trápit.
 
 ## Publikování jedné hodiny
 
@@ -43,6 +44,8 @@ Balíček ZIP se všemi materiály lze vytvořit použitím skriptu:
 ```shell
 uv run cli.py export <id-hodiny>
 ```
+
+Ten se posílá účastnicím přes slack těsně před hodinou.
 
 ## Publikování na web
 
@@ -58,3 +61,10 @@ jméno větve, do které se mají materiály kompilovat (aktuálně tedy `compil
 prošťouchnout pomocí akce v hlavním repozitáři: https://github.com/pyvec/naucse.python.cz/actions/workflows/main.yml . 
 Ta se spustí tlačítkem "Run workflow" vpravo nahoře. Pokud by chyběla práva, @janpipek či @coobas by právo
 mít měli.
+
+Do několika minut je hotovo 🎉
+
+## Možné problémy
+
+- naucse nemá rádo javascript ve stránkách, předvším pak plotly výstup. Ten koliduje s šablonovacím systémem
+a stránka se prostě nerenderuje. Je potřeba z notebooků toto odstranit. 
