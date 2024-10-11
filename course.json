@@ -452,6 +452,73 @@
                 },
                 "title": "Pandas - vztahy mezi více proměnnými"
             },
+            "pydata/pandas_groupby": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyDataCZ napsali Jakub Urban a Ondřej Kokeš, 2020."
+                        ],
+                        "content": {
+                            "path": "pandas_groupby/index.html"
+                        },
+                        "ids": [
+                            "agregace_nad_nesloupci",
+                            "analyza_dat_po_skupinach",
+                            "binning",
+                            "co_je_ten_codedataframegroupby_objectcode",
+                            "dalsi_agregacni_funkce",
+                            "eda_5_pokrocilejsi_manipulace_a_agregace",
+                            "inverzni_kontigencni_tabulky",
+                            "kontingencni_tabulky",
+                            "krok_1_split",
+                            "krok_2__3_apply__combine",
+                            "str_a_dt_metody",
+                            "transformace_sloupcu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#agregace_nad_nesloupci",
+                            "#analyza_dat_po_skupinach",
+                            "#binning",
+                            "#co_je_ten_codedataframegroupby_objectcode",
+                            "#dalsi_agregacni_funkce",
+                            "#eda_5_pokrocilejsi_manipulace_a_agregace",
+                            "#inverzni_kontigencni_tabulky",
+                            "#kontingencni_tabulky",
+                            "#krok_1_split",
+                            "#krok_2__3_apply__combine",
+                            "#str_a_dt_metody",
+                            "#transformace_sloupcu",
+                            "data:image/png;base64,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YIE6d+6s1q1bKzU1VQcOHAhjxeHRo0ePRudVRESEsrKyJHFenam+vl7z589Xz5491bp1a1177bVasmSJ33e7cF595fjx45oxY4a6d++u1q1b66abbtKuXbt8663ulWmGXn/9dbNp0ybz0UcfmbKyMvPggw+amJgYs2/fPmOMMT//+c9Nt27dTFFRkdm9e7dJSUkxN910U5irDr+dO3eaHj16mP79+5vp06f7xunXVxYuXGhuvPFGc+TIEd+fzz//3LeeXn3l6NGjpnv37ubuu+82O3bsMJ988onJz883H3/8sW/O8uXLTfv27c369evNe++9Z77//e+bnj17mi+//DKMlV9+VVVVfudUYWGhkWT+9re/GWM4r860dOlSEx8fbzZu3GgOHjxo1q1bZ9q2bWueeOIJ3xzOq6/88Ic/NMnJyaa4uNgcOHDALFy40DidTvOvf/3LGGN3r5plQDmXq666yvzxj3801dXVJiYmxqxbt8637sMPPzSSTElJSRgrDK/jx4+b66+/3hQWFprvfve7voBCv/wtXLjQDBgw4Jzr6JW/2bNnm1tuueW8671er0lMTDSPPPKIb6y6uto4HA7zwgsvXI4SrTV9+nRz7bXXGq/Xy3l1loyMDDN58mS/sbFjx5qJEycaYzivzlRbW2uioqLMxo0b/cYHDx5sHnroIet71Sxf4jlTfX29XnzxRZ08eVIul0ulpaXyeDxKTU31zendu7eSkpJUUlISxkrDKysrSxkZGX59kUS/zuHAgQPq0qWLevXqpYkTJ6q8vFwSvTrb66+/rqFDh+oHP/iBOnXqpEGDBumZZ57xrT948KAqKir8+tW+fXsNHz68RfarQV1dnZ577jlNnjxZERERnFdnuemmm1RUVKSPPvpIkvTee+/pnXfe0ejRoyVxXp3p9OnTqq+vV6tWrfzGW7durXfeecf6Xl0R32bcFHv37pXL5dKpU6fUtm1bvfrqq0pOTtaePXsUGxvb6MsGExISVFFREZ5iw+zFF1/Uu+++6/e6ZIOKigr6dYbhw4dr7dq1uuGGG3TkyBEtWrRI3/72t7Vv3z56dZZPPvlEK1euVHZ2th588EHt2rVLv/zlLxUbG6vMzExfT87+9OiW2q8G69evV3V1te6++25J/Ayebc6cOaqpqVHv3r0VFRWl+vp6LV26VBMnTpQkzqsztGvXTi6XS0uWLFGfPn2UkJCgF154QSUlJbruuuus71WzDSg33HCD9uzZo2PHjumVV15RZmamiouLw12WdQ4dOqTp06ersLCwUcpGYw3/S5Ok/v37a/jw4erevbtefvlltW7dOoyV2cfr9Wro0KH69a9/LUkaNGiQ9u3bp1WrVikzMzPM1dlr9erVGj16dEBfR98Svfzyy3r++eeVl5enG2+8UXv27NGMGTPUpUsXzqtz+Mtf/qLJkyfrmmuuUVRUlAYPHqwf/ehHKi0tDXdpX6vZvsQTGxur6667TkOGDNGyZcs0YMAAPfHEE0pMTFRdXZ2qq6v95ldWVioxMTE8xYZRaWmpqqqqNHjwYEVHRys6OlrFxcV68sknFR0drYSEBPp1AR06dNA3v/lNffzxx5xbZ+ncubOSk5P9xvr06eN7SayhJ2ffjdJS+yVJn332md5880397Gc/841xXvmbNWuW5syZowkTJqhfv36aNGmSZs6cqWXLlknivDrbtddeq+LiYp04cUKHDh3Szp075fF41KtXL+t71WwDytm8Xq/cbreGDBmimJgYFRUV+daVlZWpvLxcLpcrjBWGx8iRI7V3717t2bPH92fo0KGaOHGi79/06/xOnDihf/7zn+rcuTPn1lluvvlmlZWV+Y199NFH6t69uySpZ8+eSkxM9OtXTU2NduzY0SL7JUlr1qxRp06dlJGR4RvjvPJXW1uryEj/X11RUVHyer2SOK/Op02bNurcubP++9//Kj8/X2PGjLG/V+F+l+6lMGfOHFNcXGwOHjxo3n//fTNnzhwTERFhCgoKjDH/u2UvKSnJvPXWW2b37t3G5XIZl8sV5qrtceZdPMbQrzP96le/Mm+//bY5ePCg+fvf/25SU1PN1Vdfbaqqqowx9OpMO3fuNNHR0Wbp0qXmwIED5vnnnzdxcXHmueee881Zvny56dChg3nttdfM+++/b8aMGWPNLY6XW319vUlKSjKzZ89utI7z6iuZmZnmmmuu8d1m/Ne//tVcffXV5oEHHvDN4bz6ypYtW8wbb7xhPvnkE1NQUGAGDBhghg8fburq6owxdveqWQaUyZMnm+7du5vY2FjzjW98w4wcOdIXTowx5ssvvzS/+MUvzFVXXWXi4uLMXXfdZY4cORLGiu1ydkChX18ZP3686dy5s4mNjTXXXHONGT9+vN/netArfxs2bDB9+/Y1DofD9O7d2/zhD3/wW+/1es38+fNNQkKCcTgcZuTIkaasrCxM1YZXfn6+kXTO4+e8+kpNTY2ZPn26SUpKMq1atTK9evUyDz30kHG73b45nFdfeemll0yvXr1MbGysSUxMNFlZWaa6utq33uZeRRhzxsfvAQAAWKDFvAcFAABcOQgoAADAOgQUAABgHQIKAACwDgEFAABYh4ACAACsQ0ABAADWIaAAAADrEFAAAIB1CCgAAMA6BBQAAGAdAgoAALDO/wdhV1IPS60JWgAAAABJRU5ErkJggg==",
+                            "https://naucse.python.cz/2020/pydata-praha-jaro/pydata/eda-univariate-timeseries/",
+                            "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html?highlight=groupby#pandas.DataFrame.groupby",
+                            "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.MultiIndex.html",
+                            "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.html",
+                            "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.crosstab.html",
+                            "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.cut.html",
+                            "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html",
+                            "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html",
+                            "https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html",
+                            "https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html",
+                            "https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods",
+                            "https://volby.cz/opendata/senat_vse/SENATregPopis.pdf",
+                            "https://volby.cz/opendata/senat_vse/senat_vse_opendata.htm"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/pydata/pandas_groupby/index.ipynb",
+                        "title": "Pandas - práce s indexy a analýza dat po skupinách",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true,
+                            "user-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/pydata/pandas_groupby/info.yml",
+                "static_files": {},
+                "title": "Pandas - práce s indexy a analýza dat po skupinách"
+            },
             "pydata/pandas_joins": {
                 "pages": {
                     "index": {
@@ -757,6 +824,20 @@
                 "slug": "eda4",
                 "source_file": "course.yml",
                 "title": "Explorativní datová analýza a více zdrojů / proměnných"
+            },
+            {
+                "date": "2024-10-14",
+                "materials": [
+                    {
+                        "lesson_slug": "pydata/pandas_groupby",
+                        "title": "Pandas - práce s indexy a analýza dat po skupinách",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "5",
+                "slug": "eda5",
+                "source_file": "course.yml",
+                "title": "Explorativní datová analýza - agregace a transformace"
             },
             {
                 "date": "2024-12-24",
