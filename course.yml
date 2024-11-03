@@ -54,6 +54,15 @@ plan:
     materials:
     - lesson: pydata/pandas_groupby
 
+  - title: "Strojové učení - úvod, regrese"
+    slug: ml1
+    date: 2024-11-04
+    materials:
+    - lesson: pydata/intro_regression
+    - lesson: pydata/regression_metrics
+    - lesson: pydata/regression_exercises
+    - lesson: pydata/regression_resume
+
   - title: "Svátky klidu a konce kurzu"
     slug: konec
     serial: null
