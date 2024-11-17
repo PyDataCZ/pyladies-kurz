@@ -70,6 +70,14 @@ plan:
     - lesson: pydata/scikitlearn_api
     - lesson: pydata/homework_revisited
     - lesson: pydata/scikitlearn_resume
+    
+  - title: "Strojové učení - klasifikační úlohy"
+    slug: ml3
+    date: 2024-11-18
+    materials:
+    - lesson: pydata/intro_classification
+    - lesson: pydata/classification_metrics
+    - lesson: pydata/classification_resume
 
   - title: "Svátky klidu a konce kurzu"
     slug: konec
