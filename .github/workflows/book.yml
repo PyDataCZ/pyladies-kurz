@@ -50,7 +50,7 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        uv run jupyter-book build book/
+        uv run --directory book jupyter-book build --html
 
     # Upload the book's HTML as an artifact
     - name: Upload artifact
