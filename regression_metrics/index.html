@@ -51,8 +51,8 @@ odezvám přičteme náhodné číslo z intervalu (-10, 10).</p>
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"správně"</span><span class="p">:</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]})</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"predikováno"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"správně"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">predikovano</span><span class="p">:</span> <span class="n">predikovano</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -157,7 +157,7 @@ odezvám přičteme náhodné číslo z intervalu (-10, 10).</p>
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spocti_metriky</span><span class="p">(</span><span class="n">skutecna_odezva</span><span class="p">,</span> <span class="n">predikovano</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">spocti_metriky</span><span class="p">(</span><span class="n">skutecna_odezva</span><span class="p">,</span> <span class="n">predikovano</span><span class="p">):</span>
     <span class="n">chyby</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
     <span class="n">chyby</span><span class="p">[</span><span class="s2">"absolutní_chyba"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">skutecna_odezva</span> <span class="o">-</span> <span class="n">predikovano</span><span class="p">)</span>
     <span class="n">chyby</span><span class="p">[</span><span class="s2">"chyba_na_druhou"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">skutecna_odezva</span> <span class="o">-</span> <span class="n">predikovano</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
