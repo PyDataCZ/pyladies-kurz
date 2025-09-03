@@ -5,6 +5,7 @@ on:
   push:
     branches:
     - main
+    - book-downloads
     # If your git repository has the Jupyter Book within some-subfolder next to
     # unrelated files, you can make this run only if a file within that specific
     # folder has been modified.
@@ -56,6 +57,11 @@ jobs:
     - name: Build the book
       run: |
         uv run --directory book jupyter-book build --html
+
+    # Generate chapter downloads directly to the built site
+    - name: Generate chapter downloads
+      run: |
+        uv run python cli.py export-all-chapters --output-dir book/_build/html/_downloads
 
     # Upload the book's HTML as an artifact
     - name: Upload artifact

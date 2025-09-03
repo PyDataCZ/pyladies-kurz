@@ -12,6 +12,7 @@ project:
       ref: jupyter-book
   toc:
     - file: intro.md
+    - file: downloads.md
     - title: Představení, Jupyter notebook, základy pandas
       children:
         - file: pydata/install/index.md
@@ -56,4 +57,21 @@ project:
 site:
   options:
     folders: true
+    source_buttons:
+      repository:
+        provider: github
+        url: https://github.com/PyDataCZ/pyladies-kurz
+    logo_text: Datový kurz PyLadies
+    navbar_persistent: ["search-button"]
+    navbar_end: ["navbar-icon-links"]
+    footer_start: ["copyright"]
+    footer_end: ["sphinx-version"]
+    html_extra_head: |
+      <script defer src="/_static/downloads.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   template: book-theme
+  static_folders: [_static, _downloads]
+  actions:
+    - title: Download Chapter
+      url: "#"
+      icon: download
