@@ -1,0 +1,59 @@
+version: 1
+project:
+  title: Datavý kurz PyLadies
+  authors:
+    - name: PyLadies a PyData Prague
+  github: PyDataCZ/pyladies-kurz
+  thebe:
+    binder:
+      repo: PyDataCZ/pyladies-kurz
+      provider: github
+      url: https://mybinder.org
+      ref: jupyter-book
+  toc:
+    - file: intro.md
+    - title: Představení, Jupyter notebook, základy pandas
+      children:
+        - file: pydata/install/index.md
+        - file: pydata/notebook/index.md
+        - file: pydata/pandas_core/index.ipynb
+    - title: Datové typy a základy vizualizace v pandas
+      children:
+        - file: pydata/pandas_types/index.ipynb
+        - file: pydata/visualization_basics/index.ipynb
+    - title: Statistika jedné proměnné a časové řady
+      children:
+        - file: pydata/eda-univariate-timeseries/index.ipynb
+    - title: Explorativní datová analýza a více zdrojů / proměnných
+      children:
+        - file: pydata/pandas_joins/index.ipynb
+        - file: pydata/pandas_correlations/index.ipynb
+    - title: Explorativní datová analýza - agregace a transformace
+      children:
+        - file: pydata/pandas_groupby/index.ipynb
+    - title: Strojové učení - úvod, regrese
+      children:
+        - file: pydata/intro_regression/index.ipynb
+        - file: pydata/regression_metrics/index.ipynb
+        - file: pydata/regression_exercises/index.ipynb
+        - file: pydata/regression_resume/index.ipynb
+    - title: Strojové učení - Scikit-learn, ML workflow
+      children:
+        - file: pydata/scikitlearn_api/index.ipynb
+        - file: pydata/homework_revisited/index.ipynb
+        - file: pydata/scikitlearn_resume/index.md
+    - title: Strojové učení - klasifikační úlohy
+      children:
+        - file: pydata/intro_classification/index.ipynb
+        - file: pydata/classification_metrics/index.ipynb
+        - file: pydata/classification_resume/index.md
+    - title: Analýza hlavních komponent (PCA)
+      children:
+        - file: pydata/pca/index.ipynb
+    - title: Interaktivní vizualizace a aplikace
+      children:
+        - file: pydata/dashboards/index.ipynb
+site:
+  options:
+    folders: true
+  template: book-theme

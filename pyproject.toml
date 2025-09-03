@@ -12,7 +12,7 @@ dependencies = [
     "Jinja2>=3.0.0",
     "ipython>=8.4.0",
     "ghp-import~=2.1.0",
-    "pygit2==1.13.3"  # V novějších verzích AttributeError
+    "jupyter-book>=2.0.0b3",
 ]
 
 [tool.uv.workspace]
