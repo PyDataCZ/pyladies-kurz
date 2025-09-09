@@ -3,45 +3,50 @@
 </h1>
 <p>Instalace všeho potřebného není složitá a zabere jen chvíli. Pokud se během ní
 přeci jen něco pokazí, popros na Slacku nebo někoho zkušenějšího o radu.</p>
-<p>Další kroky počítají s tím, že máš nainstalovaný a funkční Python 3.10-3.12.
-Pokud ne, jedna z následujících tří alternativních cest by tě do takové situace měla snadno dovést:</p>
+<p>Pokud již máš na svém počítači nainstalovaný aktuální Python (3.11 a vyšší)
+a rozumíš si s virtuálními prostředími, můžeš samozřejmě používat ten. Nicméně silně
+doporučujeme používat nástroj <code>uv</code>.</p>
+<p><a href="https://docs.astral.sh/uv/"><code>uv</code></a> je mocný nástroj, který toho umí víc:</p>
 <ul>
-<li><p>Obecný návod na instalaci máme k dispozici <a href="https://naucse.python.cz/course/pyladies/sessions/install/">v začátečnickém kurzu</a>. Až budeš vybírat instalátor, sáhni po tom s nejnovější verzí (v okamžiku začátku kurzu 3.12.6), ideálně v 64bitové verzi. Toto je náš preferovaný způsob.</p>
-</li>
-<li><p>Máš-li aktualizované Windows 10/11, úplně nejjednodušší je použít instalaci z <a href="https://apps.microsoft.com/detail/9ncvdn91xzqp">Microsoft Store</a>. Toto místo ti otevře i příkaz <code>python</code> v příkazové řádce, pokud žádnou jinou instalaci Pythonu ještě nemáš. Nicméně můžeš čekat zádrhele, když začneš instalovat další nástroje Pythonu, které v kurzu nepoužíváme.</p>
-</li>
-<li><p>Na MacOS, kromě Homebrew zmiňovaného v návodu začátečnickém kurzu výše, je také jednoduché použít oficiální instalátor z <a href="https://www.python.org/downloads/macos/">python.org</a>. V současnosti je poslední verze 3.12.6 ke stažení <a href="https://www.python.org/ftp/python/3.12.6/python-3.12.6-macos11.pkg">zde</a>.</p>
-</li>
-<li><p>Můžeš použít distribuci <a href="https://github.com/mamba-org/mamba">Mamba</a>, která řeší kromě Pythonu samotného i případné další (binární) závislosti a je tak v podstatě nejrobustnějším řešením napříč operačními systémy. Lidé z oblasti data science (včetně některých autorů těchto materiálů) ji rádi používají - sice se tak připravují o práci s &quot;čistým&quot; Pythonem, ale zjednodušují si instalaci některých (zejména výpočetních) knihoven, které závisejí na externích binárních balíčcích. Instalace je jednoduchá, viz <a href="https://mamba.readthedocs.io/en/latest/mamba-installation.html">dockumentace</a>. Na vytváření virtuálních prostředí a instalace balíčků pak slouží příkaz <code>mamba</code>, viz <a href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">dokumentace</a>.</p>
-</li>
+<li>spravuje instalované verze Pythonu (aniž by zasahoval do systému)</li>
+<li>spravuje virtuální prostředí pro různé projekty (aniž by je bylo třeba explicitně vytvářet)</li>
+<li>umožňuje snadno instalovat a spouštět různé nástroje postavené na Pythonu</li>
+<li>pomáhá s vytvářením balíčků a jejich závislostí</li>
 </ul>
-<h2 id="adresar_vytvoreni_a_aktivace_virtualniho_prostredi">Adresář, vytvoření a aktivace virtuálního prostředí
-<a href="#adresar_vytvoreni_a_aktivace_virtualniho_prostredi" class="header-link">#</a>
+<p>Pojďme ho tedy nainstalovat.</p>
+<h2 id="instalace_uv">Instalace uv
+<a href="#instalace_uv" class="header-link">#</a>
 </h2>
-<p>Nejprve si připrav adresář pro ukládání souborů (třeba <code>pydata</code>) a v něm si vytvoř
-virtuální prostředí.</p>
-<p>Pokud nevíš jak na to, kompletní návod je stejně jako pro instalaci Pythonu k dispozici
-v <a href="https://naucse.python.cz/2019/pyladies-ostrava-podzim/beginners/venv-setup/">materiálech pro začátečnický kurz</a>.</p>
-<p>Po každém spuštění příkazové řádky bude potřeba aktivovat virtuální prostředí, abychom
-mohli pracovat s knihovnami a nástroji v něm nainstalovanými.</p>
-<h2 id="instalace_knihoven">Instalace knihoven
-<a href="#instalace_knihoven" class="header-link">#</a>
+<p>Celý proces je popsaný na stránce https://docs.astral.sh/uv/getting-started/installation/ -
+liší se podle tvého operačního systému. Každopádně vždy probihá v příkazovém řádku.</p>
+<h3 id="windows">Windows
+<a href="#windows" class="header-link">#</a>
+</h3>
+<p>Kdekoliv v příkazové řádce (či PowerShell okně) spusť následující:</p>
+<div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">&quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</span>
+</pre></div><p>To by mělo nástroj stáhnout z internetu a nainstalovat - přitom se vypíše cca toto:</p>
+<div class="highlight"><pre><span></span>Downloading uv 0.8.15 (x86_64-pc-windows-msvc)
+Installing to C:\Users\janpi\.local\bin
+  uv.exe
+  uvx.exe
+  uvw.exe
+everything&#39;s installed!
+</pre></div><h3 id="macos_ci_linux">MacOS či Linux
+<a href="#macos_ci_linux" class="header-link">#</a>
+</h3>
+<p>Tady bude nejlepší v příkazové řádce spustit</p>
+<div class="highlight"><pre><span></span>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</pre></div><p>To by mělo nástroj stáhnout z internetu a nainstalovat.</p>
+<h2 id="overeni">Ověření
+<a href="#overeni" class="header-link">#</a>
 </h2>
-<p>Do příkazové řádky s aktivním virtuálním prostředím zadej následující příkaz:</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>requests<span class="w"> </span>seaborn<span class="w"> </span>scipy<span class="w"> </span>scikit-learn<span class="w"> </span>sqlalchemy<span class="w"> </span>plotly<span class="w"> </span>xlrd<span class="w"> </span>openpyxl
-</pre></div><p>Tímto příkazem se do virtuálního prostředí nainstalovaly následující knihovny (a některé další jejich závislosti):</p>
-<ul>
-<li>Jupyter - webové rozhraní pro interaktivní a reprodukovatelnou práci s Pythonem</li>
-<li>Matplotlib - jedna z nejznámějších knihoven pro tvorbu grafů</li>
-<li>Openpyxl - knihovna pro načítání a zápis souborů .xlsx</li>
-<li>Pandas - pro práci s tabulkovými daty</li>
-<li>Plotly - knihovna pro vytváření interaktivních grafů</li>
-<li>Requests - knihovna pro práci s HTTP (webovými a API) požadavky</li>
-<li>Scikit-learn - sbírka nejznámějších algoritmů pro strojové učení</li>
-<li>SciPy - švýcarský nůž pro vědecké výpočty a pokročilou matematiku</li>
-<li>Seaborn - rozšíření pro Matplotlib, které umí vytvořit pokročilejší grafy</li>
-<li>Sqlalchemy - knihovna pro sjednocený, vysokoúrovňový přístup k databázím</li>
-<li>Xlrd - knihovna pro načítání souborů .xls/.xlsx</li>
-</ul>
+<p>Zkus v příkazové řádce pustit toto:</p>
+<div class="highlight"><pre><code>uv run --python 3.13 python -c &quot;print('Ahoj Pyladies')&quot;
+</code></pre></div><p>Při prvním spuštění nejspíš uvidíš, jak se stahuje a instaluje správná verze Pythonu,
+při druhém spuštění vše proběhne jako blesk. V každém případě by tě měl program slušně
+pozdravit.</p>
+<h2 id="pomoc">Pomoc!
+<a href="#pomoc" class="header-link">#</a>
+</h2>
 <p>Pokud kterýkoliv z kroků selže, nebo si jen nebudeš vědět rady, zeptej se na Slacku v kanále <code>#poradna</code>, ideálně ještě před zahájením kurzu.</p>
 <p>V následující kapitole se podíváme na to, jak Jupyter spustit a jak s ním pracovat.</p>
