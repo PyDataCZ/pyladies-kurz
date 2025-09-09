@@ -15,17 +15,16 @@ s vizualizacemi a výsledky, připravit si prezentaci či datovou analýzu atp
 
 ## Spuštění
 
-Po úspěšné instalaci lze Jupyter Notebook spustit v aktivním virtuálním prostředí
-jednoduchým příkazem:
+Po úspěšné instalaci lze Jupyter Notebook spustit jednoduchým příkazem:
 
 ```shell
-(venv)$ jupyter notebook
+uv run jupyter notebook
 ```
 
 Pokud ti tento příkaz nefunguje, vyzkoušej následující:
 
 ```shell
-(venv)$ python -m notebook
+uv run python -m notebook
 ```
 
 Po spuštění Notebooku se automaticky spustí i webový prohlížeč, ve kterém se
