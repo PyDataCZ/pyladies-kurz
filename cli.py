@@ -42,15 +42,21 @@ def export(slug: str) -> None:
     ]
     with zipfile.ZipFile(f"{slug}.zip", "w") as zip:
         for dir in dirs:
-            for file in dir.glob("**/*"):
-                click.echo(f"  {file}")
+            for file in dir.glob("**/*"):                
                 if not file.is_file():
                     continue
+                if file.name == "info.yml":
+                    continue
+                if "checkpoint" in file.stem:
+                    continue
+                click.echo(f"  {file}")
                 if file.suffix == ".ipynb":
                     content = clear_notebook(file)
                     zip.writestr(str(file.relative_to(dir.parent)), content)
                 else:
                     zip.write(file, arcname=file.relative_to(dir.parent))
+        click.echo("  lessons/pyproject.toml")
+        zip.write("lessons/pyproject.toml", arcname="pyproject.toml")
 
 
 if __name__ == "__main__":
