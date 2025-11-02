@@ -16,7 +16,7 @@
   + [xgboost](https://xgboost.readthedocs.io/en/stable/) - často model první volby pro tabulková data
   + [TabPFN](https://github.com/PriorLabs/TabPFN) - pokud chcete jít s dobou, ale pozor i pro maličko větší data  budete potřebovat výkonější počítač
 
-- Pokud Vás zajímají neuronové sítě nebo moderní jazykové modely, může zkusit videa od [Andrej Karpathy](https://karpathy.ai/), jsou k nalezení na [youtube](https://www.youtube.com/@AndrejKarpathy).
+- Pokud Vás zajímají neuronové sítě nebo moderní jazykové modely, může zkusit videa od [Andrej Karpathy](https://karpathy.ai/), jsou k nalezení na [youtube](https://www.youtube.com/@AndrejKarpathy). Další výborné video kurzy má [Sebastian Raschka](https://sebastianraschka.com/teaching/), jeho kniha [Machine Learning Q and AI](https://sebastianraschka.com/books/ml-q-and-ai/#table-of-contents) je dostupná volně online. 
 - Pokud byste pokukovali po kurzech na Coursera, hledejte jméno lektora **Andrew Ng**.
 - Spoustu zajímavého lze najít na [deeplearning.ai](https://www.deeplearning.ai/courses/).
 
