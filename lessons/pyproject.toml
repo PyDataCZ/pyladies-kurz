@@ -18,5 +18,6 @@ dependencies = [
     "scipy>=1.13.1",
     "seaborn>=0.13.2",
     "sqlalchemy>=2.0.35",
+    "tqdm>=4.67.1",
     "xlrd>=2.0.1",
 ]
