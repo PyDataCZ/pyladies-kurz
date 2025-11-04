@@ -46,6 +46,7 @@ project:
       children:
         - file: pydata/intro_classification/index.ipynb
         - file: pydata/classification_metrics/index.ipynb
+        - file: pydata/classification_bonus/index.ipynb
         - file: pydata/classification_resume/index.md
     - title: Analýza hlavních komponent (PCA)
       children:
