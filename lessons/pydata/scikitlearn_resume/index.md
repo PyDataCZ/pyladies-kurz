@@ -1,4 +1,4 @@
-# Strojové učení - Scikit-learn, klasifikace 
+# Scikit-learn - resume
 
 
 ### Co bych měla po této hodině znát?

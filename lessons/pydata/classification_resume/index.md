@@ -1,4 +1,4 @@
-# Strojové učení -  klasifikace 
+# Klasifikace - resume
 
 
 ### Co bych měla po této hodině znát?
