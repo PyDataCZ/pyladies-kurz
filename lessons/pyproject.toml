@@ -3,11 +3,19 @@ name = "lessons"
 version = "0.1.0"
 description = "PyLadies kurz"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = [
-    "jupyter>=1.1.1",
+    "ipykernel",
+    "ipywidgets",
+    "jupyter-ai>=3.1.1",
+    "jupyter-console",
+    "jupyterlab",
+    "marimo-jupyter-extension>=0.3.0",
+    "marimo[sandbox]>=0.23.14",
     "matplotlib>=3.9.2",
     "meteostat>=1.7.4",
+    "nbconvert",
+    "notebook",
     "numpy>=2.0.2",
     "openpyxl>=3.1.5",
     "pandas>=2.2.3",
