@@ -1,0 +1,63 @@
+version: 1
+project:
+  title: Datavý kurz PyLadies
+  authors:
+    - name: PyLadies a PyData Prague
+  github: PyDataCZ/pyladies-kurz
+  settings:
+    output_matplotlib_strings: remove
+  thebe:
+    binder:
+      repo: PyDataCZ/pyladies-kurz
+      provider: github
+      url: https://mybinder.org
+      ref: main
+  toc:
+    - file: book/introduction.md
+    - title: Představení, Jupyter notebook, základy pandas
+      children:
+        - file: lessons/installation/installation.md
+        - file: lessons/jupyter-notebook/jupyter-notebook.md
+        - file: lessons/pandas-core/pandas-core.ipynb
+    - title: Datové typy a základy vizualizace v pandas
+      children:
+        - file: lessons/pandas-data-types/pandas-data-types.ipynb
+        - file: lessons/visualization-basics/visualization-basics.ipynb
+    - title: Statistika jedné proměnné a časové řady
+      children:
+        - file: lessons/univariate-and-time-series-analysis/univariate-and-time-series-analysis.ipynb
+    - title: Explorativní datová analýza a více zdrojů / proměnných
+      children:
+        - file: lessons/pandas-joins/pandas-joins.ipynb
+        - file: lessons/pandas-correlations/pandas-correlations.ipynb
+    - title: Explorativní datová analýza - agregace a transformace
+      children:
+        - file: lessons/pandas-groupby/pandas-groupby.ipynb
+    - title: Strojové učení - úvod, regrese
+      children:
+        - file: lessons/regression-introduction/regression-introduction.ipynb
+        - file: lessons/regression-metrics/regression-metrics.ipynb
+        - file: lessons/regression-exercises/regression-exercises.ipynb
+        - file: lessons/regression-summary/regression-summary.ipynb
+    - title: Strojové učení - Scikit-learn, ML workflow
+      children:
+        - file: lessons/scikit-learn-api/scikit-learn-api.ipynb
+        - file: lessons/homework-revisited/homework-revisited.ipynb
+        - file: lessons/scikit-learn-summary/scikit-learn-summary.md
+    - title: Strojové učení - klasifikační úlohy
+      children:
+        - file: lessons/classification-introduction/classification-introduction.ipynb
+        - file: lessons/classification-metrics/classification-metrics.ipynb
+        - file: lessons/classification-bonus/classification-bonus.ipynb
+        - file: lessons/classification-summary/classification-summary.md
+    - title: Analýza hlavních komponent (PCA)
+      children:
+        - file: lessons/principal-component-analysis/principal-component-analysis.ipynb
+    - title: Interaktivní vizualizace a aplikace
+      children:
+        - file: lessons/dashboards/dashboards.ipynb
+    - file: book/credits.md
+site:
+  options:
+    folders: true
+  template: book-theme
