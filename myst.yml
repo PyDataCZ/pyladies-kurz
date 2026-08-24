@@ -60,4 +60,6 @@ project:
 site:
   options:
     folders: true
+    logo_text: "Datový kurz PyLadies"
+    style: style.css
   template: book-theme
