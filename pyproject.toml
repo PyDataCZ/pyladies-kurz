@@ -6,7 +6,7 @@ authors = [
     {name = "Jan Pipek", email = "jan.pipek@gmail.com"},
     {name = "Jakub Urban", email = "coobas@gmail.com"}
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
     "jupyter-book==2.1.6",
 ]
