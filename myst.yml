@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: Datavý kurz PyLadies
+  title: Datový kurz PyLadies
   authors:
     - name: PyLadies a PyData Prague
   github: PyDataCZ/pyladies-kurz
