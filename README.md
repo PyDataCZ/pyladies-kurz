@@ -12,9 +12,16 @@ uv run python scripts/render_notebooks.py
 uv run jupyter-book build --html --strict
 ```
 
-Výstup Jupyter Booku vzniká v `_build/html`. Notebooky s uloženými výstupy a
-ověřené vykonané notebooky jsou v `_build/notebooks/`; tyto adresáře nejsou
-zdrojové soubory kurzu.
+Výstup Jupyter Booku vzniká v `_build/html`. Je koncipován pro běh na serveru, a tedy
+je potřeba spustit jednoduchý HTTP server v daném adresáři - samotné otevření index.html nestačí.
+Například takto:
+
+```shell
+uv run --directory _build/html python -m http.server
+```
+
+Notebooky s uloženými výstupy a ověřené vykonané notebooky jsou v `_build/notebooks/`;
+tyto adresáře nejsou zdrojové soubory kurzu.
 
 Interaktivní práci s notebooky spustíš příkazem:
 
