@@ -1,70 +1,33 @@
 # Materiály pro Datový kurz PyLadies
 
-Tento repozitář slouží jako zdroj pro materiály datového kurzu, který najdeš
-(ve vydání roku 2024) na adrese https://naucse.python.cz/2024/pydata-praha-podzim/.
+Zdrojové materiály kurzu jsou uspořádané v adresáři `lessons/`, vždy v
+samostatném tematickém adresáři se sémantickým názvem a podsložkou `assets/`.
 
-## Instalace a spuštění
-
-Chceš-li server spustit na svém počítači, např. proto, že se chceš zapojit do
-vývoje, je potřeba ho nejdřív nainstalovat:
-
-### Instalace `uv`
-
-Nemáš-li `uv`, nainstaluj si jej. Na to je několik způsobů:
-
-* podle [návodu](https://github.com/astral-sh/uv)
-
-### Instalace závislostí
-
-Přepni se do adresáře s projektem a spusť:
+## Instalace a lokální kontrola
 
 ```shell
-uv sync
+uv sync --locked --all-packages
+uv run python scripts/migrate_lessons.py --verify
+uv run python scripts/render_notebooks.py
+uv run jupyter-book build --html --strict
 ```
 
-### Lokální server
-
-Chceš-li si kurz prohlédnout, přepni se do adresáře s projektem a spusť:
+Výstup Jupyter Booku vzniká v `_build/html`. Je koncipován pro běh na serveru, a tedy
+je potřeba spustit jednoduchý HTTP server v daném adresáři - samotné otevření index.html nestačí.
+Například takto:
 
 ```shell
-uv run python -m naucse serve
+uv run --directory _build/html python -m http.server
 ```
 
-* Program vypíše adresu (např. `http://0.0.0.0:8003/`).
-  * Buď adresu navštiv v prohlížeči a doklikej se na kurz, nebo
-  * na konec adresy přidej `/course/local/` a navštiv kurz přímo.
+Notebooky s uloženými výstupy a ověřené vykonané notebooky jsou v `_build/notebooks/`;
+tyto adresáře nejsou zdrojové soubory kurzu.
 
-Poznámka @janpipek: ve windows ani linuxu mi to nefunguje :-( Ale tím asi netřeba se 
-trápit.
-
-## Publikování jedné hodiny
-
-Balíček ZIP se všemi materiály lze vytvořit použitím skriptu:
+Interaktivní práci s notebooky spustíš příkazem:
 
 ```shell
-uv run cli.py export <id-hodiny>
+uv run --directory lessons jupyter lab
 ```
 
-Ten se posílá účastnicím přes slack těsně před hodinou.
-
-## Publikování na web
-
-1. Aby se vůbec něco nahrálo na web, kurz musí být definován v repozitáři
-https://github.com/pyvec/naucse.python.cz, konkrétně v souboru `courses.yaml`
-
-2. Soubor `.github/workflows/main.yml` v tomto repozitáři musí definovat odpovídající
-jméno větve, do které se mají materiály kompilovat (aktuálně tedy `compiled2024`)
-
-3. Potom by mělo stačit mergovat cokoliv do větve `main`, aby se vše automaticky propsalo na web.
-
-4. ⚠️ Nicméně ono se sice vyplodí, co se vyplodit má, ale na web nenahraje. Je potřeba to 
-prošťouchnout pomocí akce v hlavním repozitáři: https://github.com/pyvec/naucse.python.cz/actions/workflows/main.yml . 
-Ta se spustí tlačítkem "Run workflow" vpravo nahoře. Pokud by chyběla práva, @janpipek či @coobas by právo
-mít měli.
-
-Do několika minut je hotovo 🎉
-
-## Možné problémy
-
-- naucse nemá rádo javascript ve stránkách, předvším pak plotly výstup. Ten koliduje s šablonovacím systémem
-a stránka se prostě nerenderuje. Je potřeba z notebooků toto odstranit. 
+Kniha používá Binder z větve `main`. Publikování na GitHub Pages probíhá po
+změně větve `main` prostřednictvím workflow v `.github/workflows/book.yml`.

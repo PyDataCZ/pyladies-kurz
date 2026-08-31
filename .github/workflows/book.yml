@@ -40,7 +40,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        uv sync
+        uv sync --locked --all-packages
 
     # (optional) Cache your executed notebooks between runs
     # if you have config:
@@ -49,19 +49,19 @@ jobs:
     - name: cache executed notebooks
       uses: actions/cache@v4
       with:
-        path: book/_build/.jupyter_cache
+        path: _build/.jupyter_cache
         key: jupyter-book-cache-${{ hashFiles('uv.lock') }}
 
     # Build the book
     - name: Build the book
       run: |
-        uv run --directory book jupyter-book build --html
+        uv run jupyter-book build --html --strict
 
     # Upload the book's HTML as an artifact
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v4
       with:
-        path: "book/_build/html"
+        path: "_build/html"
 
     # Deploy the book's HTML to GitHub Pages
     - name: Deploy to GitHub Pages

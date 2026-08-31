@@ -1,0 +1,5 @@
+/* Hide the redundant project-title entry at the top of the sidebar TOC;
+   the same title is already shown in the top navbar (site.options.logo_text). */
+.myst-toc-item.font-bold[href="/"] {
+  display: none;
+}
